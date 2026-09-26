@@ -3,33 +3,1208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bali Jewelry Masterclass — A Piece of Bali, Made by You.">
-  <title>Bali Jewelry Masterclass</title>
+
+  <meta name="description" content="Bali Jewelry Masterclass — Make your own handmade silver ring in a genuine home-based Balinese workshop. A Piece of Bali, Made by You.">
+
+  <title>Bali Jewelry Masterclass — A Piece of Bali, Made by You.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --cream: #f7f1e8;
+      --warm-white: #fffdf9;
+      --sand: #dfcdb6;
+      --terracotta: #b86f55;
+      --terracotta-dark: #92533f;
+      --gold: #b59662;
+      --ink: #25221f;
+      --muted: #756e66;
+      --line: rgba(37,34,31,0.13);
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--warm-white);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      color: white;
+    }
+
+    nav {
+      width: min(1180px, 90%);
+      margin: auto;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: -2px;
+      opacity: .8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      opacity: .92;
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      border: 1px solid rgba(255,255,255,.65);
+      padding: 10px 18px;
+      border-radius: 100px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 92vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      color: white;
+      background: #5a514a;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(20,17,14,.58) 0%,
+          rgba(20,17,14,.28) 48%,
+          rgba(20,17,14,.08) 100%
+        ),
+        url("Hero%20(1).jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 150px 0 105px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      opacity: .9;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 7vw, 86px);
+      font-weight: 500;
+      line-height: .98;
+      letter-spacing: -2.5px;
+      max-width: 800px;
+    }
+
+    .hero-text {
+      max-width: 570px;
+      font-size: 17px;
+      margin-top: 25px;
+      color: rgba(255,255,255,.9);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.55);
+      color: white;
+      backdrop-filter: blur(5px);
+    }
+
+    .btn-light:hover {
+      background: rgba(255,255,255,.2);
+    }
+
+    .hero-note {
+      margin-top: 25px;
+      font-size: 12px;
+      opacity: .78;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 105px 0;
+      background: var(--cream);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: clamp(37px, 5vw, 57px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    .intro-copy p {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 540px;
+    }
+
+    .intro-image {
+      position: relative;
+    }
+
+    .intro-image img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--terracotta);
+      color: white;
+      padding: 18px 22px;
+      max-width: 220px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      padding: 110px 0;
+      background: var(--warm-white);
+    }
+
+    .experience-header {
+      max-width: 650px;
+      margin-bottom: 55px;
+    }
+
+    .experience-header p {
+      color: var(--muted);
+      margin-top: 18px;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-card {
+      padding: 35px 32px 35px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .experience-card:not(:first-child) {
+      padding-left: 32px;
+    }
+
+    .experience-card:last-child {
+      border-right: 0;
+    }
+
+    .number {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 17px;
+    }
+
+    .experience-card h3 {
+      font-size: 19px;
+      margin-bottom: 11px;
+    }
+
+    .experience-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       STORY / DIFFERENCE
+    ========================= */
+
+    .story {
+      background: var(--ink);
+      color: white;
+      padding: 115px 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .story-image img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .story-copy h2 {
+      color: white;
+    }
+
+    .story-copy p {
+      margin-top: 22px;
+      color: rgba(255,255,255,.7);
+      max-width: 530px;
+    }
+
+    .story-points {
+      margin-top: 32px;
+      display: grid;
+      gap: 17px;
+    }
+
+    .story-point {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 9px;
+      flex: 0 0 auto;
+    }
+
+    .story-point span {
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+    }
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .steps {
+      padding: 110px 0;
+      background: var(--cream);
+    }
+
+    .steps-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .steps-heading p {
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .step-grid {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: var(--warm-white);
+      padding: 30px;
+      min-height: 210px;
+    }
+
+    .step-number {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--terracotta);
+      font-weight: 600;
+    }
+
+    .step h3 {
+      margin-top: 30px;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .step p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       PRICE / BOOKING
+    ========================= */
+
+    .booking {
+      padding: 115px 0;
+      background: var(--warm-white);
+    }
+
+    .booking-box {
+      background: var(--terracotta);
+      color: white;
+      padding: 65px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .booking-box h2 {
+      color: white;
+    }
+
+    .booking-box p {
+      margin-top: 15px;
+      max-width: 570px;
+      color: rgba(255,255,255,.85);
+    }
+
+    .price {
+      margin-top: 23px;
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+    }
+
+    .price small {
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .booking-details {
+      margin-top: 23px;
+      display: grid;
+      gap: 7px;
+      font-size: 13px;
+      color: rgba(255,255,255,.83);
+    }
+
+    .booking-action {
+      text-align: center;
+      min-width: 190px;
+    }
+
+    .booking-action .btn {
+      background: white;
+      color: var(--terracotta-dark);
+      width: 100%;
+    }
+
+    .booking-action small {
+      display: block;
+      margin-top: 12px;
+      font-size: 11px;
+      opacity: .75;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--ink);
+      color: white;
+      padding: 65px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 55px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+    }
+
+    .footer-copy {
+      margin-top: 15px;
+      color: rgba(255,255,255,.55);
+      max-width: 330px;
+      font-size: 13px;
+    }
+
+    footer h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 17px;
+      color: var(--sand);
+    }
+
+    footer ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      color: rgba(255,255,255,.65);
+      font-size: 13px;
+    }
+
+    .copyright {
+      padding-top: 25px;
+      font-size: 11px;
+      color: rgba(255,255,255,.4);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero-content {
+        padding: 140px 0 70px;
+      }
+
+      .intro-grid,
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card,
+      .experience-card:not(:first-child) {
+        padding: 30px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .step-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .booking-box {
+        grid-template-columns: 1fr;
+        padding: 45px 30px;
+      }
+
+      .booking-action {
+        text-align: left;
+      }
+
+      .booking-action .btn {
+        width: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .copyright {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .container {
+        width: 88%;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      .step-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-caption {
+        left: 0;
+        bottom: -15px;
+      }
+
+      .booking {
+        padding: 75px 0;
+      }
+    }
+
+  </style>
 </head>
+
+
 <body>
 
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
   <header>
-    <h1>Bali Jewelry Masterclass</h1>
-    <p>A Piece of Bali, Made by You.</p>
+    <nav>
+      <a href="#" class="brand">
+        Bali Jewelry Masterclass
+        <span>Handmade in Bali</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#experience">The Experience</a>
+        <a href="#story">Our Place</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#booking" class="nav-cta">Book Your Experience</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section id="experience">
-      <h2>Make Your Own Silver Ring in Bali</h2>
-      <p>
-        Create your own handmade silver ring in a genuine home-based
-        Balinese workshop.
-      </p>
-    </section>
 
-    <section id="booking">
-      <h2>Book Your Experience</h2>
-      <p>IDR 600,000 per person</p>
-    </section>
-  </main>
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Bali Jewelry Masterclass
+        </div>
+
+        <h1>
+          A Piece of Bali,<br>
+          Made by You.
+        </h1>
+
+        <p class="hero-text">
+          Create your own handmade silver ring in a genuine
+          home-based Balinese workshop — and take home
+          something that carries your story.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#booking" class="btn btn-primary">
+            Book Your Experience
+          </a>
+
+          <a href="#experience" class="btn btn-light">
+            Discover the Experience
+          </a>
+
+        </div>
+
+        <div class="hero-note">
+          Small groups · Hands-on experience · Genuine Balinese home workshop
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INTRO
+  ========================== -->
+
+  <section class="intro" id="experience">
+
+    <div class="container">
+
+      <div class="intro-grid">
+
+        <div class="intro-copy">
+
+          <div class="section-label">
+            The Experience
+          </div>
+
+          <h2>
+            Not just a souvenir.
+            Make the memory yourself.
+          </h2>
+
+          <p>
+            Step away from the usual tourist experience and spend
+            a couple of hours learning the basics of traditional
+            silver ring making.
+          </p>
+
+          <p>
+            You will work directly with the tools, shape your silver,
+            refine the details and finish your own piece with guidance
+            throughout the process.
+          </p>
+
+        </div>
+
+
+        <div class="intro-image">
+
+          <img
+            src="Hero%20(2).jpg"
+            alt="Guests creating handmade silver jewelry at Bali Jewelry Masterclass"
+          >
+
+          <div class="image-caption">
+            Hands-on, personal and made in a real Balinese home.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXPERIENCE FEATURES
+  ========================== -->
+
+  <section class="experience">
+
+    <div class="container">
+
+      <div class="experience-header">
+
+        <div class="section-label">
+          What You Get
+        </div>
+
+        <h2>
+          Simple, personal, hands-on.
+        </h2>
+
+        <p>
+          Everything you need to create your own silver ring,
+          without the pressure of being an expert.
+        </p>
+
+      </div>
+
+
+      <div class="experience-grid">
+
+        <div class="experience-card">
+
+          <div class="number">01</div>
+
+          <h3>
+            Your own silver ring
+          </h3>
+
+          <p>
+            Create one handmade silver ring from our available
+            designs and make it your own.
+          </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+          <div class="number">02</div>
+
+          <h3>
+            Guided by a local maker
+          </h3>
+
+          <p>
+            Learn step by step with guidance throughout the
+            process — no previous experience required.
+          </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+          <div class="number">03</div>
+
+          <h3>
+            Your Bali memory
+          </h3>
+
+          <p>
+            Leave Bali with something you actually made,
+            rather than something you simply bought.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       OUR PLACE
+  ========================== -->
+
+  <section class="story" id="story">
+
+    <div class="container">
+
+      <div class="story-grid">
+
+        <div class="story-image">
+
+          <img
+            src="Hero%20(2).jpg"
+            alt="Bali Jewelry Masterclass home workshop"
+          >
+
+        </div>
+
+
+        <div class="story-copy">
+
+          <div class="section-label">
+            Our Place
+          </div>
+
+          <h2>
+            A real home.<br>
+            A real Bali neighborhood.
+          </h2>
+
+          <p>
+            Bali Jewelry Masterclass takes place in a genuine
+            Balinese home — not a resort, hotel or commercial
+            tourist attraction.
+          </p>
+
+          <p>
+            The setting is part of the experience. It is relaxed,
+            personal and intentionally different from the typical
+            workshop environment.
+          </p>
+
+
+          <div class="story-points">
+
+            <div class="story-point">
+              <div class="dot"></div>
+              <span>
+                Genuine home-based Balinese workshop
+              </span>
+            </div>
+
+            <div class="story-point">
+              <div class="dot"></div>
+              <span>
+                Small-group atmosphere
+              </span>
+            </div>
+
+            <div class="story-point">
+              <div class="dot"></div>
+              <span>
+                Learn by actually making
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HOW IT WORKS
+  ========================== -->
+
+  <section class="steps" id="how-it-works">
+
+    <div class="container">
+
+      <div class="steps-heading">
+
+        <div class="section-label">
+          How It Works
+        </div>
+
+        <h2>
+          From a piece of silver
+          to something that's yours.
+        </h2>
+
+        <p>
+          A relaxed two-hour experience designed for beginners.
+        </p>
+
+      </div>
+
+
+      <div class="step-grid">
+
+        <div class="step">
+
+          <div class="step-number">
+            STEP 01
+          </div>
+
+          <h3>
+            Choose
+          </h3>
+
+          <p>
+            Select your ring style and decide how you want
+            your piece to look.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            STEP 02
+          </div>
+
+          <h3>
+            Shape
+          </h3>
+
+          <p>
+            Work with the silver and shape your ring using
+            traditional jewelry-making tools.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            STEP 03
+          </div>
+
+          <h3>
+            Refine
+          </h3>
+
+          <p>
+            Smooth, adjust and refine the details with
+            guidance along the way.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            STEP 04
+          </div>
+
+          <h3>
+            Take it home
+          </h3>
+
+          <p>
+            Finish your handmade silver ring and take home
+            a piece of Bali made by you.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BOOKING
+  ========================== -->
+
+  <section class="booking" id="booking">
+
+    <div class="container">
+
+      <div class="booking-box">
+
+        <div>
+
+          <div class="section-label">
+            Book Your Experience
+          </div>
+
+          <h2>
+            Make something<br>
+            worth remembering.
+          </h2>
+
+          <div class="price">
+            IDR 600,000
+            <small>/ person</small>
+          </div>
+
+          <p>
+            Your experience includes the instructor, silver material,
+            one silver ring from our catalog and documentation.
+          </p>
+
+
+          <div class="booking-details">
+
+            <div>✓ Approx. 2-hour workshop</div>
+            <div>✓ Silver material included up to 5 grams</div>
+            <div>✓ One handmade silver ring</div>
+            <div>✓ Photography / documentation included</div>
+            <div>✓ No previous experience required</div>
+
+          </div>
+
+        </div>
+
+
+        <div class="booking-action">
+
+          <a href="#" class="btn">
+            Book Now
+          </a>
+
+          <small>
+            Booking details coming soon
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
-    <p>&copy; 2026 Bali Jewelry Masterclass</p>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-brand">
+            Bali Jewelry Masterclass
+          </div>
+
+          <p class="footer-copy">
+            A hands-on silver jewelry experience in a genuine
+            Balinese home.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Explore
+          </h4>
+
+          <ul>
+            <li><a href="#experience">The Experience</a></li>
+            <li><a href="#story">Our Place</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#booking">Book</a></li>
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Bali Jewelry Masterclass
+          </h4>
+
+          <ul>
+            <li>Made in Bali</li>
+            <li>Home-based workshop</li>
+            <li>Small groups</li>
+            <li>Handmade silver jewelry</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        <div>
+          © 2026 Bali Jewelry Masterclass
+        </div>
+
+        <div>
+          A Piece of Bali, Made by You.
+        </div>
+
+      </div>
+
+    </div>
+
   </footer>
 
 </body>

@@ -4,14 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Bali Jewelry Masterclass — Make your own handmade silver ring in a genuine home-based Balinese workshop. A Piece of Bali, Made by You.">
+  <meta name="description" content="Join Bali Jewelry Masterclass in Dalung, North Kuta, to make your own pure silver ring or bracelet with guidance from our instructors. About 10 minutes from Canggu.">
 
-  <title>Bali Jewelry Masterclass — A Piece of Bali, Made by You.</title>
+  <title>Bali Jewelry Workshop in North Kuta | Bali Jewelry Masterclass</title>
+
+  <link rel="canonical" href="https://balijewelrymasterclass.com/">
+  <meta property="og:url" content="https://balijewelrymasterclass.com/">
+  <meta property="og:image" content="https://balijewelrymasterclass.com/bali-jewelry-workshop-guests.jpg">
+
+  <link rel="preload" as="image" href="bali-jewelry-workshop-guests.jpg" fetchpriority="high">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Nothing+You+Could+Do&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Bali Jewelry Masterclass",
+      "description": "A hands-on pure silver jewelry workshop in Dalung, North Kuta, about 10 minutes from Canggu.",
+      "email": "balijewelrymasterclass@gmail.com",
+      "telephone": "+628976843534",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cemara Giri Graha 3 Blok II No.6F",
+        "addressLocality": "Dalung, North Kuta",
+        "addressRegion": "Bali",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "10:00",
+        "closes": "19:00"
+      }],
+      "hasMap": "https://maps.app.goo.gl/k5iEkVehrubxCqJ79",
+      "sameAs": [
+        "https://www.instagram.com/balijewelrymasterclass/",
+        "https://www.tiktok.com/@balijewelrymasterclass",
+        "https://www.facebook.com/balijewelrymasterclass"
+      ]
+    }
+  </script>
 
   <style>
 
@@ -42,7 +86,8 @@
       font-family: "DM Sans", sans-serif;
       background: var(--warm-white);
       color: var(--ink);
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     img {
@@ -111,7 +156,8 @@
       display: flex;
       gap: 32px;
       align-items: center;
-      font-size: 14px;
+      font-size: 17px;
+      line-height: 1.4;
     }
 
     .nav-links a {
@@ -122,6 +168,25 @@
     .nav-links a:hover {
       opacity: 1;
     }
+
+    .nav-group { position: relative; }
+    .nav-group > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -18px;
+      min-width: 205px;
+      padding: 12px 18px;
+      background: var(--ink);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 3px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+    .nav-group:hover .nav-dropdown,
+    .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: white; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
 
     .nav-cta {
       border: 1px solid rgba(255,255,255,.65);
@@ -153,7 +218,7 @@
           rgba(20,17,14,.28) 48%,
           rgba(20,17,14,.08) 100%
         ),
-        url("Hero%20(1).jpg");
+        url("bali-jewelry-workshop-guests.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -188,6 +253,16 @@
       font-size: 17px;
       margin-top: 25px;
       color: rgba(255,255,255,.9);
+    }
+
+    .hero-brand-statement {
+      margin-bottom: 18px;
+      color: rgba(255,255,255,.9);
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: .2px;
     }
 
     .hero-buttons {
@@ -244,10 +319,31 @@
       background: var(--cream);
     }
 
+    .intro#pure-silver {
+      padding: 88px 0;
+      background: #252321;
+    }
+
+    .intro#pure-silver .intro-copy h2 {
+      color: var(--white);
+      line-height: 1.03;
+    }
+
+    .intro#pure-silver .intro-copy .section-label {
+      color: #F4F0E8;
+      margin-bottom: 14px;
+    }
+
+    .intro#pure-silver .intro-copy p {
+      color: #F4F0E8;
+      margin-top: 18px;
+      line-height: 1.65;
+    }
+
     .intro-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 90px;
+      grid-template-columns: calc((100% - 90px) / 2) minmax(0, 1fr);
+      gap: 36px;
       align-items: center;
     }
 
@@ -268,7 +364,7 @@
       letter-spacing: -1.5px;
     }
 
-    .intro-copy p {
+   .intro-copy p {
       margin-top: 22px;
       color: var(--muted);
       font-size: 18px;
@@ -281,19 +377,17 @@
     }
 
     .intro-image img {
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
+      height: auto;
       border-radius: 3px;
     }
 
     .image-caption {
       position: absolute;
-      bottom: -20px;
-      left: -20px;
-      background: var(--terracotta);
+      bottom: 28px;
+      left: 28px;
       color: white;
-      padding: 18px 22px;
-      max-width: 220px;
+      padding: 15px 18px;
+      max-width: 190px;
       font-size: 13px;
       line-height: 1.45;
     }
@@ -354,9 +448,244 @@
       color: var(--muted);
     }
 
-    /* =========================
-       STORY / DIFFERENCE
-    ========================= */
+    .experience#pricing {
+      background: var(--cream);
+    }
+
+    .experience#pricing .pricing-header {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .experience#pricing .pricing-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 34px;
+    }
+
+    .experience#pricing .pricing-card {
+      display: grid;
+      grid-template-rows: 22px 24px 44px 24px;
+      align-content: start;
+      gap: 0;
+      padding: 4px 28px 8px;
+      border-right: 1px solid var(--line);
+      border-bottom: 0;
+      background: transparent;
+      text-align: left;
+    }
+
+    .experience#pricing .pricing-card:first-child { padding-left: 0; }
+    .experience#pricing .pricing-card:last-child { padding-right: 0; border-right: 0; }
+
+    .experience#pricing .pricing-category {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .experience#pricing .pricing-audience {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .experience#pricing .pricing-audience--empty { visibility: hidden; }
+
+    .experience#pricing .pricing-card h3.pricing-amount {
+      min-height: 0;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(24px, 2.6vw, 34px);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -.5px;
+      white-space: nowrap;
+    }
+
+    .experience#pricing .pricing-unit {
+      margin: 0;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .experience#pricing .pricing-included,
+    .experience#pricing .pricing-additional {
+      border-top: 1px solid var(--line);
+      margin-top: 34px;
+      padding-top: 34px;
+    }
+
+    .experience#pricing .pricing-subheader {
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+
+    .experience#pricing .pricing-subheader .section-label {
+      margin-bottom: 12px;
+    }
+
+    .experience#pricing .pricing-subheader h2 {
+      margin-bottom: 8px;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.12;
+    }
+
+    .experience#pricing .pricing-subheader p {
+      max-width: 680px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .experience#pricing .pricing-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .experience#pricing .pricing-feature {
+      padding: 4px 24px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .experience#pricing .pricing-feature:first-child { padding-left: 0; }
+    .experience#pricing .pricing-feature:last-child { padding-right: 0; border-right: 0; }
+
+    .experience#pricing .pricing-feature-icon {
+      display: block;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 14px;
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .experience#pricing .pricing-feature h3,
+    .experience#pricing .pricing-cost h3 {
+      margin: 0 0 6px;
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .experience#pricing .pricing-feature p,
+    .experience#pricing .pricing-cost p {
+      margin: 0;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .experience#pricing .pricing-additional {
+      margin-top: 36px;
+      padding-top: 30px;
+    }
+
+    .experience#pricing .pricing-additional .pricing-subheader {
+      margin-bottom: 20px;
+    }
+
+    .experience#pricing .pricing-additional .pricing-subheader h2 {
+      font-size: clamp(30px, 3.3vw, 40px);
+    }
+
+    .experience#pricing .pricing-cost-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .experience#pricing .pricing-cost {
+      padding: 0 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .experience#pricing .pricing-cost:first-child { padding-left: 0; }
+    .experience#pricing .pricing-cost:last-child { padding-right: 0; border-right: 0; }
+
+    .experience#pricing .pricing-cost h3 { font-size: 18px; }
+    .experience#pricing .pricing-cost p { font-size: 15px; }
+
+    .experience#pricing .pricing-footer {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 32px;
+      margin-top: 28px;
+    }
+
+    .experience#pricing .pricing-footer .btn { gap: 18px; }
+
+
+    @media (min-width: 651px) and (max-width: 1050px) {
+      .experience#pricing .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .experience#pricing .pricing-card:nth-child(1),
+      .experience#pricing .pricing-card:nth-child(2) { border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+      .experience#pricing .pricing-card:nth-child(2),
+      .experience#pricing .pricing-card:nth-child(4) { border-right: 0; }
+      .experience#pricing .pricing-card:nth-child(3) { padding-left: 0; }
+      .experience#pricing .pricing-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
+      .experience#pricing .pricing-feature:nth-child(2) { border-right: 0; }
+      .experience#pricing .pricing-feature:nth-child(3) { padding-left: 0; }
+      .experience#pricing .pricing-cost-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+      .experience#pricing .pricing-cost:nth-child(2) { border-right: 0; }
+      .experience#pricing .pricing-cost:nth-child(3) { padding-left: 0; }
+      .experience#pricing .pricing-cost { padding-inline: 18px; }
+      .experience#pricing .pricing-cost:first-child { padding-left: 0; }
+      .experience#pricing .pricing-footer { grid-template-columns: 1fr; gap: 22px; }
+    }
+
+    @media (max-width: 650px) {
+      .experience#pricing .pricing-header { margin-bottom: 30px; }
+      .experience#pricing .pricing-grid { grid-template-columns: 1fr; padding-bottom: 24px; }
+      .experience#pricing .pricing-card,
+      .experience#pricing .pricing-card:first-child,
+      .experience#pricing .pricing-card:last-child {
+        grid-template-rows: 22px 18px 40px 22px;
+        padding: 18px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .experience#pricing .pricing-card:last-child { border-bottom: 0; padding-bottom: 0; }
+      .experience#pricing .pricing-card h3.pricing-amount { font-size: 30px; }
+      .experience#pricing .pricing-included,
+      .experience#pricing .pricing-additional { margin-top: 28px; padding-top: 28px; }
+      .experience#pricing .pricing-subheader h2 { font-size: 34px; }
+      .experience#pricing .pricing-feature-grid,
+      .experience#pricing .pricing-cost-grid { grid-template-columns: 1fr; }
+      .experience#pricing .pricing-feature,
+      .experience#pricing .pricing-feature:first-child,
+      .experience#pricing .pricing-feature:last-child,
+      .experience#pricing .pricing-cost,
+      .experience#pricing .pricing-cost:first-child,
+      .experience#pricing .pricing-cost:last-child {
+        padding: 18px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .experience#pricing .pricing-feature:first-child,
+      .experience#pricing .pricing-cost:first-child { padding-top: 0; }
+      .experience#pricing .pricing-feature:last-child,
+      .experience#pricing .pricing-cost:last-child { border-bottom: 0; padding-bottom: 0; }
+      .experience#pricing .pricing-feature-icon { width: 36px; height: 36px; margin-bottom: 10px; }
+      .experience#pricing .pricing-footer { grid-template-columns: 1fr; gap: 20px; }
+      .experience#pricing .pricing-footer .btn { justify-self: start; }
+    }
 
     .story {
       background: var(--ink);
@@ -364,14 +693,128 @@
       padding: 115px 0;
     }
 
+    .story#moments {
+      background: #252321;
+      padding-block: 120px;
+    }
+
+    .story#moments .moments-header {
+      max-width: 650px;
+    }
+
+    .story#moments .moments-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+      gap: 26px;
+      margin-top: 44px;
+    }
+
+    .story#moments .moments-gallery-item {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .story#moments .moments-gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .story#moments .moments-gallery-item:nth-child(n + 4) {
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+    }
+
+    .story#moments .moments-gallery-item:nth-child(n + 4) img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .story#moments .moments-instagram {
+      margin-top: 30px;
+      margin-bottom: 0;
+    }
+
+    .story#moments .moments-instagram-cta {
+      gap: 12px;
+      padding: 14px 23px;
+      white-space: nowrap;
+    }
+
+    .story#moments .moments-instagram-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+    }
+
+    @media (max-width: 850px) {
+      .story#moments .moments-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .story#moments .moments-instagram-cta {
+        gap: 10px;
+        padding: 12px 18px;
+        font-size: 14px;
+      }
+
+      .story#moments .moments-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
     .story-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 90px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 55px;
       align-items: center;
     }
 
+    .story#about-bjm {
+      padding: 96px 0;
+      background: #252321;
+      color: #FFFFFF;
+    }
+
+    .story#about-bjm .section-label {
+      color: #F4F0E8;
+    }
+
+    .story#about-bjm .story-copy h2 {
+      color: #FFFFFF;
+      line-height: 1.03;
+    }
+
+    .story#about-bjm .story-copy p {
+      max-width: 500px;
+      margin-top: 18px;
+      color: rgba(255,255,255,.8);
+      line-height: 1.68;
+    }
+
+    .story#about-bjm .story-points {
+      margin-top: 26px;
+      gap: 14px;
+    }
+
+    .story#about-bjm .dot {
+      background: #F4F0E8;
+    }
+
+    .story#about-bjm .story-point span {
+      color: rgba(255,255,255,.86);
+    }
+
+    @media (max-width: 850px) {
+      .story#about-bjm { padding: 72px 0; }
+    }
+
     .story-image img {
+      height: auto;
       aspect-ratio: 4 / 3;
       object-fit: cover;
     }
@@ -421,15 +864,118 @@
       background: var(--cream);
     }
 
+    .steps#schedule {
+      padding: 104px 0;
+      background: #FFFFFF;
+      color: #252321;
+    }
+
+    .steps#schedule .section-label,
+    .steps#schedule .schedule-description {
+      color: #252321;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-areas: "schedule-image schedule-copy";
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 72px;
+      align-items: center;
+    }
+
+    .schedule-copy {
+      grid-area: schedule-copy;
+      justify-self: end;
+      max-width: 520px;
+      text-align: right;
+    }
+
+    .schedule-copy .section-label { margin-bottom: 16px; }
+
+    .schedule-copy h2 {
+      font-size: clamp(44px, 5.2vw, 62px);
+    }
+
+    .schedule-hours {
+      margin-top: 24px;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .schedule-description {
+      max-width: 490px;
+      margin-top: 12px;
+      color: #252321;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .schedule-image { grid-area: schedule-image; }
+
+    .schedule-image img {
+      height: auto;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 850px) {
+      .steps#schedule { padding: 80px 0; }
+      .schedule-grid { grid-template-areas: "schedule-copy" "schedule-image"; grid-template-columns: 1fr; gap: 32px; }
+      .schedule-copy { max-width: 620px; }
+      .schedule-copy h2 { font-size: clamp(38px, 8vw, 52px); }
+      .schedule-hours { margin-top: 20px; font-size: 19px; }
+      .schedule-image { grid-area: schedule-image; }
+
+    .schedule-image img { width: 100%; }
+    }
+    .steps#craft {
+      padding: 96px 0 68px;
+      background: #FFFFFF;
+      color: #252321;
+    }
+
+    .steps#craft .section-label,
+    .steps#craft .steps-heading,
+    .steps#craft .steps-heading p,
+    .steps#craft .step,
+    .steps#craft .step-number,
+    .steps#craft .step h3,
+    .steps#craft .step p {
+      color: #252321;
+    }
+
+    .steps#craft .step {
+      background: #F4F0E8;
+    }
+
     .steps-heading {
       text-align: center;
       max-width: 650px;
       margin: auto;
     }
 
+    .steps#craft .steps-heading {
+      max-width: none;
+      margin: 0;
+      text-align: left;
+    }
+
+    .steps#craft .steps-heading h2 {
+      line-height: 1.05;
+    }
+
+    .steps#craft .steps-heading h2 {
+      font-size: clamp(42px, 5.1vw, 60px);
+    }
+
     .steps-heading p {
       margin-top: 18px;
       color: var(--muted);
+    }
+
+    .steps#craft .steps-heading p {
+      font-size: 18px;
+      line-height: 1.65;
     }
 
     .step-grid {
@@ -439,14 +985,26 @@
       gap: 18px;
     }
 
+    .steps#craft .step-grid {
+      margin-top: 32px;
+      grid-auto-rows: 1fr;
+      column-gap: 18px;
+      row-gap: 14px;
+    }
+
     .step {
       background: var(--warm-white);
-      padding: 30px;
-      min-height: 210px;
+      padding: 32px;
+      min-height: 225px;
+    }
+
+    .steps#craft .step {
+      padding: 28px;
+      min-height: 205px;
     }
 
     .step-number {
-      font-size: 12px;
+      font-size: 16px;
       letter-spacing: 2px;
       color: var(--terracotta);
       font-weight: 600;
@@ -454,15 +1012,33 @@
 
     .step h3 {
       margin-top: 30px;
+      min-height: 2.4em;
       font-family: "Playfair Display", serif;
       font-size: 25px;
       font-weight: 500;
+    }
+
+    .steps#craft .step h3 {
+      min-height: 1.8em;
+      margin-top: 24px;
+      margin-bottom: 0;
+      line-height: 1.25;
     }
 
     .step p {
       margin-top: 10px;
       color: var(--muted);
       font-size: 13px;
+    }
+
+    .steps#craft .step p {
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 850px) {
+      .steps#craft { padding: 76px 0 56px; }
+      .steps#craft .step-grid { margin-top: 28px; }
     }
 
     /* =========================
@@ -474,6 +1050,133 @@
       background: var(--warm-white);
     }
 
+    .closing-section {
+      padding: 100px 0 96px;
+      background: #FFFFFF;
+    }
+
+    .closing-location-contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      gap: 64px;
+      padding-bottom: 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .closing-location h2,
+    .closing-contact h2 {
+      margin-bottom: 16px;
+      font-size: clamp(32px, 3.5vw, 42px);
+    }
+
+    .closing-location p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .closing-location .closing-location-note { margin-top: 8px; }
+
+    .closing-map-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--terracotta);
+      font-size: 15px;
+    }
+
+    .closing-contact {
+      padding-left: 44px;
+      border-left: 1px solid var(--line);
+    }
+
+    .closing-contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 22px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .closing-contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 40px;
+    }
+
+    .closing-contact-links svg {
+      width: 15px;
+      height: 15px;
+      flex: 0 0 15px;
+    }
+
+    .closing-contact-links a:hover,
+    .closing-map-link:hover,
+    .closing-faq-list a:hover { text-decoration: underline; }
+
+    .closing-faq {
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .closing-faq h2 {
+      margin-bottom: 20px;
+      font-size: clamp(30px, 3.4vw, 40px);
+    }
+
+    .closing-faq-list { border-top: 1px solid var(--line); }
+
+    .closing-faq-list details { border-bottom: 1px solid var(--line); }
+
+    .closing-faq-list summary {
+      position: relative;
+      padding: 19px 38px 19px 0;
+      cursor: pointer;
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      line-height: 1.4;
+      list-style: none;
+    }
+
+    .closing-faq-list summary::-webkit-details-marker { display: none; }
+    .closing-faq-list summary::after { content: "+"; position: absolute; top: 16px; right: 4px; font: 400 22px/1.2 "DM Sans", sans-serif; }
+    .closing-faq-list details[open] summary::after { content: "−"; }
+
+    .closing-faq-list details p {
+      max-width: 720px;
+      margin: -3px 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .closing-faq-list details p a { color: var(--terracotta); }
+
+    .closing-cta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 22px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .closing-cta h2 { font-size: clamp(28px, 3.2vw, 38px); }
+
+    .closing-cta .btn {
+      padding: 16px 26px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 850px) {
+      .closing-section { padding: 80px 0; }
+      .closing-location-contact { grid-template-columns: 1fr; gap: 30px; }
+      .closing-contact { padding: 28px 0 0; border-top: 1px solid var(--line); border-left: 0; }
+      .closing-faq { margin-top: 34px; }
+      .closing-cta { align-items: flex-start; flex-direction: column; margin-top: 32px; }
+    }
     .booking-box {
       background: var(--terracotta);
       color: white;
@@ -537,54 +1240,190 @@
     ========================= */
 
     footer {
-      background: var(--ink);
-      color: white;
-      padding: 65px 0 30px;
+      background: #252321;
+      color: var(--cream);
+      padding: 44px 0 20px;
+    }
+
+    footer h2 { margin-top: 0; }
+
+    footer > .container {
+      width: min(1180px, 90%);
+      margin-inline: auto;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 60px;
-      padding-bottom: 55px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr);
+      column-gap: clamp(28px, 4vw, 64px);
+      width: 100%;
+      padding-bottom: 48px;
       border-bottom: 1px solid rgba(255,255,255,.12);
     }
 
-    .footer-brand {
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
+    .footer-logo {
+      width: min(100%, 255px);
+      height: auto;
+      display: block;
+      margin: 0 0 18px -29px;
+      filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%);
     }
 
-    .footer-copy {
-      margin-top: 15px;
-      color: rgba(255,255,255,.55);
-      max-width: 330px;
+    .footer-brand-column {
+      text-align: left;
+    }
+
+    .footer-tagline {
+      max-width: 260px;
+      margin: 0 0 14px;
+      color: var(--sand);
+      font-size: 15px;
+      line-height: 1.8;
+      letter-spacing: 3px;
+    }
+
+    @media (min-width: 651px) {
+      .footer-tagline {
+        max-width: none;
+        white-space: nowrap;
+      }
+    }
+
+    .footer-brand-description {
+      max-width: 285px;
+      margin: 0;
+      color: rgba(247,241,232,.72);
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .footer-social-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .footer-social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      color: rgba(247,241,232,.88);
+    }
+
+    .footer-social-links svg {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+    }
+
+    .footer-location {
+      color: rgba(247,241,232,.72);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .footer-location {
+      max-width: 300px;
+      margin: 0;
+    }
+
+    .footer-location-note { margin-top: 14px; }
+
+    .footer-location-address {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+    }
+
+    .footer-location-address svg {
+      width: 18px;
+      height: 18px;
+      margin-top: 4px;
+      flex: 0 0 18px;
+    }
+
+    .footer-map-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--sand);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .footer-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 38px;
+      color: rgba(247,241,232,.72);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .footer-contact-link svg {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+    }
+
+    .footer-contact-intro {
+      margin: 0 0 18px;
+      color: rgba(247,241,232,.82);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .footer-contact-list {
+      display: grid;
+      justify-items: start;
+      gap: 7px;
+    }
+
+    .footer-column ul {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      color: rgba(247,241,232,.82);
+      font-size: 15px;
+      line-height: 1.5;
+      list-style: none;
+    }
+
+    footer h2 {
+      font-family: "DM Sans", sans-serif;
       font-size: 13px;
-    }
-
-    footer h4 {
-      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 17px;
+      letter-spacing: 2.8px;
+      margin-bottom: 22px;
       color: var(--sand);
     }
 
-    footer ul {
-      list-style: none;
-      display: grid;
-      gap: 9px;
-      color: rgba(255,255,255,.65);
-      font-size: 13px;
+    .footer-link-arrow {
+      display: inline-block;
+      margin-left: 4px;
+      font-size: 16px;
+      line-height: 1;
+      opacity: .75;
     }
 
     .copyright {
-      padding-top: 25px;
-      font-size: 11px;
-      color: rgba(255,255,255,.4);
+      padding-top: 20px;
+      font-size: 14px;
+      color: rgba(247,241,232,.48);
       display: flex;
       justify-content: space-between;
       gap: 20px;
+      width: 100%;
+      line-height: 1.6;
     }
 
     /* =========================
@@ -596,6 +1435,24 @@
       .nav-links {
         display: none;
       }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open {
+        display: grid;
+        position: absolute;
+        top: 82px;
+        left: 5%;
+        width: 90%;
+        gap: 0;
+        padding: 12px 20px;
+        background: var(--ink);
+        border-radius: 3px;
+        font-size: 15px;
+      }
+      .nav-links.is-open > a,
+      .nav-links.is-open .nav-group > a { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
 
       .hero {
         min-height: 88vh;
@@ -605,15 +1462,25 @@
         padding: 140px 0 70px;
       }
 
-      .intro-grid,
-      .story-grid {
+      .intro-grid {
         grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .intro#pure-silver {
+        padding: 72px 0;
+      }
+
+      .story-grid {
+        grid-template-columns: minmax(0, 1fr);
         gap: 50px;
       }
 
       .experience-grid {
         grid-template-columns: 1fr;
       }
+
+      .pricing-grid { grid-template-columns: 1fr; }
 
       .experience-card,
       .experience-card:not(:first-child) {
@@ -639,19 +1506,51 @@
         width: auto;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
       .copyright {
         flex-direction: column;
       }
     }
 
+    @media (max-width: 650px) {.steps#craft .step-grid {
+        grid-template-columns: 1fr;
+      }
+
+}
+
+    @media (min-width: 651px) and (max-width: 1050px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 36px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .footer-logo {
+        width: min(100%, 230px);
+        margin-left: -26px;
+      }
+      .copyright {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .footer-email span { white-space: normal; }
+      .footer-grid > * { min-width: 0; }
+    }
+
+    @media (max-width: 420px) {
+    }
+
     @media (max-width: 550px) {
 
       .container {
+        width: 88%;
+      }
+
+      footer > .container {
         width: 88%;
       }
 
@@ -672,15 +1571,268 @@
       }
 
       .image-caption {
-        left: 0;
-        bottom: -15px;
+        left: 24px;
+        bottom: 24px;
       }
 
       .booking {
         padding: 75px 0;
       }
     }
+/* =========================
+   TYPOGRAPHY CALIBRATION V1
+========================= */
 
+.hero-text {
+  font-size: 18px;
+  line-height: 1.65;
+  margin-top: 24px;
+}
+
+.btn {
+  font-size: 15px;
+}
+
+.hero-note {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.section-label {
+  font-size: 15px;
+  letter-spacing: 2.5px;
+  line-height: 1.4;
+}
+
+.intro-copy p {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.image-caption {
+  font-family: "Nothing You Could Do", "Segoe Print", cursive;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.25;
+  max-width: none;
+  white-space: nowrap;
+}
+
+.experience-header p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.experience-card h3 {
+  font-size: 20px;
+}
+
+.experience-card p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.story-copy p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.story-point span {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.steps-heading p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.step p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.booking-box p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.booking-details {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-copy,
+footer ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.copyright {
+  line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .intro-copy p,
+  .experience-card p,
+  .story-copy p,
+  .steps-heading p,
+  .booking-box p {
+    font-size: 16px;
+  }
+
+  .section-label {
+    font-size: 13px;
+  }
+
+  .nav-links {
+    font-size: 16px;
+  }
+}
+
+.hero .hero-content {
+  max-width: 900px;
+}
+
+.hero .hero-brand-statement {
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  max-width: 900px;
+  line-height: 1.04;
+}
+
+.hero .hero-text {
+  max-width: 570px;
+  margin-top: 18px;
+  line-height: 1.6;
+}
+
+.hero .hero-buttons {
+  margin-top: 24px;
+}
+
+@media (max-width: 650px) {
+  .hero-desktop-break { display: none; }
+}
+
+.intro#workshop .intro-copy .section-label {
+  margin-bottom: 14px;
+}
+
+.intro#workshop .intro-copy h2 {
+  line-height: 1.02;
+}
+
+.intro#workshop .intro-copy p {
+  max-width: 510px;
+  margin-top: 18px;
+  line-height: 1.68;
+}
+
+.intro#workshop .intro-copy p:last-child {
+  margin-top: 26px;
+}
+
+.experience#pricing {
+  background: #F4F0E8;
+  color: #252321;
+}
+
+.experience#pricing > .container {
+  width: min(1180px, 90%);
+}
+
+.experience#pricing .section-label,
+.experience#pricing .pricing-category,
+.experience#pricing .pricing-card h3.pricing-amount,
+.experience#pricing .pricing-feature h3,
+.experience#pricing .pricing-cost h3,
+.experience#pricing .pricing-subheader h2 {
+  color: #252321;
+}
+
+.experience#pricing .pricing-header {
+  max-width: 980px;
+  margin-bottom: 38px;
+}
+
+.experience#pricing .pricing-header .section-label {
+  margin-bottom: 14px;
+}
+
+.experience#pricing .pricing-header h2 {
+  font-size: clamp(40px, 4.3vw, 60px);
+  line-height: 1.08;
+}
+
+.experience#pricing .pricing-header p {
+  max-width: 900px;
+  margin-top: 12px;
+  color: rgba(37,35,33,.76);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.experience#pricing .pricing-grid {
+  border-color: rgba(37,35,33,.13);
+}
+
+.experience#pricing .pricing-card {
+  grid-template-rows: 22px 24px 48px 26px;
+  border-color: rgba(37,35,33,.13);
+}
+
+.experience#pricing .pricing-category { font-size: 14px; }
+.experience#pricing .pricing-audience { color: rgba(37,35,33,.72); font-size: 12px; }
+.experience#pricing .pricing-card h3.pricing-amount { font-size: clamp(28px, 2.7vw, 38px); }
+.experience#pricing .pricing-unit { color: rgba(37,35,33,.76); font-size: 17px; }
+
+.experience#pricing .pricing-included,
+.experience#pricing .pricing-additional {
+  border-color: rgba(37,35,33,.13);
+  margin-top: 34px;
+  padding-top: 34px;
+}
+
+.experience#pricing .pricing-subheader {
+  max-width: 1000px;
+}
+
+.experience#pricing .pricing-subheader p,
+.experience#pricing .pricing-feature p,
+.experience#pricing .pricing-cost p {
+  color: rgba(37,35,33,.76);
+}
+
+.experience#pricing .pricing-feature,
+.experience#pricing .pricing-cost {
+  border-color: rgba(37,35,33,.13);
+}
+
+.experience#pricing .pricing-feature-icon { stroke: #252321; }
+.experience#pricing .pricing-feature h3 { font-size: 21px; }
+.experience#pricing .pricing-feature p { font-size: 17px; line-height: 1.55; }
+.experience#pricing .pricing-cost h3 { font-size: 20px; }
+.experience#pricing .pricing-cost p { font-size: 16px; line-height: 1.55; }
+
+@media (max-width: 650px) {
+  .experience#pricing > .container { width: 90%; }
+  .experience#pricing .pricing-header { margin-bottom: 30px; }
+  .experience#pricing .pricing-header h2 { font-size: 34px; }
+  .experience#pricing .pricing-header p { font-size: 16px; }
+  .experience#pricing .pricing-card {
+    grid-template-rows: 22px 18px 40px 22px;
+  }
+  .experience#pricing .pricing-card h3.pricing-amount { font-size: 30px; }
+  .experience#pricing .pricing-feature p,
+  .experience#pricing .pricing-cost p { font-size: 16px; }
+}
   </style>
 </head>
 
@@ -693,26 +1845,27 @@
 
   <header>
     <nav>
-      <a href="#" class="brand">
-        <img src="bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass">
-        
+      <a href="#" class="brand" aria-label="Bali Jewelry Masterclass home">
+        <img src="bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" fetchpriority="high">
       </a>
-
-      <div class="nav-links">
-        <a href="#experience">The Experience</a>
-        <a href="#story">Our Place</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#booking" class="nav-cta">Book Your Experience</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><a href="#workshop">The Workshop</a><div class="nav-dropdown"><a href="#experience">The Experience</a><a href="#schedule">Schedule</a><a href="#pricing">Pricing</a></div></div>
+        <div class="nav-group"><a href="#craft">The Craft</a><div class="nav-dropdown"><a href="#pure-silver">Pure Silver</a><a href="#making-your-jewelry">Making Your Jewelry</a></div></div>
+        <a href="#moments">Moments</a>
+        <div class="nav-group"><a href="#about-bjm">About Us</a><div class="nav-dropdown"><a href="#about-bjm">About BJM</a><a href="#our-location">Our Location</a><a href="#contact">Contact</a><a href="#faq">FAQ</a></div></div>
+        <a href="https://wa.me/628976843534" class="nav-cta" target="_blank" rel="noopener noreferrer">Book</a>
       </div>
     </nav>
   </header>
 
+  <main>
 
   <!-- =========================
        HERO
   ========================== -->
 
-  <section class="hero">
+  <section class="hero" id="home">
 
     <div class="hero-image"></div>
 
@@ -720,33 +1873,24 @@
 
       <div class="hero-content">
 
-        
+        <p class="hero-brand-statement">A Piece of Bali, Made by You.</p>
 
-        <h1>
-          A Piece of Bali,<br>
-          Made by You.
-        </h1>
+        <h1>Create your own<br class="hero-desktop-break"> silver jewelry in Bali.</h1>
 
         <p class="hero-text">
-          Create your own handmade silver ring in a genuine
-          home-based Balinese workshop — and take home
-          something that carries your story.
+          Our home studio is in Dalung, Bali. Choose your design and make your own silver jewelry with guidance from our instructors. No experience needed.
         </p>
 
         <div class="hero-buttons">
 
-          <a href="#booking" class="btn btn-primary">
-            Book Your Experience
+          <a href="https://wa.me/628976843534" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Book Your Workshop
           </a>
 
           <a href="#experience" class="btn btn-light">
-            Discover the Experience
+            See the Experience
           </a>
 
-        </div>
-
-        <div class="hero-note">
-          Small groups · Hands-on experience · Genuine Balinese home workshop
         </div>
 
       </div>
@@ -760,7 +1904,7 @@
        INTRO
   ========================== -->
 
-  <section class="intro" id="experience">
+  <section class="intro" id="workshop">
 
     <div class="container">
 
@@ -768,26 +1912,20 @@
 
         <div class="intro-copy">
 
-          <div class="section-label">
-            The Experience
-          </div>
+          <div class="section-label" id="experience">The Experience</div>
 
           <h2>
-            Not just a souvenir.
-            Make the memory yourself.
+            Make something with your own hands.
           </h2>
 
           <p>
-            Step away from the usual tourist experience and spend
-            a couple of hours learning the basics of traditional
-            silver ring making.
+            When you arrive at our home in Dalung, Bali, our team will welcome you, explain how the workshop works and go over the pricing. Then we'll help you choose a design from our catalog.
           </p>
 
           <p>
-            You will work directly with the tools, shape your silver,
-            refine the details and finish your own piece with guidance
-            throughout the process.
+            Then it's your turn. With guidance from our instructors, you'll work with pure silver and make your jewelry step by step. The workshop takes around two hours and is suitable for beginners. We mainly make silver rings and bracelets. Other designs may be possible with manual approval. You can take your finished piece home the same day.
           </p>
+          <p>A simple experience. Something you made yourself. Something you can keep.</p>
 
         </div>
 
@@ -795,12 +1933,16 @@
         <div class="intro-image">
 
           <img
-            src="Hero%20(2).jpg"
-            alt="Guests creating handmade silver jewelry at Bali Jewelry Masterclass"
+            src="hands-trying-on-handmade-silver-ring.jpg"
+            alt="Hands checking the fit of a handmade silver ring during a jewelry workshop"
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
           >
 
           <div class="image-caption">
-            Hands-on, personal and made in a real Balinese home.
+            Something you made.<br>Something you keep.
           </div>
 
         </div>
@@ -812,93 +1954,16 @@
   </section>
 
 
-  <!-- =========================
-       EXPERIENCE FEATURES
-  ========================== -->
-
-  <section class="experience">
-
-    <div class="container">
-
-      <div class="experience-header">
-
-        <div class="section-label">
-          What You Get
-        </div>
-
-        <h2>
-          Simple, personal, hands-on.
-        </h2>
-
-        <p>
-          Everything you need to create your own silver ring,
-          without the pressure of being an expert.
-        </p>
-
-      </div>
 
 
-      <div class="experience-grid">
 
-        <div class="experience-card">
-
-          <div class="number">01</div>
-
-          <h3>
-            Your own silver ring
-          </h3>
-
-          <p>
-            Create one handmade silver ring from our available
-            designs and make it your own.
-          </p>
-
-        </div>
-
-
-        <div class="experience-card">
-
-          <div class="number">02</div>
-
-          <h3>
-            Guided by a local maker
-          </h3>
-
-          <p>
-            Learn step by step with guidance throughout the
-            process — no previous experience required.
-          </p>
-
-        </div>
-
-
-        <div class="experience-card">
-
-          <div class="number">03</div>
-
-          <h3>
-            Your Bali memory
-          </h3>
-
-          <p>
-            Leave Bali with something you actually made,
-            rather than something you simply bought.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
 
 
   <!-- =========================
        OUR PLACE
   ========================== -->
 
-  <section class="story" id="story">
+  <section class="story" id="about-bjm">
 
     <div class="container">
 
@@ -907,8 +1972,12 @@
         <div class="story-image">
 
           <img
-            src="Hero%20(2).jpg"
-            alt="Bali Jewelry Masterclass home workshop"
+            src="balinese-home-silver-jewelry-workshop.jpg"
+            alt="A guest and jewelry maker working together at a wooden workbench"
+            width="5368"
+            height="3579"
+            loading="lazy"
+            decoding="async"
           >
 
         </div>
@@ -916,25 +1985,18 @@
 
         <div class="story-copy">
 
-          <div class="section-label">
-            Our Place
-          </div>
+          <div class="section-label">About BJM</div>
 
           <h2>
-            A real home.<br>
-            A real Bali neighborhood.
+            Our home studio in Dalung.
           </h2>
 
           <p>
-            Bali Jewelry Masterclass takes place in a genuine
-            Balinese home — not a resort, hotel or commercial
-            tourist attraction.
+            Bali Jewelry Masterclass is a hands-on pure silver jewelry workshop based in our home studio in Dalung, Bali. We’re about 10 minutes from Canggu, with rice fields nearby.
           </p>
 
           <p>
-            The setting is part of the experience. It is relaxed,
-            personal and intentionally different from the typical
-            workshop environment.
+            We welcome guests into our home studio to make silver jewelry together. No previous experience is needed — our instructors guide you through the process.
           </p>
 
 
@@ -943,21 +2005,21 @@
             <div class="story-point">
               <div class="dot"></div>
               <span>
-                Genuine home-based Balinese workshop
+                Make your own silver ring or bracelet
               </span>
             </div>
 
             <div class="story-point">
               <div class="dot"></div>
               <span>
-                Small-group atmosphere
+                A real residential neighborhood in Dalung
               </span>
             </div>
 
             <div class="story-point">
               <div class="dot"></div>
               <span>
-                Learn by actually making
+                Groups of up to 11 guests
               </span>
             </div>
 
@@ -971,28 +2033,24 @@
 
   </section>
 
-
   <!-- =========================
        HOW IT WORKS
   ========================== -->
 
-  <section class="steps" id="how-it-works">
+  <section class="steps" id="craft">
 
     <div class="container">
 
       <div class="steps-heading">
 
-        <div class="section-label">
-          How It Works
-        </div>
+        <div class="section-label" id="making-your-jewelry">The Process</div>
 
         <h2>
-          From a piece of silver
-          to something that's yours.
+          How your piece comes together.
         </h2>
 
         <p>
-          A relaxed two-hour experience designed for beginners.
+          Our instructors guide you through each step.
         </p>
 
       </div>
@@ -1002,17 +2060,14 @@
 
         <div class="step">
 
-          <div class="step-number">
-            STEP 01
-          </div>
+          <div class="step-number">01</div>
 
           <h3>
-            Choose
+            Design
           </h3>
 
           <p>
-            Select your ring style and decide how you want
-            your piece to look.
+            Browse our wide selection of jewelry samples and find a design you like. Choose your favorite, then make it your own in silver.
           </p>
 
         </div>
@@ -1021,7 +2076,41 @@
         <div class="step">
 
           <div class="step-number">
-            STEP 02
+            02
+          </div>
+
+          <h3>
+            Measure
+          </h3>
+
+          <p>
+            We prepare the silver and measure the amount needed for your chosen design.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <h3>
+            Melt
+          </h3>
+
+          <p>
+            We heat the silver until it melts, ready to be worked into your piece.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            04
           </div>
 
           <h3>
@@ -1029,47 +2118,14 @@
           </h3>
 
           <p>
-            Work with the silver and shape your ring using
-            traditional jewelry-making tools.
+            We roll and shape the silver to create the form of your chosen design.
           </p>
 
         </div>
-
-
-        <div class="step">
-
-          <div class="step-number">
-            STEP 03
-          </div>
-
-          <h3>
-            Refine
-          </h3>
-
-          <p>
-            Smooth, adjust and refine the details with
-            guidance along the way.
-          </p>
-
-        </div>
-
-
-        <div class="step">
-
-          <div class="step-number">
-            STEP 04
-          </div>
-
-          <h3>
-            Take it home
-          </h3>
-
-          <p>
-            Finish your handmade silver ring and take home
-            a piece of Bali made by you.
-          </p>
-
-        </div>
+        <div class="step"><div class="step-number">05</div><h3>Solder</h3><p>We join the silver pieces using heat, carefully connecting each part of the design.</p></div>
+        <div class="step"><div class="step-number">06</div><h3>File</h3><p>We smooth the edges and surfaces, refining the shape and removing rough areas.</p></div>
+        <div class="step"><div class="step-number">07</div><h3>Polish</h3><p>We polish the piece to smooth the surface and bring out the natural finish of the silver.</p></div>
+        <div class="step"><div class="step-number">08</div><h3>Finish</h3><p>We add the final details, check your piece, and prepare your finished jewelry to wear.</p></div>
 
       </div>
 
@@ -1082,65 +2138,214 @@
        BOOKING
   ========================== -->
 
-  <section class="booking" id="booking">
-
+  <section class="intro" id="pure-silver">
     <div class="container">
-
-      <div class="booking-box">
-
-        <div>
-
-          <div class="section-label">
-            Book Your Experience
-          </div>
-
-          <h2>
-            Make something<br>
-            worth remembering.
-          </h2>
-
-          <div class="price">
-            IDR 600,000
-            <small>/ person</small>
-          </div>
-
-          <p>
-            Your experience includes the instructor, silver material,
-            one silver ring from our catalog and documentation.
-          </p>
-
-
-          <div class="booking-details">
-
-            <div>✓ Approx. 2-hour workshop</div>
-            <div>✓ Silver material included up to 5 grams</div>
-            <div>✓ One handmade silver ring</div>
-            <div>✓ Photography / documentation included</div>
-            <div>✓ No previous experience required</div>
-
-          </div>
-
+      <div class="intro-grid">
+        <div class="intro-image">
+          <img src="Tools Material (1).jpg" alt="Pure silver granules in a crucible" width="1567" height="1177" loading="lazy" decoding="async">
         </div>
-
-
-        <div class="booking-action">
-
-          <a href="#" class="btn">
-            Book Now
-          </a>
-
-          <small>
-            Booking details coming soon
-          </small>
-
+        <div class="intro-copy">
+          <div class="section-label">The Craft</div>
+          <h2>Working with pure silver.</h2>
+          <p>Each guest works with up to 6 grams of pure silver to make one catalog design. Our instructors will show you how to measure, shape, and finish your piece.</p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
+
+
+
+
+  <section class="experience" id="pricing">
+    <div class="container">
+      <div class="experience-header pricing-header">
+        <div class="section-label">Pricing</div>
+        <h2>Create your own silver jewelry.</h2>
+        <p>A hands-on workshop in our home studio in Bali.<br>Choose the experience that suits you &mdash; solo, together, or with friends.</p>
+      </div>
+
+      <div class="experience-grid pricing-grid">
+        <div class="experience-card pricing-card">
+          <div class="pricing-category">Single</div>
+          <div class="pricing-audience pricing-audience--empty" aria-hidden="true">&nbsp;</div>
+          <h3 class="pricing-amount">IDR 650,000</h3>
+          <p class="pricing-unit">per person</p>
+        </div>
+        <div class="experience-card pricing-card">
+          <div class="pricing-category">Couple</div>
+          <div class="pricing-audience pricing-audience--empty" aria-hidden="true">&nbsp;</div>
+          <h3 class="pricing-amount">IDR 600,000</h3>
+          <p class="pricing-unit">per person</p>
+        </div>
+        <div class="experience-card pricing-card">
+          <div class="pricing-category">Small Group</div>
+          <div class="pricing-audience">3&ndash;6 people</div>
+          <h3 class="pricing-amount">IDR 575,000</h3>
+          <p class="pricing-unit">per person</p>
+        </div>
+        <div class="experience-card pricing-card">
+          <div class="pricing-category">Large Group</div>
+          <div class="pricing-audience">7&ndash;11 people</div>
+          <h3 class="pricing-amount">IDR 550,000</h3>
+          <p class="pricing-unit">per person</p>
+        </div>
+      </div>
+
+      <div class="pricing-included" id="included">
+        <div class="pricing-subheader">
+          <div class="section-label">What's Included</div>
+          <h2>Everything you need is included.</h2>
+          <p>We provide the materials, tools, guidance and documentation so you can create and take home your own silver jewelry.</p>
+        </div>
+        <div class="pricing-feature-grid">
+          <article class="pricing-feature">
+            <svg class="pricing-feature-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="m8 29 24-14 9 5-24 14-9-5Z"/><path d="m8 29-1 8 9 4 25-14v-7M16 34l1 7M23 30l1 7M30 26l1 7"/><path d="m14 25 18-10"/></svg>
+            <h3>Silver Material</h3>
+            <p>Up to 6 grams of pure silver per person to create your own piece.</p>
+          </article>
+          <article class="pricing-feature">
+            <svg class="pricing-feature-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="m8 10 7-5 9 9-5 7-5-4-8 8-4-4 8-8-2-3Z"/><path d="m19 19 20 20 4-4-20-20M28 8l5-5 10 10-5 5M7 39l10-10"/></svg>
+            <h3>Tools &amp; Equipment</h3>
+            <p>All workshop tools and equipment needed during the experience.</p>
+          </article>
+          <article class="pricing-feature">
+            <svg class="pricing-feature-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="13" r="6"/><circle cx="10" cy="18" r="4.5"/><circle cx="38" cy="18" r="4.5"/><path d="M13 39v-5c0-7 5-12 11-12s11 5 11 12v5H13ZM3 36v-4c0-5 3-8 7-9M45 36v-4c0-5-3-8-7-9"/></svg>
+            <h3>Guidance &amp; Support</h3>
+            <p>Step-by-step guidance from our instructors throughout the process.</p>
+          </article>
+          <article class="pricing-feature">
+            <svg class="pricing-feature-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M7 16h8l3-5h13l3 5h7v23H7z"/><circle cx="24" cy="27" r="7"/><path d="M12 20h3"/></svg>
+            <h3>Documentation</h3>
+            <p>Workshop photos delivered digitally via Google Drive.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="pricing-additional">
+        <div class="pricing-subheader">
+          <div class="section-label">Additional Costs</div>
+          <h2>Optional extras for special designs.</h2>
+          <p>Some materials and designs may require an additional charge.</p>
+        </div>
+        <div class="pricing-cost-grid">
+          <article class="pricing-cost"><h3>Extra Silver</h3><p>Additional silver is charged per gram when more than 6 grams is needed.</p></article>
+          <article class="pricing-cost"><h3>Gemstones</h3><p>Gemstones are available at an additional cost.</p></article>
+          <article class="pricing-cost"><h3>Special / Reference Designs</h3><p>More complex or reference designs may incur an additional charge and require prior approval.</p></article>
+        </div>
+      </div>
+
+      <div class="pricing-footer">
+        <a href="#book" class="btn btn-primary">Book your workshop <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="schedule">
+    <div class="container">
+      <div class="schedule-grid">
+        <div class="schedule-copy">
+          <div class="section-label">SCHEDULE</div>
+          <h2>Workshop times</h2>
+          <p class="schedule-hours">Every day &middot; 10:00 AM &ndash; 9:00 PM</p>
+          <p class="schedule-description">Our workshop is open every day from 10:00 AM to 9:00 PM. For evening sessions, please arrive by 7:00 PM at the latest.</p>
+        </div>
+        <div class="schedule-image">
+          <img src="Workshop Experience (1).jpg" alt="Guests and instructor inside the jewelry workshop" width="5421" height="3440" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="moments">
+    <div class="container">
+      <div class="story-copy moments-header">
+        <div class="section-label">GALLERY</div>
+        <h2>Moments from the workshop.</h2>
+        <p>A few moments from our home studio in Bali.</p>
+      </div>
+
+      <div class="moments-gallery-grid" aria-label="Bali Jewelry Masterclass gallery">
+        <figure class="moments-gallery-item"><img src="Guest (1).jpg" alt="Workshop guest showing handmade silver jewelry" width="2048" height="1536" loading="lazy" decoding="async"></figure>
+        <figure class="moments-gallery-item"><img src="Guest (2).jpg" alt="Guest showing rings made during the workshop" width="2048" height="1536" loading="lazy" decoding="async"></figure>
+        <figure class="moments-gallery-item"><img src="Guest (4).jpg" alt="Guest working with silver during the workshop" width="2048" height="1536" loading="lazy" decoding="async"></figure>
+        <figure class="moments-gallery-item"><img src="Workshop Experience (4).jpg" alt="Instructor helping a guest shape a silver piece" width="5472" height="3648" loading="lazy" decoding="async"></figure>
+        <figure class="moments-gallery-item"><img src="Workshop Experience (5).jpg" alt="Hands working together at a jewelry-making bench" width="5443" height="3352" loading="lazy" decoding="async"></figure>
+        <figure class="moments-gallery-item"><img src="Workshop Experience (6).jpg" alt="Guest and instructor working at the workshop bench" width="5472" height="3648" loading="lazy" decoding="async"></figure>
+      </div>
+
+      <p class="moments-instagram">
+        <a class="btn btn-primary moments-instagram-cta" href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer">
+          <svg class="moments-instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+          </svg>
+          <span>More moments on Instagram</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="closing-section" id="booking">
+    <div class="container">
+      <div class="closing-location-contact">
+        <div class="closing-location" id="our-location">
+          <div class="section-label">The Location</div>
+          <h2>Our Home Studio</h2>
+          <p>Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          <p class="closing-location-note">About 10 minutes from Canggu, near a rice-field area.</p>
+          <a class="closing-map-link" href="https://maps.app.goo.gl/k5iEkVehrubxCqJ79" target="_blank" rel="noopener noreferrer">View on Google Maps &rarr;</a>
+        </div>
+
+        <div class="closing-contact" id="contact">
+          <div class="section-label">Contact</div>
+          <h2>Have a question?</h2>
+          <div class="closing-contact-links">
+            <a href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              WhatsApp
+            </a>
+            <a href="mailto:balijewelrymasterclass@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="closing-faq" id="faq">
+        <div class="section-label">FAQ</div>
+        <h2>Frequently asked questions.</h2>
+        <div class="closing-faq-list">
+          <details>
+            <summary>Is the workshop suitable for beginners?</summary>
+            <p>Yes. Our instructors guide you through each step.</p>
+          </details>
+          <details>
+            <summary>How long does the workshop take?</summary>
+            <p>The workshop takes about two hours.</p>
+          </details>
+          <details>
+            <summary>Can I take my jewelry home?</summary>
+            <p>Yes. You can take your finished piece home the same day.</p>
+          </details>
+          <details>
+            <summary>How do I find the studio?</summary>
+            <p>We are at Cemara Giri Graha 3 Blok II No.6F, Dalung, North Kuta. <a href="https://maps.app.goo.gl/k5iEkVehrubxCqJ79" target="_blank" rel="noopener noreferrer">View on Google Maps &rarr;</a></p>
+          </details>
+        </div>
+      </div>
+
+      <div class="closing-cta">
+        <h2>Ready to make your own?</h2>
+        <a class="btn btn-primary" id="book" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">Book your workshop &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
 
   <!-- =========================
        FOOTER
@@ -1152,69 +2357,89 @@
 
       <div class="footer-grid">
 
-        <div>
-
-          <div class="footer-brand">
-            Bali Jewelry Masterclass
+        <div class="footer-brand-column">
+          <img class="footer-logo" src="bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async">
+          <p class="footer-tagline">A Piece of Bali, Made by You.</p>
+          <p class="footer-brand-description">A hands-on silver jewelry workshop in a real Balinese home, in the heart of Dalung, Bali.</p>
+          <div class="footer-social-links" aria-label="Social media">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M14 3h3.1c.4 2.3 1.8 4.3 4.9 4.8v3.3c-1.9-.1-3.7-.7-5.1-1.8V15a5.5 5.5 0 1 1-5.5-5.5c.4 0 .8 0 1.2.1V13a2.2 2.2 0 1 0 1.4 2V3z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M13.4 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v2.3H7.6v3.1h2.7v8h3.1z" />
+              </svg>
+            </a>
           </div>
-
-          <p class="footer-copy">
-            A hands-on silver jewelry experience in a genuine
-            Balinese home.
-          </p>
-
         </div>
 
+        <div class="footer-column footer-location-column">
+          <h2>Our Location</h2>
+          <div class="footer-location-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <p class="footer-location footer-location-note">About 10 minutes from Canggu, near a rice-field area.</p>
+          <a class="footer-map-link" href="https://maps.app.goo.gl/k5iEkVehrubxCqJ79" target="_blank" rel="noopener noreferrer">View on Google Maps &rarr;</a>
+        </div>
 
-        <div>
+        <div class="footer-column footer-contact-column">
+          <h2>Contact</h2>
+          <p class="footer-contact-intro">Have a question?<br>We'd love to hear from you.</p>
+          <div class="footer-contact-list">
+            <a class="footer-contact-link" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              WhatsApp
+            </a>
+            <a class="footer-contact-link" href="mailto:balijewelrymasterclass@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              Email
+            </a>
+          </div>
+        </div>
 
-          <h4>
-            Explore
-          </h4>
-
+        <div class="footer-column footer-workshop-column">
+          <h2>The Workshop</h2>
           <ul>
             <li><a href="#experience">The Experience</a></li>
-            <li><a href="#story">Our Place</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#booking">Book</a></li>
+            <li><a href="#pure-silver">The Craft</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#moments">Moments</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">Book Your Workshop</a></li>
           </ul>
-
-        </div>
-
-
-        <div>
-
-          <h4>
-            Bali Jewelry Masterclass
-          </h4>
-
-          <ul>
-            <li>Made in Bali</li>
-            <li>Home-based workshop</li>
-            <li>Small groups</li>
-            <li>Handmade silver jewelry</li>
-          </ul>
-
         </div>
 
       </div>
 
-
       <div class="copyright">
 
-        <div>
-          © 2026 Bali Jewelry Masterclass
-        </div>
-
-        <div>
-          A Piece of Bali, Made by You.
-        </div>
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
 
       </div>
 
     </div>
 
   </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteMenu = document.querySelector('#site-menu');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = siteMenu.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+</script>
 
 </body>
 </html>

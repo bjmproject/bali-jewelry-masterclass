@@ -39,7 +39,9 @@
         manifest.languages[code] && manifest.languages[code] === segments[0]
       ) || 'en';
       if (currentLanguage !== 'en') segments.shift();
-      const page = segments.join('/') || 'index.html';
+      const path = segments.join('/') || 'index.html';
+      // Netlify pretty URLs omit .html; availability keeps the source filenames.
+      const page = manifest.pages[path] ? path : `${path}.html`;
       const equivalents = manifest.pages[page];
       if (!equivalents) return;
       options.querySelectorAll('[data-language]').forEach(existing => {

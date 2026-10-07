@@ -1,0 +1,37 @@
+/* UI only: no language navigation, translation, or persistence. */
+header .language-selector { position: relative; flex-shrink: 0; color: inherit; font-family: inherit; font-size: 12px; line-height: 1.4; }
+header .language-toggle { display: inline-flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 5px; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; white-space: nowrap; cursor: pointer; }
+header .language-toggle > span { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 10px; width: 10px; height: 12px; font-size: 0; line-height: 0; }
+header .language-toggle:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+header .language-heading { display: none; }
+header .language-options { position: absolute; top: calc(100% + 12px); right: 0; display: grid; grid-template-columns: repeat(5, 44px); gap: 2px; min-width: 0; padding: 6px; background: var(--chrome-background, #000000); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+header .language-options[hidden] { display: none; }
+header .language-option { display: flex; align-items: center; justify-content: center; min-height: 44px; margin: 0; padding: 4px 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; white-space: nowrap; }
+header .language-option.is-active { font-weight: 600; }
+header .language-option:disabled { opacity: 1; cursor: default; }
+@media (max-width: 850px) {
+  header .language-selector { order: 1; justify-self: start; font-size: 13px; }
+  header .language-toggle { display: none; }
+  header .language-heading { display: block; margin-top: 12px; font-size: 12px; opacity: .65; }
+  header .language-options,
+  header .language-options[hidden] { position: static; display: grid; min-width: 0; padding: 4px 0 0; border: 0; background: transparent; box-shadow: none; }
+  header .language-option { min-height: 44px; }
+}
+
+header .language-flag { display: block; width: 22px; height: 15px; object-fit: contain; flex: 0 0 22px; }
+header .language-option.is-active { box-shadow: inset 0 -1px currentColor; }
+header .language-option:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+/* Match the desktop navigation line without an inline-button baseline gap. */
+@media (min-width: 851px) {
+  header .language-selector {
+    display: inline-flex;
+    align-items: center;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  header .language-toggle {
+    justify-content: center;
+    line-height: inherit;
+  }
+}

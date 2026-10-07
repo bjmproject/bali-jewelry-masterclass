@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>Comment s’habiller pour un atelier de bijoux &#224; Bali | BJM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FFFFFF; --warm-white: #FFFFFF; --sand: #FFFFFF; --ink: #000000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; width: 100%; z-index: 20; color: #FFFFFF; background: #000000; }
+    nav { width: min(1180px, 90%); margin: auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding-top: 35px; }
+    .brand { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 23px; letter-spacing: -.5px; position: relative; left: -40px; }
+    .brand img { width: 300px; height: auto; display: block; }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (min-width: 851px) { .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; } }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: #FFFFFF; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+
+    .articles-page-intro { padding: 68px 0 82px; background: var(--cream); }
+    .articles-page-intro h1 { color: var(--ink); font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: clamp(36px, 4.2vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -1px; }
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    .footer-tagline { max-width: 260px; margin: 0 0 14px; color: var(--sand); font-size: 15px; line-height: 1.8; letter-spacing: 3px; }
+    .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    .footer-location-note { margin-top: 14px; }
+    .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+
+    @media (min-width: 651px) { .footer-tagline { max-width: none; white-space: nowrap; } }
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--ink); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (min-width: 851px) {
+      .footer-location-map { height: 175px; }
+    }
+    @media (max-width: 650px) {
+      .brand { left: 1vw; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer > .container { width: 88%; }
+      .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+      .copyright { flex-direction: column; }
+    }
+      /* Utility link below the existing footer divider. */
+    footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+    .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+    .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+  </style>
+  <link rel="stylesheet" href="/header-layout.css?v=1">
+  <link rel="stylesheet" href="/footer-layout.css?v=1">
+  <link rel="stylesheet" href="/site-chrome.css?v=13">
+  <link rel="stylesheet" href="/communication-hub.css?v=1">
+  <style>
+    /* Article content only; shared site chrome is preserved. */
+    .silver-article-page { background: var(--cream); color: var(--ink); padding: 40px 0; }
+    .silver-article-page .silver-article { width: min(780px, 90%); margin-inline: auto; }
+    .silver-article-page .article-eyebrow { color: #000000; font-size: 12px; font-weight: 600; letter-spacing: 2px; margin-bottom: 12px; }
+    .silver-article-page h1, .silver-article-page h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; }
+    .silver-article-page h1 { font-size: clamp(34px, 4vw, 48px); line-height: 1.15; letter-spacing: -.7px; margin-bottom: 22px; }
+    .silver-article-page h1 span { display: inline-block; font-size: .76em; margin-top: 8px; }
+    .silver-article-page h2 { font-size: clamp(26px, 3vw, 32px); line-height: 1.2; margin-bottom: 14px; }
+    .silver-article-page p, .silver-article-page dd { font-size: 17px; line-height: 1.75; color: rgba(0,0,0,.72); overflow-wrap: break-word; }
+    .silver-article-page p + p { margin-top: 12px; }
+    .silver-article-page section { margin-top: 32px; }
+    .silver-article-page p a { color: #000000; text-decoration: underline; text-underline-offset: 3px; }
+    .silver-article-page .silver-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding-block: 20px; margin-block: 20px; border-block: 1px solid rgba(0,0,0,.18); }
+    .silver-article-page .silver-comparison dt { font-weight: 600; margin-bottom: 8px; }
+    .silver-article-page .silver-comparison dt span { display: block; color: #000000; font: 600 34px/1.2 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; margin-bottom: 6px; }
+    .silver-article-page .article-reflection { color: #000000; font: 600 26px/1.4 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; margin-top: 16px; }
+    .silver-article-page .article-closing-line { font-style: italic; font-weight: 500; margin-top: 18px; }
+    .silver-article-page .article-workshop-cta { border-top: 1px solid rgba(0,0,0,.18); padding-top: 24px; }
+    .silver-article-page .article-primary { display: inline-flex; align-items: center; width: fit-content; margin-top: 18px; padding: 12px 20px; border: 0; border-radius: 14px; background: #000000; color: var(--cream); font-weight: 600; }
+    .silver-article-page .article-primary:hover { background: rgba(0,0,0,.78); }
+    .silver-article-page a:focus-visible { outline: 2px solid #000000; outline-offset: 4px; }
+    @media (max-width: 600px) {
+      .silver-article-page { padding: 30px 0; }
+      .silver-article-page .silver-article { width: 88%; }
+      .silver-article-page section { margin-top: 28px; }
+      .silver-article-page .silver-comparison { grid-template-columns: 1fr; gap: 18px; }
+      .silver-article-page p, .silver-article-page dd { font-size: 16px; }
+    }
+  </style>
+  <style>
+    .silver-article-page .article-sources { border-top: 1px solid rgba(0,0,0,.18); padding-top: 20px; }
+    .silver-article-page .article-sources h2 { font-size: 22px; margin-bottom: 12px; }
+    .silver-article-page .article-sources ul { display: grid; gap: 8px; list-style: none; padding: 0; }
+    .silver-article-page .article-sources a { font-size: 14px; line-height: 1.6; }
+  </style>
+  <style>
+    .silver-article-page h3 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 22px; font-weight: 600; line-height: 1.3; margin: 24px 0 12px; }
+    .silver-article-page ul, .silver-article-page ol { margin: 12px 0; padding-left: 24px; color: rgba(0,0,0,.72); font-size: 17px; line-height: 1.75; overflow-wrap: break-word; }
+    .silver-article-page li + li { margin-top: 4px; }
+    @media (max-width: 650px) { .silver-article-page ul, .silver-article-page ol { font-size: 16px; } }
+  </style>
+  <link rel="stylesheet" href="/language-selector.css">
+  <link rel="stylesheet" href="/email-chooser.css?v=1">
+<meta name="description" content="V&#234;tements, chaussures, accessoires : d&#233;couvrez quoi porter et apporter pour participer confortablement &#224; un atelier de cr&#233;ation de bijoux en argent &#224; Bali.">
+<link rel="canonical" href="https://balijewelrymasterclass.com/fr/what-to-wear-jewelry-making-class-bali.html">
+<meta property="og:url" content="https://balijewelrymasterclass.com/fr/what-to-wear-jewelry-making-class-bali.html">
+<meta property="og:title" content="Comment s’habiller pour un atelier de bijoux &#224; Bali | BJM">
+<meta property="og:description" content="V&#234;tements, chaussures, accessoires : d&#233;couvrez quoi porter et apporter pour participer confortablement &#224; un atelier de cr&#233;ation de bijoux en argent &#224; Bali.">
+<link rel="alternate" hreflang="en" href="https://balijewelrymasterclass.com/what-to-wear-jewelry-making-class-bali.html">
+<link rel="alternate" hreflang="fr" href="https://balijewelrymasterclass.com/fr/what-to-wear-jewelry-making-class-bali.html">
+<link rel="alternate" hreflang="x-default" href="https://balijewelrymasterclass.com/what-to-wear-jewelry-making-class-bali.html">
+  <link rel="stylesheet" href="/blog-navigation.css?v=1">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/fr/index.html" class="brand" aria-label="Accueil Bali Jewelry Masterclass">
+        <img src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">L’atelier</button><div class="nav-dropdown" id="workshop-dropdown"><a href="/fr/index.html#creative-process">Votre création</a><a href="/fr/skills-techniques.html#pure-silver">Savoir-faire &amp; techniques</a><a href="/fr/index.html#schedule">HORAIRES</a><a href="/fr/pricing.html">TARIFS</a></div></div>
+        <a href="/fr/gallery.html">Galerie</a>
+        <a href="/fr/blog.html">Blog</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">À propos</button><div class="nav-dropdown" id="about-dropdown"><a href="/fr/about.html">À propos de BJM</a><a href="/fr/index.html#location">Nous trouver</a><a href="/fr/index.html#contact">Contact</a><a href="/fr/faq.html">FAQ</a></div></div>
+        <div class="language-selector" role="group" aria-label="Langue du site">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Langue : français" title="Français"><img class="language-flag" src="/language-flag-fr.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">LANGUE</span>
+          <div class="language-options" id="language-options" hidden>
+            <button type="button" class="language-option" data-language="en" lang="en" aria-label="Anglais" title="Anglais"><img class="language-flag" src="/language-flag-gb.svg" alt="" width="22" height="15"></button>
+            <span class="language-option is-active" data-language="fr" lang="fr" aria-current="true" title="Français" aria-label="Français"><img class="language-flag" src="/language-flag-fr.svg" alt="" width="22" height="15"></span>
+            <button class="language-option" type="button" data-language="de" lang="de" disabled title="Allemand — bientôt disponible" aria-label="Allemand — bientôt disponible"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="zh-CN" lang="zh-CN" disabled title="Chinois — bientôt disponible" aria-label="Chinois — bientôt disponible"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="ja" lang="ja" disabled title="Japonais — bientôt disponible" aria-label="Japonais — bientôt disponible"><img class="language-flag" src="/language-flag-jp.svg" alt="" width="22" height="15"></button>
+          </div>
+        </div>
+        <a href="/fr/booking.html" class="nav-cta">Réserver</a>
+      </div>
+    </nav>
+  </header>
+  <main class="silver-article-page">
+    <article class="silver-article" aria-labelledby="article-title">
+      <div class="article-opening">
+        <p class="article-eyebrow">CRÉATION DE BIJOUX À BALI</p>
+        <h1 id="article-title">Comment s’habiller pour un atelier de création de bijoux à Bali ?<br><span>Guide pratique</span></h1>
+        <p>Vous n’avez pas besoin d’une tenue spéciale pour un atelier de création de bijoux.</p>
+        <p>Pour la plupart des <a href="/fr/silver-jewelry-workshop-bali-for-beginners.html">ateliers pour débutants</a>, la réponse pratique est simple :</p>
+        <p><strong>Portez des vêtements confortables qui vous permettent de vous asseoir, de bouger et de travailler facilement avec vos mains.</strong></p>
+        <p>La création de bijoux est une activité pratique : vous pourrez vous pencher sur un établi, utiliser des outils, façonner le métal, limer, polir et travailler à proximité d’équipements.</p>
+        <p>Vous pouvez tout à fait porter une tenue qui vous plaît — surtout si vous souhaitez des photos de l’expérience.</p>
+        <p>Choisissez simplement une tenue que vous ne passerez pas tout l’atelier à réajuster ou à surveiller.</p>
+        <p>Voici les points à prendre en compte.</p></div>
+      <section><h2>Choisissez des vêtements dans lesquels vous pouvez travailler à l’aise</h2>
+        <p>Vous passerez probablement une bonne partie de l’atelier assis à un établi, à vous concentrer sur des détails assez petits.</p>
+        <p>Votre position peut changer selon les outils utilisés ou les <a href="/fr/what-to-expect-silver-jewelry-making-class-bali.html">différentes étapes de fabrication de votre pièce</a>.</p>
+        <p>Vous n’avez pas besoin de vêtements de travail spécifiques.</p>
+        <p>Des vêtements ordinaires conviennent, tant que vous pouvez bouger confortablement.</p>
+        <p>Si un vêtement vous gêne lorsque vous vous asseyez, vous penchez en avant ou bougez les bras, il risque de devenir agaçant au bout d’un moment.</p>
+        <p>La meilleure tenue est généralement celle que vous oubliez une fois la fabrication commencée.</p>
+      </section>
+      <section><h2>Gardez les vêtements amples sous contrôle</h2>
+        <p>Des manches très amples, une écharpe ou un tissu flottant peuvent vous gêner à l’établi.</p>
+        <p>Cela ne signifie pas qu’il faut les éviter complètement.</p>
+        <p>Il est simplement utile de pouvoir retrousser, ajuster ou attacher les vêtements amples si nécessaire.</p>
+        <p>Les précautions peuvent varier selon les outils et les étapes : suivez donc les consignes de votre instructeur pendant la séance.</p>
+        <p>S’il vous demande de déplacer ou d’attacher quelque chose avant d’utiliser un équipement, faites-le avant de continuer.</p>
+      </section>
+      <section><h2>Prévoyez un élastique si vous avez les cheveux longs</h2>
+        <p>Les cheveux longs peuvent vous gêner lorsque vous vous penchez sur votre travail.</p>
+        <p>À certaines étapes, il peut aussi être nécessaire de les tenir éloignés des outils, des équipements ou de la zone de travail.</p>
+        <p>Vous n’êtes pas forcément obligé de garder les cheveux attachés pendant tout l’atelier.</p>
+        <p>Mais un élastique vous permettra de les attacher dès que nécessaire.</p>
+        <p>C’est un petit détail qu’on oublie facilement jusqu’au moment où l’on est déjà assis à l’établi.</p>
+      </section>
+      <section><h2>Quelles chaussures porter ?</h2>
+        <p>Vous n’avez pas besoin de venir avec des chaussures de sécurité professionnelles, sauf si l’atelier que vous visitez l’exige expressément.</p>
+        <p>Choisissez des chaussures confortables et pratiques pour l’atelier et le reste de votre journée.</p>
+        <p>La fabrication de bijoux implique des outils, des équipements et de petits morceaux de matière : ne déduisez pas les exigences de sécurité de ce que vous avez vu ailleurs.</p>
+        <p>Chaque atelier peut avoir ses propres procédures.</p>
+        <p>Si l’atelier vous donne des consignes précises concernant les chaussures, respectez-les.</p>
+        <p>Sinon, choisissez des chaussures confortables avec lesquelles vous pouvez vous déplacer facilement.</p>
+      </section>
+      <section><h2>Et les bagues, montres et bracelets ?</h2>
+        <p>Vous n’avez pas forcément besoin d’arriver sans bijoux.</p>
+        <p>Mais certains accessoires que vous portez peuvent devenir gênants une fois le travail commencé.</p>
+        <p>Une montre ou un bracelet peut entraver vos mouvements à l’établi.</p>
+        <p>Il peut être nécessaire de retirer vos bagues à certaines étapes, selon ce que vous faites.</p>
+        <p>Votre instructeur vous indiquera si un accessoire doit être retiré temporairement pour une étape particulière.</p>
+        <p>Si vous apportez des bijoux de valeur, pensez à prévoir un endroit sûr où les ranger pendant que vous travaillez.</p>
+        <p>Des accessoires assez simples peuvent vous faciliter les choses.</p>
+      </section>
+      <section><h2>Vos vêtements risquent-ils de se salir ?</h2>
+        <p>Vous ne vous inscrivez pas à un chantier.</p>
+        <p>Mais vous travaillez du métal.</p>
+        <p>Selon les techniques utilisées, la fabrication de bijoux peut produire de petites quantités de poussière métallique, de résidus de polissage ou d’autres salissures d’atelier.</p>
+        <p>Cela ne veut pas dire que vous repartirez couvert de saleté.</p>
+        <p>En revanche, une tenue extrêmement délicate que vous craignez de toucher ne sera peut-être pas le choix le plus reposant.</p>
+        <p>Portez quelque chose dans lequel vous êtes à l’aise pour travailler.</p>
+      </section>
+      <section><h2>Et la météo à Bali ?</h2>
+        <p>Il peut faire chaud à Bali : des vêtements légers peuvent être agréables pour venir à l’atelier et en repartir.</p>
+        <p>Mais l’atelier n’est qu’une partie de votre journée.</p>
+        <p>Vous arriverez peut-être après un déjeuner, poursuivrez votre journée ailleurs ou passerez davantage de temps dehors.</p>
+        <p>Inutile de composer toute votre tenue autour de deux heures à un établi de bijoutier.</p>
+        <p>Choisissez quelque chose qui convient à votre journée tout en restant pratique pour une activité manuelle.</p>
+      </section>
+      <section><h2>Avez-vous besoin de gants ?</h2>
+        <p>N’apportez pas de gants simplement parce que la fabrication de bijoux implique des outils et de la chaleur.</p>
+        <p>Les gants ne conviennent pas à toutes les opérations ni à tous les équipements.</p>
+        <p>Il en va de même pour les autres équipements de protection.</p>
+        <p>Les procédures de sécurité dépendent du travail effectué.</p>
+        <p>Utilisez les équipements de protection fournis ou recommandés par l’atelier et suivez les consignes de votre instructeur, plutôt que de supposer vous-même qu’un équipement supplémentaire sera forcément plus sûr.</p>
+      </section>
+      <section><h2>Que faut-il apporter ?</h2>
+        <p>Pour un atelier débutant, vous ne devriez pas avoir à emporter le matériel de fabrication de bijoux.</p>
+        <p>Chez Bali Jewelry Masterclass, les outils, les équipements et l’argent nécessaires à l’atelier standard sont fournis.</p>
+        <p>Quelques effets personnels peuvent néanmoins être utiles :</p>
+        <ul><li>une image de référence si vous avez déjà un modèle en tête</li>
+          <li>un élastique si vous avez les cheveux longs</li>
+          <li>votre téléphone si vos références y sont enregistrées</li>
+          <li>les effets personnels indispensables que vous emportez habituellement dans la journée</li></ul>
+        <p>Vous n’avez pas besoin d’apporter vos propres outils de bijouterie.</p>
+        <p>Si vous avez un modèle précis en tête, une référence sera bien plus utile.</p>
+      </section>
+      <section><h2>Peut-on quand même bien s’habiller pour les photos ?</h2>
+        <p>Bien sûr.</p>
+        <p>Pratique ne veut pas dire peu flatteur.</p>
+        <p>Si les photos comptent pour vous, portez une tenue dans laquelle vous aimez vous voir.</p>
+        <p>Gardez simplement à l’esprit que l’atelier est une activité, pas un décor de séance photo.</p>
+        <p>Vous serez assis à un établi, vous bougerez les bras, manipulerez des outils et vous concentrerez sur votre bijou.</p>
+        <p>Une tenue qui vous plaît et vous permet de faire tout cela confortablement répond aux deux besoins.</p>
+        <p>Vous n’avez pas à choisir entre profiter de l’atelier et aimer les photos ensuite.</p>
+      </section>
+      <section><h2>Que porter pour venir à Bali Jewelry Masterclass ?</h2>
+        <p>Pour Bali Jewelry Masterclass, des vêtements confortables du quotidien conviennent.</p>
+        <p>Vous n’avez besoin ni de vêtements spéciaux de bijouterie ni d’équipement professionnel.</p>
+        <p>Notre atelier se déroule dans notre maison à <strong>Dalung, North Kuta</strong>, et la séance standard comprend <strong>deux heures</strong> de fabrication pratique de bijoux.</p>
+        <p>Portez quelque chose qui vous permet de vous asseoir et de travailler confortablement.</p>
+        <p>Si vous avez les cheveux longs, prévoyez de quoi les attacher si nécessaire.</p>
+        <p>Gardez les vêtements amples sous contrôle autour de la zone de travail.</p>
+        <p>Si un instructeur vous donne une consigne de sécurité pour un outil ou une étape, respectez-la avant de continuer.</p>
+        <p>Les outils et équipements de l’atelier sont fournis : vous n’avez donc pas besoin de venir avec la tenue — ou la valise — d’un bijoutier professionnel.</p>
+      </section>
+      <section><h2>Une liste simple avant l’atelier</h2>
+        <p>Avant de partir pour l’atelier, vous pouvez vous en tenir à ceci :</p>
+        <ul><li><strong>Vêtements confortables :</strong> une tenue dans laquelle vous pouvez vous asseoir et bouger facilement</li>
+          <li><strong>Tissus amples :</strong> assurez-vous de pouvoir les attacher si nécessaire</li>
+          <li><strong>Cheveux longs :</strong> prévoyez un élastique</li>
+          <li><strong>Chaussures :</strong> choisissez quelque chose de confortable et pratique</li>
+          <li><strong>Accessoires :</strong> soyez prêt à les retirer temporairement si nécessaire</li>
+          <li><strong>Référence de modèle :</strong> enregistrez-la sur votre téléphone si vous en avez une</li>
+          <li><strong>Outils :</strong> laissez-les chez vous ; l’atelier fournit ce dont vous avez besoin</li></ul>
+        <p>C’est à peu près tout.</p>
+        <p>Vous ne vous préparez pas à une journée de travail d’orfèvre professionnel.</p>
+        <p>Vous venez passer deux heures à apprendre quelque chose de nouveau et à fabriquer un bijou.</p>
+        <p>Portez une tenue confortable, suivez les consignes à l’établi et concentrez-vous sur la pièce devant vous.</p>
+        <p>À la fin de la séance, la chose la plus intéressante que vous porterez sera peut-être le bijou que vous venez de créer.</p>
+      </section>
+      <section class="article-workshop-cta" aria-label="Découvrir l’atelier">
+        <p class="article-eyebrow">HABILLÉ ET PRÊT À CRÉER ?</p>
+        <p>Venez passer deux heures à créer votre propre bijou en argent dans notre atelier à domicile à Bali.</p>
+        <a class="article-primary" href="/fr/index.html#creative-process">Découvrir l’atelier →</a>
+      </section>
+            <div class="article-back-navigation">
+        <a class="article-back-link" href="/fr/blog.html">← Retour au blog</a>
+      </div>
+</article>
+  </main>
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="/fr/index.html#home" aria-label="Accueil Bali Jewelry Masterclass"><img class="footer-logo" src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">Votre atelier de création en argent à Bali</p>
+          <div class="footer-social-links" aria-label="Réseaux sociaux">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>Nous trouver</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Bali Jewelry Masterclass sur Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>Contact</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="Envoyer un e-mail à Bali Jewelry Masterclass" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">E-mail</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Bali Jewelry Masterclass"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="/fr/about.html">À propos de BJM</a></li>
+            <li><a href="/fr/index.html#creative-process">Votre création</a></li>
+            <li><a href="/fr/skills-techniques.html">Savoir-faire &amp; techniques</a></li>
+            <li><a href="/fr/pricing.html">TARIFS</a></li>
+            <li><a href="/fr/index.html#schedule">HORAIRES</a></li>
+            <li><a href="/fr/gallery.html">Galerie</a></li>
+            <li><a href="/fr/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="/fr/policies.html">Conditions</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← Retour</span>
+    <button type="button" class="communication-hub-toggle" aria-label="Options de contact" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> Comment pouvons-nous vous aider ? </h2>
+      <p class="communication-hub-intro"> Choisissez le moyen le plus simple de nous contacter. </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> Envoyez-nous un message </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> E-mail </span><span class="communication-hub-detail"> Vous préférez nous écrire par e-mail ? </span></span></button>
+        <a class="communication-hub-option" href="/fr/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> Réserver un atelier </span><span class="communication-hub-detail"> Choisissez les détails de votre atelier </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script src="/language-selector.js" defer></script>
+  <script>/* Shared footer email-provider chooser. */
+(() => {
+  const triggers = document.querySelectorAll('footer button[data-email-chooser]');
+  if (!triggers.length) return;
+
+  const recipient = 'balijewelrymasterclass@gmail.com';
+  const encodedRecipient = encodeURIComponent(recipient);
+  const providers = [
+    ['Gmail', `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedRecipient}`],
+    ['Outlook', `https://outlook.live.com/mail/0/deeplink/compose?to=${encodedRecipient}`],
+    ['Yahoo Mail', `https://compose.mail.yahoo.com/?to=${encodedRecipient}`],
+    ['Messagerie par défaut', `mailto:${recipient}`]
+  ];
+
+  const dialog = document.createElement('dialog');
+  dialog.id = 'email-provider-chooser';
+  dialog.className = 'email-chooser';
+  dialog.setAttribute('aria-labelledby', 'email-chooser-title');
+  dialog.setAttribute('aria-describedby', 'email-chooser-description');
+  dialog.innerHTML = `
+    <button type="button" class="email-chooser-close" aria-label="Fermer le choix du service de messagerie" autofocus>&times;</button>
+    <h2 id="email-chooser-title">Envoyez-nous un e-mail</h2>
+    <p id="email-chooser-description">Choisissez votre service de messagerie.</p>
+    <div class="email-chooser-options"></div>`;
+  const options = dialog.querySelector('.email-chooser-options');
+  for (const [name, url] of providers) {
+    const link = document.createElement('a');
+    const icon = document.createElement('img');
+    icon.src = {
+      'Gmail': '/email-provider-gmail.svg',
+      'Outlook': '/email-provider-outlook.svg',
+      'Yahoo Mail': '/email-provider-yahoo.svg',
+      'Messagerie par défaut': '/email-provider-other.svg'
+    }[name];
+    icon.className = 'email-provider-icon';
+    icon.alt = '';
+    icon.width = 22;
+    icon.height = 22;
+    const label = document.createElement('span');
+    label.textContent = name;
+    link.append(icon, label);
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    options.append(link);
+  }
+  document.body.append(dialog);
+
+  let opener;
+  for (const trigger of triggers) {
+    trigger.addEventListener('click', () => {
+      opener = trigger;
+      dialog.showModal();
+    });
+  }
+  dialog.querySelector('.email-chooser-close').addEventListener('click', () => dialog.close());
+  let startedOutside = false;
+  const outside = event => {
+    const bounds = dialog.getBoundingClientRect();
+    return event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom);
+  };
+  dialog.addEventListener('pointerdown', event => { startedOutside = outside(event); });
+  dialog.addEventListener('click', event => {
+    if (startedOutside && outside(event)) dialog.close();
+    startedOutside = false;
+  });
+  // Native modal dialogs handle Escape, focus containment, and inert background content.
+  dialog.addEventListener('close', () => opener?.focus());
+})();
+</script>
+  <script src="/header-dropdowns.js?v=1" defer></script>
+  <script src="/communication-hub.js?v=1" defer></script>
+</body>
+</html>

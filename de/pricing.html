@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>Preise | Bali Jewelry Masterclass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FFFFFF; --sand: #FFFFFF; --ink: #000000; --charcoal: #000000; --terracotta: #000000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; z-index: 20; color: var(--cream); background: var(--charcoal); }
+    nav { width: min(1180px, 90%); min-height: 86px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 24px; }
+    .brand { position: relative; left: -40px; }
+    .brand img { display: block; width: 300px; height: auto; }
+    .nav-links { display: flex; align-items: center; gap: 32px; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: opacity .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: opacity .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; }
+    @media (min-width: 851px) {
+      .nav-group--craft .nav-dropdown-toggle { gap: 0; }
+      .nav-group--craft .nav-dropdown-toggle::after { content: none; }
+      .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; }
+    }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: var(--cream); border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+    .nav-cta { border: 1px solid rgba(255,255,255,.65); padding: 10px 18px; border-radius: 100px; }
+
+    .pricing-intro { padding: 64px 0 46px; }
+    .section-label { margin-bottom: 14px; color: var(--terracotta); text-transform: uppercase; letter-spacing: 3px; font-size: 14px; font-weight: 600; }
+    h1, h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; }
+    .pricing-intro h1 { color: var(--ink); font-size: clamp(40px, 5vw, 60px); line-height: 1.08; letter-spacing: -1px; }
+    .pricing-intro > .container > p:last-child { max-width: 720px; margin-top: 14px; color: rgba(0,0,0,.72); }
+
+    .price-options { padding: 4px 0 72px; }
+    .price-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(0,0,0,.2); border-bottom: 1px solid rgba(0,0,0,.2); }
+    .price-option { padding: 24px 22px 28px; border-right: 1px solid rgba(0,0,0,.16); }
+    .price-option:first-child { padding-left: 0; }
+    .price-option:last-child { padding-right: 0; border-right: 0; }
+    .price-option h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 15px; font-weight: 600; }
+    .price-audience { min-height: 24px; color: rgba(0,0,0,.60); font-size: 13px; }
+    .price-amount { margin-top: 20px; font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: clamp(24px, 2.5vw, 34px); line-height: 1.2; white-space: nowrap; }
+    .price-unit { color: rgba(0,0,0,.60); font-size: 14px; }
+
+    .pricing-page .included { padding: 72px 0 78px; color: var(--ink); }
+    .pricing-page .included .section-label { color: var(--terracotta); }
+    .included h2, .additional h2 { font-size: clamp(32px, 4vw, 46px); line-height: 1.1; }
+    .included-intro, .additional-intro { max-width: 700px; }
+    .pricing-page .included-intro > p:last-child, .pricing-page .additional-intro > p:last-child { margin-top: 12px; color: rgba(0,0,0,.72); }
+    .feature-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-top: 40px; }
+    .feature-icon { display: block; width: 42px; height: 42px; margin-bottom: 14px; fill: none; stroke: var(--cream); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .feature h3, .cost h3 { margin-bottom: 8px; font-size: 17px; font-weight: 600; }
+    .pricing-page .feature p { color: rgba(0,0,0,.72); font-size: 15px; line-height: 1.6; }
+
+    .additional { padding: 72px 0 84px; }
+    .additional .section-label { margin-bottom: 12px; }
+    .additional-intro > p:last-child { color: rgba(0,0,0,.60); }
+    .cost-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; margin-top: 32px; }
+    .cost { padding-top: 18px; border-top: 1px solid rgba(0,0,0,.2); }
+    .cost p { color: rgba(0,0,0,.72); font-size: 15px; line-height: 1.6; }
+    footer { padding: 28px 0; background: var(--charcoal); color: var(--cream); }
+    footer .container { display: flex; justify-content: space-between; gap: 20px; }
+    footer a { color: var(--sand); }
+
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--charcoal); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .price-option:nth-child(2) { border-right: 0; }
+      .price-option:nth-child(3) { padding-left: 0; }
+      .price-option:nth-child(-n+2) { border-bottom: 1px solid rgba(0,0,0,.16); }
+      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .container { width: 88%; }
+      .pricing-intro { padding: 52px 0 34px; }
+      .price-options { padding-bottom: 56px; }
+      .price-grid, .feature-grid, .cost-grid { grid-template-columns: 1fr; }
+      .price-option, .price-option:first-child, .price-option:last-child { padding: 20px 0; border-right: 0; border-bottom: 1px solid rgba(0,0,0,.16); }
+      .price-option:last-child { border-bottom: 0; }
+      .price-option:nth-child(3) { padding-left: 0; }
+      .price-amount { margin-top: 8px; font-size: 30px; }
+      .included, .additional { padding: 58px 0 64px; }
+      .feature-grid { gap: 22px; margin-top: 30px; }
+      .feature-icon { width: 36px; height: 36px; margin-bottom: 10px; }
+      .cost-grid { gap: 22px; margin-top: 26px; }
+      footer .container { flex-direction: column; }
+    }
+  </style>
+  <link rel="stylesheet" href="/header-layout.css?v=1">
+  <link rel="stylesheet" href="/footer-layout.css?v=1">
+  <link rel="stylesheet" href="/site-chrome.css?v=13">
+  <link rel="stylesheet" href="/communication-hub.css?v=1">
+  <style>
+    /* Pricing body only. Shared header and footer styles remain untouched. */
+    .pricing-page .pricing-intro h1 { position: relative; }
+    .pricing-page .pricing-intro > .container > .section-label { position: relative; top: -24px; }
+    .pricing-page .pricing-icon { display: block; width: 32px; height: 32px; color: #000000; flex-shrink: 0; }
+    .pricing-page .feature > .pricing-icon { margin-inline: auto; }
+    .pricing-page .cost > .pricing-icon { width: 26px; height: 26px; }
+    .pricing-page { --rule: rgba(0,0,0,.18); background: var(--cream); }
+    .pricing-page .container { width: min(1500px, 90%); margin-inline: auto; }
+    .pricing-page .section-label { margin-bottom: 10px; color: var(--terracotta); font-size: 12px; font-weight: 600; letter-spacing: 2.3px; }
+    .pricing-page h2 { font-size: clamp(30px, 3vw, 44px); line-height: 1.14; }
+    .pricing-page p { overflow-wrap: break-word; }
+    .pricing-page .pricing-intro { padding: 44px 0 30px; }
+    .pricing-page .pricing-intro .container { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.35fr); column-gap: 40px; align-items: start; }
+    .pricing-page .pricing-intro .section-label { grid-column: 1; }
+    .pricing-page .pricing-intro h1 { grid-column: 1; font-size: clamp(60px, 6.5vw, 94px); line-height: 1; letter-spacing: -2px; }
+    .pricing-page .intro-copy { grid-column: 2; grid-row: 1 / span 2; padding-left: 36px; border-left: 1px solid var(--rule); max-width: none; }
+    .pricing-page .intro-copy h2 { max-width: 540px; font-size: clamp(34px, 3.5vw, 50px); }
+    .pricing-page .intro-copy p { margin-top: 12px; color: rgba(0,0,0,.72); }
+    .pricing-page .price-options { padding: 0 0 28px; }
+    .pricing-page .price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 0; border: 0; border-top: 1px solid var(--rule); padding-top: 24px; }
+    .pricing-page .price-option,
+    .pricing-page .price-option:first-child,
+    .pricing-page .price-option:last-child { padding: 0 32px 0 0; border: 0; }
+    .pricing-page .price-option:nth-child(even) { padding: 0 0 0 32px; border-left: 1px solid var(--rule); }
+    .pricing-page .price-option:nth-child(n+3) { padding-top: 22px; border-top: 1px solid var(--rule); }
+    .pricing-page .option-heading { display: flex; justify-content: space-between; align-items: start; gap: 16px; margin-bottom: 12px; }
+    .pricing-page .price-option h2 { font: 600 12px/1.5 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; letter-spacing: 2px; color: var(--terracotta); }
+    .pricing-page .price-audience { min-height: 0; margin-top: 3px; color: var(--terracotta); font-size: 12px; letter-spacing: 1.5px; }
+    .pricing-page .price { flex-shrink: 0; text-align: right; }
+    .pricing-page .price-amount { margin: 0; color: #000000; font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; font-size: clamp(28px, 2.5vw, 36px); line-height: 1.2; }
+    .pricing-page .price-unit { color: rgba(0,0,0,.60); font-size: 14px; }
+    .pricing-page .price-option h3 { margin-bottom: 10px; font: 600 clamp(23px, 2vw, 28px)/1.2 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; }
+    .pricing-page .price-option > p { margin-top: 10px; color: rgba(0,0,0,.72); }
+    .pricing-page .included { padding: 0 0 32px; background: transparent; color: var(--ink); }
+    .pricing-page .included-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 36px; max-width: none; padding: 24px 28px; border-radius: 12px; background: rgba(0,0,0,.04); }
+    .pricing-page .included-intro .section-label { grid-column: 1; color: var(--terracotta); }
+    .pricing-page .included-intro h2 { grid-column: 1; max-width: 540px; }
+    .pricing-page .included-intro > p:last-child { grid-column: 2; grid-row: 1 / span 2; align-self: center; margin: 0; padding-left: 36px; border-left: 1px solid var(--rule); color: rgba(0,0,0,.72); }
+    .pricing-page .feature-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; margin-top: 26px; }
+    .pricing-page .feature { text-align: center; padding: 0; border: 0; }
+    .pricing-page .feature h3 { max-width: 170px; margin: 0 auto 10px; font: 600 22px/1.15 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; }
+    .pricing-page .feature p { font-size: 16px; line-height: 1.5; color: rgba(0,0,0,.72); }
+    .pricing-page .additional { padding: 26px 0; }
+    .pricing-page .additional > .container { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); column-gap: 36px; padding-top: 24px; border-top: 1px solid var(--rule); }
+    .pricing-page .additional-intro { max-width: none; }
+    .pricing-page .additional-intro > p:last-child { margin-top: 12px; color: rgba(0,0,0,.72); }
+    .pricing-page .cost-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; }
+    .pricing-page .cost { padding: 0 0 0 20px; border: 0; border-left: 1px solid var(--rule); }
+    .pricing-page .cost h3 { margin-bottom: 10px; font: 600 20px/1.25 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; }
+    .pricing-page .cost h3 span { display: block; margin-top: 8px; font: 600 14px/1.5 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; color: var(--terracotta); }
+    .pricing-page .cost p { font-size: 16px; line-height: 1.55; color: rgba(0,0,0,.72); }
+    .pricing-page .cost-note { grid-column: 1 / -1; margin-top: 20px; max-width: none; color: rgba(0,0,0,.72); }
+    .pricing-page .reassurance { padding: 0 0 10px; }
+    .pricing-page .reassurance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; padding: 24px 28px; border: 0; border-radius: 12px; background: rgba(0,0,0,.04); align-items: start; }
+    .pricing-page .reassurance-grid > div:last-child { padding-left: 32px; border-left: 1px solid var(--rule); }
+    .pricing-page .reassurance h2 { font-size: clamp(26px, 2.4vw, 34px); }
+    .pricing-page .reassurance p:not(.section-label) { margin-top: 10px; color: rgba(0,0,0,.72); }
+    .pricing-page .faq-link { display: inline-block; margin-top: 14px; color: #000000; font-weight: 600; }
+    .pricing-page .faq-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .pricing-page .pricing-closing { padding: 28px 0 36px; }
+    .pricing-page .closing-layout { display: block; text-align: center; border: 0; padding: 0; }
+    .pricing-page .closing-divider { display: none; }
+    .pricing-page .pricing-closing h2 { max-width: 700px; margin-inline: auto; font-size: clamp(32px, 3.2vw, 46px); }
+    .pricing-page .pricing-closing p:not(.section-label) { max-width: 760px; margin: 12px auto 0; color: rgba(0,0,0,.72); }
+    .pricing-page .booking-link { display: inline-flex; align-items: center; justify-content: center; gap: 12px; width: fit-content; margin-top: 18px; padding: 13px 24px; border-radius: 14px; background: #000000; color: var(--cream); font-weight: 600; }
+    .pricing-page .booking-link:hover { background: rgba(0,0,0,.78); }
+    .pricing-page a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+    @media (max-width: 1199px) {
+      .pricing-page .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 28px; }
+      .pricing-page .additional > .container { grid-template-columns: 1fr; }
+      .pricing-page .cost-grid { margin-top: 24px; }
+      .pricing-page .cost:first-child { padding-left: 0; border-left: 0; }
+    }
+    @media (max-width: 850px) {
+      .pricing-page .pricing-intro .container { grid-template-columns: 1fr; }
+      .pricing-page .pricing-intro .section-label, .pricing-page .pricing-intro h1 { grid-column: auto; }
+      .pricing-page .intro-copy { grid-column: auto; grid-row: auto; margin-top: 22px; padding-left: 0; border: 0; }
+      .pricing-page .pricing-intro h1 { font-size: 64px; }
+      .pricing-page .price-grid { grid-template-columns: 1fr; gap: 24px; }
+      .pricing-page .price-option,
+      .pricing-page .price-option:first-child,
+      .pricing-page .price-option:last-child,
+      .pricing-page .price-option:nth-child(even) { padding: 0; border: 0; }
+      .pricing-page .price-option:nth-child(n+2) { padding-top: 22px; border-top: 1px solid var(--rule); }
+      .pricing-page .included-intro { display: block; padding: 22px; }
+      .pricing-page .included-intro > p:last-child { margin-top: 14px; padding-left: 0; border: 0; }
+      .pricing-page .reassurance-grid { grid-template-columns: 1fr; gap: 26px; }
+      .pricing-page .reassurance-grid > div:last-child { padding-left: 0; border: 0; }
+    }
+    @media (max-width: 600px) {
+      .pricing-page .container { width: 88%; }
+      .pricing-page .pricing-intro { padding: 30px 0 24px; }
+      .pricing-page .pricing-intro h1 { font-size: clamp(48px, 12vw, 64px); }
+      .pricing-page .intro-copy h2 { font-size: 34px; }
+      .pricing-page .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+      .pricing-page .feature h3 { font-size: 21px; }
+      .pricing-page .cost-grid { grid-template-columns: 1fr; gap: 22px; }
+      .pricing-page .cost { padding-left: 0; border-left: 0; }
+      .pricing-page .additional { padding: 16px 0 26px; }
+      .pricing-page .reassurance-grid { padding: 22px; }
+      .pricing-page .pricing-closing { padding: 26px 0 32px; }
+      .pricing-page .pricing-closing h2 { font-size: 32px; }
+    }
+    @media (max-width: 380px) {
+      .pricing-page .option-heading { flex-direction: column; gap: 10px; }
+      .pricing-page .price { text-align: left; }
+      .pricing-page .feature-grid { grid-template-columns: 1fr; gap: 22px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/language-selector.css">
+  <link rel="stylesheet" href="/email-chooser.css?v=1">
+<meta name="description" content="Entdecke die Preise von Bali Jewelry Masterclass f&#252;r Einzelpersonen, zwei Personen und Gruppen, mit bis zu 6 g Silber und Extras f&#252;r deinen Schmuck.">
+<link rel="canonical" href="https://balijewelrymasterclass.com/de/pricing.html">
+<meta property="og:url" content="https://balijewelrymasterclass.com/de/pricing.html">
+<meta property="og:title" content="Preise | Bali Jewelry Masterclass">
+<meta property="og:description" content="Entdecke die Preise von Bali Jewelry Masterclass f&#252;r Einzelpersonen, zwei Personen und Gruppen, mit bis zu 6 g Silber und Extras f&#252;r deinen Schmuck.">
+<link rel="alternate" hreflang="en" href="https://balijewelrymasterclass.com/pricing.html">
+<link rel="alternate" hreflang="fr" href="https://balijewelrymasterclass.com/fr/pricing.html">
+<link rel="alternate" hreflang="de" href="https://balijewelrymasterclass.com/de/pricing.html">
+<link rel="alternate" hreflang="x-default" href="https://balijewelrymasterclass.com/pricing.html">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/de/index.html" class="brand" aria-label="Bali Jewelry Masterclass Startseite">
+        <img src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menü</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">Der Workshop</button><div class="nav-dropdown" id="workshop-dropdown"><a href="/de/index.html#creative-process">Dein kreativer Prozess</a><a href="/de/skills-techniques.html#pure-silver">Handwerk &amp; Techniken</a><a href="/de/index.html#schedule">Zeiten</a><a href="/de/pricing.html">Preise</a></div></div>
+        <a href="/de/gallery.html">Galerie</a>
+        <a href="/de/blog.html">Blog</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">Über uns</button><div class="nav-dropdown" id="about-dropdown"><a href="/de/about.html">Über BJM</a><a href="/de/index.html#location">Unser Standort</a><a href="/de/index.html#contact">Kontakt</a><a href="/de/faq.html">FAQ</a></div></div>
+        <div class="language-selector" role="group" aria-label="Website-Sprache">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Sprache: Deutsch" title="Deutsch"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">SPRACHE</span>
+          <div class="language-options" id="language-options" hidden>
+            <button type="button" class="language-option" data-language="en" lang="en" aria-label="Englisch" title="Englisch"><img class="language-flag" src="/language-flag-gb.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="fr" lang="fr" disabled title="Französisch" aria-label="Französisch"><img class="language-flag" src="/language-flag-fr.svg" alt="" width="22" height="15"></button>
+            <span class="language-option is-active" aria-current="true" data-language="de" lang="de" title="Deutsch" aria-label="Deutsch"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"></span>
+            <button class="language-option" type="button" data-language="zh-CN" lang="zh-CN" disabled title="Chinesisch — demnächst" aria-label="Chinesisch — demnächst"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="ja" lang="ja" disabled title="Japanisch — demnächst" aria-label="Japanisch — demnächst"><img class="language-flag" src="/language-flag-jp.svg" alt="" width="22" height="15"></button>
+          </div>
+        </div>
+        <a href="/de/booking.html" class="nav-cta">Buchen</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pricing-page">
+    <section class="pricing-intro">
+      <div class="container">
+        <p class="section-label">DER WORKSHOP</p>
+        <h1>PREISE</h1>
+        <div class="intro-copy">
+          <h2>Von dir gemacht. Für dich zum Mitnehmen.</h2>
+          <p>In diesem Workshop wählst du nicht einfach ein fertiges Stück aus einer Auslage. Du beginnst mit Silber, arbeitest mit deinen eigenen Händen und stellst unter Anleitung unserer Kursleiter ein Schmuckstück in unserem Atelier zu Hause auf Bali her.</p>
+          <p>Komm allein, mit einem besonderen Menschen oder mit einer Gruppe von Freunden. Der Workshop bleibt derselbe — nur der Preis ändert sich je nach Gruppengröße.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="price-options" aria-label="Workshoppreise">
+      <div class="container price-grid">
+        <article class="price-option">
+          <div class="option-heading"><h2>EINZELPERSON</h2><div class="price"><p class="price-amount">650.000 IDR</p><p class="price-unit">pro Person</p></div></div>
+          <h3>Komm allein.</h3><p>Du erlebst denselben praktischen Workshop und bekommst Unterstützung von unserem Kursleiter, wann immer du sie brauchst.</p><p>Wähle dein Design, lerne die Arbeitsschritte kennen und stelle dein eigenes Silberschmuckstück her.</p></article>
+        <article class="price-option">
+          <div class="option-heading"><h2>ZU ZWEIT</h2><div class="price"><p class="price-amount">600.000 IDR</p><p class="price-unit">pro Person</p></div></div>
+          <h3>Zwei Menschen. Zwei Schmuckstücke.</h3><p>Komm mit deinem Partner, deinem besten Freund oder jemandem, mit dem du den Workshop gern teilen möchtest.</p><p>Ihr stellt jeweils euer eigenes Silberschmuckstück her und arbeitet dabei Seite an Seite.</p></article>
+        <article class="price-option">
+          <div class="option-heading"><div><h2>KLEINE GRUPPE</h2><p class="price-audience">3–10 PERSONEN</p></div><div class="price"><p class="price-amount">575.000 IDR</p><p class="price-unit">pro Person</p></div></div>
+          <h3>Bring Freunde oder Familie mit.</h3><p>Alle machen ihr eigenes Stück, während unsere Kursleiter die Gruppe durch die Arbeitsschritte begleiten. Ihr arbeitet nebeneinander, tauscht Ideen aus und lernt gemeinsam dieselben Techniken der Schmuckherstellung.</p></article>
+        <article class="price-option">
+          <div class="option-heading"><div><h2>GROSSE GRUPPE</h2><p class="price-audience">11–20 PERSONEN</p></div><div class="price"><p class="price-amount">550.000 IDR</p><p class="price-unit">pro Person</p></div></div>
+          <h3>Komm mit der ganzen Gruppe.</h3><p>Ihr reist zusammen, feiert etwas oder sucht eine Aktivität, bei der alle mitmachen können? Wir begrüßen Gruppen mit bis zu 20 Gästen. Der Workshop bleibt dabei praktisch und begleitet.</p><p>Jeder Gast stellt sein eigenes Schmuckstück her und wird während des gesamten Workshops von unseren Kursleitern unterstützt.</p></article>
+      </div>
+    </section>
+
+    <section class="included">
+      <div class="container">
+        <div class="included-intro">
+          <p class="section-label">DAS IST ENTHALTEN</p>
+          <h2>Alles, was du für dein Stück brauchst.</h2>
+          <p>Du musst weder Werkzeuge noch Materialien oder Erfahrung in der Schmuckherstellung mitbringen. Wir bereiten den Arbeitsplatz vor und begleiten dich von der Wahl deines Designs bis zum fertigen Schmuck.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 13 12-7 6 4-12 7-6-4Z"/><path d="M3 13v5l6 4 12-7v-5M9 17v5"/></svg><h3>Bis zu 6 g Silber</h3><p>Für jeden Gast ist eine bestimmte Silbermenge enthalten.</p></article>
+          <article class="feature"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="15" r="7"/><path d="m8 3 2 5h4l2-5H8Zm0 0 4 5 4-5"/></svg><h3>Ein fertiges Stück pro Gast</h3><p>Wähle ein Schmuckdesign aus unserem Workshopkatalog, stelle es im Workshop her und nimm es mit nach Hause.</p></article>
+          <article class="feature"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg><h3>2-stündiger Workshop</h3><p>Im Standardworkshop hast du zwei Stunden, um deinen Schmuck herzustellen und fertigzustellen.</p></article>
+          <article class="feature"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m4 3 5 4-3 4-4-3 2-5Zm3 6 12 12M17 3l4 4-4 4-4-4 4-4ZM15 9 3 21"/></svg><h3>Werkzeuge &amp; Ausstattung</h3><p>Alles, was für den Standardworkshop benötigt wird, steht bereit.</p></article>
+          <article class="feature"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="6" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M5 6a3 3 0 0 0 0 6M19 6a3 3 0 0 1 0 6M2 21v-3a5 5 0 0 1 3-4M22 21v-3a5 5 0 0 0-3-4"/></svg><h3>Anleitung durch Kursleiter</h3><p>Unsere Kursleiter begleiten dich bei jedem Schritt und helfen bei Techniken, die besondere Sorgfalt erfordern.</p></article>
+          <article class="feature"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5L2 9Zm4 2v6c4 3 8 3 12 0v-6M22 9v8"/></svg><h3>Keine Erfahrung nötig</h3><p>Der Workshop ist für Anfänger ohne Vorkenntnisse gedacht. Du lernst beim Machen.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="additional">
+      <div class="container">
+        <div class="additional-intro">
+          <p class="section-label">NOCH PERSÖNLICHER GESTALTEN?</p>
+          <h2>Dein Design kann über den Standardworkshop hinausgehen.</h2>
+          <p>Möchtest du etwas Schwereres, mehr Details oder eine Abwandlung des Standarddesigns? Je nach Stück können wir möglicherweise zusätzliches Silber, Edelsteine, individuelle Arbeiten, Beschichtungen oder andere Details anbieten.</p>
+        </div>
+        <div class="cost-grid">
+          <article class="cost"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 13 12-7 6 4-12 7-6-4Z"/><path d="M3 13v5l6 4 12-7v-5M9 17v5"/></svg><h3>Zusätzliches Silber <span>95.000 IDR / Gramm</span></h3><p>Silber über die enthaltenen 6 Gramm hinaus wird pro Gramm berechnet.</p></article>
+          <article class="cost"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 8 4-5h10l4 5-9 13L3 8Zm0 0h18M7 3l5 18 5-18M7 3l5 5 5-5"/></svg><h3>Besondere Extras <span>Preis je nach Design</span></h3><p>Edelsteine, individuelle Arbeiten, Beschichtungen und andere besondere Extras können zusätzliche Kosten verursachen, je nach Material, Design und Arbeitsaufwand.</p></article>
+          <article class="cost"><svg class="pricing-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg><h3>Zusätzliche Zeit <span>50.000 IDR / 30 Minuten</span></h3><p>Wenn die Fertigstellung deines Stücks länger als die üblichen zwei Stunden dauert, kannst du zusätzliche Workshopzeit in Schritten von 30 Minuten nutzen.</p></article>
+        </div>
+        <p class="cost-note">Zusätzlicher Bedarf und geschätzte Kosten werden vor Beginn der Arbeit erklärt. <strong>Keine überraschenden Kosten am Ende.</strong></p>
+      </div>
+    </section>
+
+    <section class="reassurance" aria-label="Vor der Buchung">
+      <div class="container reassurance-grid">
+        <div>
+          <p class="section-label"><strong>UNSICHER, WELCHE OPTION DU BUCHEN SOLLST?</strong></p>
+          <h2>Buche einfach für die Anzahl der Teilnehmenden.</h2><p>Das Workshoperlebnis ist für alle Gäste gleich. Die unterschiedlichen Preise richten sich nur danach, wie viele Personen gemeinsam teilnehmen.</p>
+        </div>
+        <div>
+          <p class="section-label"><strong>NOCH FRAGEN?</strong></p>
+          <h2>Informiere dich vor der Buchung.</h2><p>Hast du Fragen zu Designs, der enthaltenen Silbermenge, Workshopzeiten, Altersvorgaben, Stornierungen oder dem Ablauf vor Ort?</p>
+          <a class="faq-link" href="/de/index.html#faq">Häufige Fragen ansehen <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-closing">
+      <div class="container closing-layout">
+        <div>
+          <hr class="closing-divider">
+          <p class="section-label">BEREIT FÜR DEIN EIGENES STÜCK?</p>
+          <h2>Wähle dein Design. Mach es selbst.</h2>
+          <p>Wähle dein Datum. Wir begleiten dich vom ersten Stück Silber bis zu Schmuck, den du auf dem Heimweg tragen kannst.</p>
+          <a class="booking-link" href="/de/booking.html">Buche deinen Workshop <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="/de/index.html#home" aria-label="Bali Jewelry Masterclass Startseite"><img class="footer-logo" src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">Dein Raum für Silberhandwerk auf Bali</p>
+          <div class="footer-social-links" aria-label="Soziale Medien">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>Unser Standort</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Bali Jewelry Masterclass auf Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>Kontakt</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="E-Mail an Bali Jewelry Masterclass" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">E-Mail</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="Bali Jewelry Masterclass auf WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="/de/about.html">Über BJM</a></li>
+            <li><a href="/de/index.html#creative-process">Dein kreativer Prozess</a></li>
+            <li><a href="/de/skills-techniques.html">Handwerk &amp; Techniken</a></li>
+            <li><a href="/de/pricing.html">Preise</a></li>
+            <li><a href="/de/index.html#schedule">Zeiten</a></li>
+            <li><a href="/de/gallery.html">Galerie</a></li>
+            <li><a href="/de/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="/de/policies.html">Bedingungen</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← Zurück</span>
+    <button type="button" class="communication-hub-toggle" aria-label="Kontaktmöglichkeiten" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> Wie können wir helfen? </h2>
+      <p class="communication-hub-intro"> Wähle den einfachsten Weg, uns zu erreichen. </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> Schreib uns eine kurze Nachricht </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> E-Mail </span><span class="communication-hub-detail"> Schreibst du lieber eine E-Mail? </span></span></button>
+        <a class="communication-hub-option" href="/de/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> Workshop buchen </span><span class="communication-hub-detail"> Wähle die Details für deinen Workshop </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script src="/language-selector.js" defer></script>
+  <script>/* Shared footer email-provider chooser. */
+(() => {
+  const triggers = document.querySelectorAll('footer button[data-email-chooser]');
+  if (!triggers.length) return;
+
+  const recipient = 'balijewelrymasterclass@gmail.com';
+  const encodedRecipient = encodeURIComponent(recipient);
+  const providers = [
+    ['Gmail', `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedRecipient}`],
+    ['Outlook', `https://outlook.live.com/mail/0/deeplink/compose?to=${encodedRecipient}`],
+    ['Yahoo Mail', `https://compose.mail.yahoo.com/?to=${encodedRecipient}`],
+    ['Standard-E-Mail-App', `mailto:${recipient}`]
+  ];
+
+  const dialog = document.createElement('dialog');
+  dialog.id = 'email-provider-chooser';
+  dialog.className = 'email-chooser';
+  dialog.setAttribute('aria-labelledby', 'email-chooser-title');
+  dialog.setAttribute('aria-describedby', 'email-chooser-description');
+  dialog.innerHTML = `
+    <button type="button" class="email-chooser-close" aria-label="E-Mail-Auswahl schließen" autofocus>&times;</button>
+    <h2 id="email-chooser-title">Schreib uns eine E-Mail</h2>
+    <p id="email-chooser-description">Wähle deinen E-Mail-Dienst.</p>
+    <div class="email-chooser-options"></div>`;
+  const options = dialog.querySelector('.email-chooser-options');
+  for (const [name, url] of providers) {
+    const link = document.createElement('a');
+    const icon = document.createElement('img');
+    icon.src = {
+      'Gmail': '/email-provider-gmail.svg',
+      'Outlook': '/email-provider-outlook.svg',
+      'Yahoo Mail': '/email-provider-yahoo.svg',
+      'Standard-E-Mail-App': '/email-provider-other.svg'
+    }[name];
+    icon.className = 'email-provider-icon';
+    icon.alt = '';
+    icon.width = 22;
+    icon.height = 22;
+    const label = document.createElement('span');
+    label.textContent = name;
+    link.append(icon, label);
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    options.append(link);
+  }
+  document.body.append(dialog);
+
+  let opener;
+  for (const trigger of triggers) {
+    trigger.addEventListener('click', () => {
+      opener = trigger;
+      dialog.showModal();
+    });
+  }
+  dialog.querySelector('.email-chooser-close').addEventListener('click', () => dialog.close());
+  let startedOutside = false;
+  const outside = event => {
+    const bounds = dialog.getBoundingClientRect();
+    return event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom);
+  };
+  dialog.addEventListener('pointerdown', event => { startedOutside = outside(event); });
+  dialog.addEventListener('click', event => {
+    if (startedOutside && outside(event)) dialog.close();
+    startedOutside = false;
+  });
+  // Native modal dialogs handle Escape, focus containment, and inert background content.
+  dialog.addEventListener('close', () => opener?.focus());
+})();
+</script>
+  <script src="/header-dropdowns.js?v=1" defer></script>
+  <script src="/communication-hub.js?v=1" defer></script>
+</body>
+</html>

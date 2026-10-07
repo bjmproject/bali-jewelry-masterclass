@@ -1,0 +1,358 @@
+:root {
+  --chrome-background: #000000;
+}
+
+/* Schedule anchor: leave header clearance and a comfortable upper-viewport lead-in. */
+main #schedule {
+  scroll-margin-top: clamp(104px, 18vh, 180px);
+}
+
+/* Homepage Creative Process: use the same proven anchor landing offset. */
+main #creative-process {
+  scroll-margin-top: clamp(104px, 18vh, 180px);
+}
+
+/* Skills & Techniques: preserve the Pure Silver cross-page anchor with the same offset. */
+main #pure-silver {
+  scroll-margin-top: clamp(104px, 18vh, 180px);
+}
+@media (max-width: 850px) {
+  /* Existing stack: 72px padding, 50px gap, and a 90%-wide 1567x1177 image. */
+  main #pure-silver {
+    scroll-margin-top: calc(clamp(104px, 18vh, 180px) - 72px - 50px - (90vw * 1177 / 1567));
+  }
+}
+
+header,
+footer,
+.nav-dropdown,
+.nav-links.is-open {
+  background: var(--chrome-background);
+}
+
+.nav-links.is-open .nav-dropdown {
+  background: transparent;
+}
+
+header > nav {
+  width: min(1500px, 90%);
+  max-width: 1500px;
+  height: auto;
+  min-height: 104px;
+  margin-inline: auto;
+  padding: 0;
+  align-items: center;
+  gap: 24px;
+}
+
+header .brand {
+  left: 0;
+  transform: none;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+header .brand img {
+  /* Align visible artwork: the source has 140px of left padding at 1200px wide. */
+  transform: translateX(-11.666667%);
+}
+
+footer > .container {
+  width: min(1500px, 90%);
+  margin-inline: auto;
+}
+
+footer .footer-brand-description,
+footer .footer-location,
+footer .footer-tagline {
+  max-width: none;
+}
+
+footer .footer-tagline {
+  white-space: normal;
+}
+
+footer .footer-grid > * {
+  min-width: 0;
+}
+
+footer .footer-contact-link {
+  overflow-wrap: anywhere;
+}
+
+footer .footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: fit-content;
+  gap: 24px;
+  margin-top: 20px;
+}
+footer .footer-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #FFFFFF;
+  opacity: .75;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  aspect-ratio: auto;
+}
+footer .footer-social-links a:hover,
+footer .footer-social-links a:focus-visible { opacity: 1; }
+footer .footer-social-links a:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
+footer .footer-social-links svg {
+  width: 30px;
+  height: 30px;
+  max-width: none;
+  flex: 0 0 30px;
+}
+footer .footer-contact-column {
+  text-align: center;
+}
+
+footer .footer-contact-list {
+  justify-items: center;
+}
+
+footer .footer-location-column {
+  text-align: center;
+}
+
+footer .footer-location-address {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+footer .footer-location-address .footer-location {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+}
+
+footer .footer-location-address svg {
+  margin-top: 0;
+  flex: 0 0 18px;
+}
+
+@media (min-width: 851px) {
+  footer > .container {
+    width: min(1280px, 90%);
+  }
+
+  footer .footer-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 360px) minmax(0, .8fr) max-content;
+    column-gap: clamp(24px, 2vw, 32px);
+  }
+
+  footer .footer-location-column {
+    justify-self: start;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  footer .footer-workshop-column {
+    justify-self: end;
+    text-align: center;
+  }
+
+  footer .footer-contact-column {
+    justify-self: center;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  header .brand img {
+    width: clamp(220px, 24vw, 300px);
+  }
+
+  header .nav-links {
+    gap: clamp(12px, 2vw, 32px);
+    font-size: clamp(14px, 1.25vw, 17px);
+  }
+}
+
+@media (max-width: 850px) {
+  header > nav {
+    gap: 12px;
+  }
+
+  header .nav-links.is-open {
+    top: 100%;
+  }
+
+  header .brand img {
+    width: min(219px, 58vw);
+  }
+}
+
+/* Shared article reading hierarchy; presentation and content remain intact. */
+.silver-article-page h1 { max-width: 26ch; text-wrap: balance; }
+.silver-article-page h2, .silver-article-page h3 { font-weight: 600; }
+/* Shared footer contact details. */
+footer .footer-contact-column {
+  text-align: center;
+}
+footer .footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 18px;
+}
+footer .footer-contact-list .footer-contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+}
+footer .footer-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+footer .footer-contact-label {
+  font-weight: 500;
+}
+footer .footer-contact-detail {
+  max-width: 100%;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Contact action rows are links; contact details remain selectable text. */
+footer a.footer-contact-row {
+  cursor: pointer;
+}
+footer a.footer-contact-row svg {
+  pointer-events: none;
+}
+footer a.footer-contact-row:hover {
+  opacity: .8;
+}
+footer a.footer-contact-row:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+footer .footer-contact-detail {
+  cursor: text;
+  user-select: text;
+}
+
+/* Indicators only for header triggers that actually contain a submenu. */
+header .nav-group:has(> .nav-dropdown) > :is(a, button)::after,
+header .language-toggle > span::before,
+header .language-heading::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 6px;
+  flex: 0 0 10px;
+  border: 0;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform: none;
+}
+header .nav-group:has(> .nav-dropdown) > :is(a, button) {
+  align-items: center;
+  gap: 5px;
+}
+@media (max-width: 850px) {
+  header .language-heading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+/* Center only the main footer content at the existing mobile breakpoint. */
+@media (max-width: 650px) {
+  footer .footer-grid {
+    text-align: center;
+  }
+  footer .footer-grid .footer-logo,
+  footer .footer-grid .footer-brand-description,
+  footer .footer-grid .footer-tagline,
+  footer .footer-grid .footer-social-links {
+    margin-inline: auto;
+  }
+  footer .footer-grid .footer-social-links {
+    justify-content: center;
+  }
+  footer .footer-grid .footer-column ul {
+    justify-items: center;
+  }
+}
+
+/* Center only the text underneath the logo on mobile. */
+@media (max-width: 650px) {
+  footer .footer-grid .footer-tagline,
+  footer .footer-grid .footer-brand-description {
+    text-align: center;
+    margin-inline: auto;
+  }
+}
+
+/* Center the mobile copyright/Policies group, wrapping only when needed. */
+@media (max-width: 650px) {
+  footer > .container > .copyright {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+/* Interaction state overrides only; existing submenu appearance is preserved. */
+header .nav-links .nav-group[data-dropdown-state][data-dropdown-state="closed"] > .nav-dropdown {
+  display: none;
+}
+header .nav-links .nav-group[data-dropdown-state]:not([data-dropdown-state="closed"]) > .nav-dropdown {
+  display: grid;
+}
+@media (min-width: 851px) {
+  header .nav-links .nav-group[data-dropdown-state]:not([data-dropdown-state="closed"]) > .nav-dropdown {
+    gap: 10px;
+  }
+}
+@media (max-width: 850px) {
+  header .nav-links.is-open .nav-group > button.nav-dropdown-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* Link the existing footer logo without introducing a layout box. */
+footer .footer-logo-link { display: contents; cursor: pointer; }
+footer .footer-logo-link:focus-visible .footer-logo { outline: 2px solid currentColor; outline-offset: 4px; }
+
+/* Compact permanent article-number markers across localized Blog listings. */
+.articles-list .article-preview-content[data-article-number]::before {
+  width: fit-content;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  background: var(--ink);
+  color: var(--cream);
+}
+
+/* Shared approved mobile Menu control. */
+@media (max-width: 650px) {
+  body > header .menu-toggle { min-height: 44px; border-radius: 4px; padding: 9px 14px; border: 1px solid rgba(255,255,255,.65); font: inherit; color: #FFFFFF; background: transparent; }
+  body > header .menu-toggle { align-items: center; gap: 8px; }
+  body > header .menu-toggle::before { content: ""; display: block; width: 15px; height: 11px; flex: 0 0 15px; background: linear-gradient(#FFFFFF, #FFFFFF) 0 0 / 100% 1px no-repeat, linear-gradient(#FFFFFF, #FFFFFF) 0 50% / 100% 1px no-repeat, linear-gradient(#FFFFFF, #FFFFFF) 0 100% / 100% 1px no-repeat; }
+}

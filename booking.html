@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>Book Your Workshop | Bali Jewelry Masterclass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFFFFF;
+      --warm-white: #FFFFFF;
+      --sand: #FFFFFF;
+      --terracotta: #000000;
+      --terracotta-dark: rgba(0,0,0,.78);
+      --gold: #000000;
+      --ink: #000000;
+      --muted: rgba(0,0,0,.55);
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; width: 100%; z-index: 20; color: #FFFFFF; background: #000000; }
+    nav { width: min(1180px, 90%); margin: auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding-top: 35px; }
+    .brand { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 23px; letter-spacing: -.5px; position: relative; left: -40px; }
+    .brand img { width: 300px; height: auto; display: block; }
+    @media (min-width: 851px) {
+      header > nav { width: min(1500px, 90%); }
+      header .brand { left: -35px; }
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (min-width: 851px) { .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; } }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: #FFFFFF; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+
+    .section-label { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; font-weight: 600; color: var(--terracotta); margin-bottom: 16px; }
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    .footer-tagline { max-width: 260px; margin: 0 0 14px; color: var(--sand); font-size: 15px; line-height: 1.8; letter-spacing: 3px; }
+    .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    .footer-location-note { margin-top: 14px; }
+    .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    footer h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+
+    @media (min-width: 651px) { .footer-tagline { max-width: none; white-space: nowrap; } }
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--ink); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+      .closing-faq { margin-top: 34px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (max-width: 650px) {
+      .brand { left: 1vw; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer > .container { width: 88%; }
+      .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (min-width: 851px) {
+      .footer-location-map { height: 175px; }
+    }
+
+    .gallery-page {
+      padding: 56px 0 72px;
+      background: var(--cream);
+      color: var(--ink);
+    }
+    .gallery-page > .container { width: min(1500px, 90%); }
+    .gallery-page .section-label { margin-bottom: 14px; }
+    .gallery-page h1 {
+      color: var(--ink);
+      font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+      font-size: clamp(36px, 4.2vw, 48px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+    .gallery-page-intro { max-width: 650px; }
+    .gallery-page-intro > p:last-child {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+      gap: 26px;
+      margin-top: 34px;
+    }
+    .gallery-item { min-width: 0; margin: 0; }
+    .gallery-item img { width: 100%; height: auto; display: block; }
+    @media (min-width: 851px) {
+      .gallery-grid { align-items: stretch; }
+      .gallery-item { aspect-ratio: 4 / 3; }
+      .gallery-item:nth-child(n + 4) { aspect-ratio: 3 / 2; }
+      .gallery-item img { height: 100%; object-fit: cover; }
+    }
+    .gallery-instagram { margin-top: 30px; margin-bottom: 0; }
+    .gallery-instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 5px;
+      color: var(--terracotta);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .gallery-instagram-link:hover { color: var(--terracotta-dark); }
+    .gallery-instagram-link svg { width: 18px; height: 18px; flex: 0 0 18px; }
+    @media (max-width: 850px) {
+      .gallery-page { padding-block: 52px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    }
+    @media (max-width: 650px) {
+      .gallery-page { padding-block: 44px 56px; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+      .gallery-instagram-link { gap: 10px; font-size: 14px; }
+    }
+      /* Utility link below the existing footer divider. */
+    footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+    .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+    .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+  </style>
+  <link rel="stylesheet" href="header-layout.css?v=1">
+  <link rel="stylesheet" href="footer-layout.css?v=1">
+  <link rel="stylesheet" href="site-chrome.css?v=13">
+  <link rel="stylesheet" href="communication-hub.css?v=1">
+  <style>
+    /* Booking content only; shared site chrome is preserved. */
+    .booking-page { background: var(--cream); padding: 36px 0; }
+    .booking-page .booking-canvas { width: min(1240px, 90%); }
+    .booking-page h1, .booking-page h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; }
+    .booking-page h1 { font-size: clamp(36px, 4vw, 56px); line-height: 1.13; margin-bottom: 12px; }
+    .booking-page h2 { font-size: 28px; line-height: 1.2; }
+    .booking-page .booking-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 2px; color: #000000; margin-bottom: 10px; }
+    .booking-page .booking-intro > p:last-child { max-width: 720px; color: rgba(0,0,0,.72); }
+    .booking-page .booking-demo-note { margin: 18px 0; font-size: 14px; color: rgba(0,0,0,.60); }
+    .booking-page .booking-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); grid-template-areas: "fields summary" "submit summary"; gap: 24px 48px; margin-top: 24px; }
+    .booking-page .booking-fields { grid-area: fields; min-width: 0; }
+    .booking-page .booking-step { min-width: 0; border: 0; padding: 0; margin: 0 0 26px; }
+    .booking-page .booking-step:last-child { margin-bottom: 0; }
+    .booking-page legend { display: block; width: 100%; padding: 0 0 12px; color: #000000; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+    .booking-page legend span { margin-left: 10px; color: var(--ink); font-size: 18px; letter-spacing: 0; }
+    .booking-page button, .booking-page input, .booking-page textarea { font: inherit; }
+    .booking-page button { cursor: pointer; }
+    .booking-page .calendar-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .booking-page .calendar-heading h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 17px; font-weight: 600; }
+    .booking-page .calendar-nav { width: 44px; height: 44px; border: 1px solid rgba(0,0,0,.18); border-radius: 10px; color: var(--ink); background: transparent; }
+    .booking-page .calendar-weekdays, .booking-page .calendar-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+    .booking-page .calendar-weekdays { margin-bottom: 8px; color: rgba(0,0,0,.60); font-size: 12px; text-align: center; }
+    .booking-page .calendar-day { position: relative; min-width: 0; min-height: 44px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: var(--ink); }
+    .booking-page .calendar-day:not(:disabled) { opacity: 1; cursor: pointer; }
+    .booking-page .calendar-day:not(:disabled):hover { border-color: #000000; }
+    .booking-page .calendar-day[aria-pressed="true"] { background: #000000; color: var(--cream); font-weight: 600; }
+    .booking-page .calendar-day[aria-pressed="true"]::after { content: ""; position: absolute; bottom: 4px; left: calc(50% - 2px); width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+    .booking-page button:disabled { opacity: .32; cursor: not-allowed; }
+    .booking-page .time-options { display: flex; flex-wrap: wrap; gap: 10px; }
+    .booking-page .time-option { min-height: 44px; padding: 9px 16px; border: 1px solid rgba(0,0,0,.2); border-radius: 14px; background: transparent; color: var(--ink); }
+    .booking-page .time-option[aria-pressed="true"] { background: #000000; color: var(--cream); border-color: #000000; font-weight: 600; }
+    .booking-page .time-option[aria-pressed="true"]::before { content: "✓ "; }
+    .booking-page .custom-time-field { margin-top: 14px; width: 100%; max-width: 300px; }
+    .booking-page .wheel-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .booking-page .time-wheel-labels,
+    .booking-page .time-wheel-picker { display: grid; grid-template-columns: minmax(0, 1fr) 12px minmax(0, 1fr) minmax(0, 1fr); gap: 6px; }
+    .booking-page .time-wheel-labels { font-size: 12px; color: rgba(0,0,0,.60); text-align: center; margin-bottom: 4px; }
+    .booking-page .time-wheel-picker { position: relative; align-items: center; }
+    .booking-page .time-wheel-picker::before { content: ""; position: absolute; left: 0; right: 0; top: 44px; height: 44px; border-block: 1px solid rgba(0,0,0,.35); pointer-events: none; }
+    .booking-page .time-wheel { position: relative; height: 132px; padding-block: 44px; overflow-y: auto; overflow-x: hidden; scroll-snap-type: y mandatory; overscroll-behavior: contain; scrollbar-width: none; touch-action: pan-y; }
+    .booking-page .time-wheel::-webkit-scrollbar { display: none; }
+    .booking-page .wheel-value { height: 44px; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; color: var(--ink); opacity: .4; cursor: pointer; font-size: 18px; }
+    .booking-page .wheel-value[aria-selected="true"] { opacity: 1; color: #000000; font-weight: 600; }
+    .booking-page .wheel-colon { color: #000000; text-align: center; }
+    .booking-page .use-custom-time { margin-top: 12px; color: #000000; border-color: #000000; font-weight: 600; }
+    .booking-page .guest-counter { display: inline-flex; align-items: center; gap: 16px; }
+    .booking-page .guest-counter button { width: 44px; height: 44px; border: 1px solid rgba(0,0,0,.2); border-radius: 12px; background: transparent; color: var(--ink); font-size: 22px; }
+    .booking-page .guest-counter output { min-width: 84px; text-align: center; font-weight: 600; }
+    .booking-page .booking-note { font-size: 14px; line-height: 1.55; color: rgba(0,0,0,.60); margin-top: 10px; }
+    .booking-page .details-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+    .booking-page .booking-field label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; }
+    .booking-page .optional { color: rgba(0,0,0,.60); font-weight: 400; font-size: 12px; }
+    .booking-page input, .booking-page textarea { display: block; width: 100%; padding: 10px 12px; border: 1px solid rgba(0,0,0,.28); border-radius: 8px; background: #FFFFFF; color: var(--ink); min-height: 44px; }
+    .booking-page textarea { resize: vertical; }
+    .booking-page .booking-notes { grid-column: 1 / -1; }
+    .booking-page [aria-invalid="true"] { border-color: #000000; }
+    .booking-page .booking-error { margin-top: 8px; color: var(--terracotta-dark); font-size: 14px; }
+    .booking-page .booking-summary { grid-area: summary; align-self: start; padding: 24px; border-top: 2px solid #000000; background: rgba(0,0,0,.04); }
+    .booking-page .summary-list { margin: 22px 0; }
+    .booking-page .summary-list > div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,.14); }
+    .booking-page dt { color: rgba(0,0,0,.60); font-size: 14px; }
+    .booking-page dd { font-weight: 600; }
+    .booking-page .summary-list dd { text-align: right; }
+    .booking-page .silver-included { font-weight: 600; }
+    .booking-page .booking-submit { grid-area: submit; }
+    .booking-page .booking-primary { display: inline-flex; width: fit-content; padding: 13px 22px; border: 0; border-radius: 14px; background: #000000; color: var(--cream); font-weight: 600; }
+    .booking-page .booking-primary:hover { background: var(--terracotta-dark); }
+    .booking-page .booking-editorial { display: inline-block; color: #000000; font-weight: 600; }
+    .booking-page .booking-editorial:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .booking-page :is(button,input,textarea,a):focus-visible { outline: 2px solid #000000; outline-offset: 3px; }
+    .booking-page .booking-review { max-width: 1000px; padding: 24px 0; }
+    .booking-page .booking-review > h2 { font-size: clamp(32px, 4vw, 44px); }
+    .booking-page .review-intro { margin-top: 12px; color: rgba(0,0,0,.72); }
+    .booking-page .review-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; margin-top: 24px; }
+    .booking-page .review-list > div { margin-bottom: 16px; }
+    .booking-page .review-list dt, .booking-page .review-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; color: rgba(0,0,0,.60); }
+    .booking-page .review-list dd { margin-top: 4px; overflow-wrap: anywhere; }
+    .booking-page .review-label { margin-bottom: 12px; }
+    .booking-page .guest-review-list dt { letter-spacing: 0; font-size: 14px; font-weight: 400; }
+    .booking-page .review-additional, .booking-page .review-workshop-details { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(0,0,0,.18); }
+    .booking-page #review-notes { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .booking-page .review-workshop-details p + p { margin-top: 6px; }
+    .booking-page .review-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 22px; }
+    .booking-page .review-edit { padding: 10px 0; border: 0; background: transparent; color: #000000; font-weight: 600; }
+    .booking-page .review-edit:hover { text-decoration: underline; text-underline-offset: 4px; }
+    @media (max-width: 600px) {
+      .booking-page .review-columns { grid-template-columns: 1fr; gap: 12px; }
+    }
+    .booking-page .booking-send { max-width: 800px; padding: 24px 0; }
+    .booking-page .booking-send > h2 { font-size: clamp(30px, 3.5vw, 42px); }
+    .booking-page .send-intro { margin-top: 12px; color: rgba(0,0,0,.72); }
+    .booking-page .send-methods { display: flex; flex-wrap: wrap; gap: 14px; margin: 24px 0 16px; }
+    .booking-page .send-methods a { min-height: 48px; align-items: center; justify-content: center; text-decoration: none; }
+    .booking-page #back-to-review { margin-top: 18px; }
+    .booking-page .booking-contact { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.18); }
+    .booking-page .booking-contact p { margin-top: 8px; color: rgba(0,0,0,.72); }
+    .booking-page .contact-actions { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+    .booking-page [hidden] { display: none; }
+    @media (max-width: 850px) {
+      .booking-page .booking-layout { grid-template-columns: 1fr; grid-template-areas: "fields" "summary" "submit"; gap: 24px; }
+      .booking-page .booking-send { max-width: 800px; padding: 24px 0; }
+    .booking-page .booking-send > h2 { font-size: clamp(30px, 3.5vw, 42px); }
+    .booking-page .send-intro { margin-top: 12px; color: rgba(0,0,0,.72); }
+    .booking-page .send-methods { display: flex; flex-wrap: wrap; gap: 14px; margin: 24px 0 16px; }
+    .booking-page .send-methods a { min-height: 48px; align-items: center; justify-content: center; text-decoration: none; }
+    .booking-page #back-to-review { margin-top: 18px; }
+    .booking-page .booking-contact { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .booking-page { padding: 28px 0; }
+      .booking-page .booking-canvas { width: 88%; }
+      .booking-page .details-grid { grid-template-columns: 1fr; gap: 16px; }
+      .booking-page .calendar-days, .booking-page .calendar-weekdays { gap: 2px; }
+      .booking-page .booking-summary { padding: 20px; }
+    }
+  </style>
+  <style>
+    /* Final prepared-request state only. */
+    .booking-page .booking-thank-you { max-width: 800px; padding: 24px 0; }
+    .booking-page .booking-thank-you > .booking-eyebrow { font-family: "Nothing You Could Do", "Noto Sans SC", "Microsoft YaHei", cursive; font-size: clamp(38px, 4vw, 52px); font-weight: 400; color: #000000; line-height: 1.1; letter-spacing: 0; margin-bottom: 16px; }
+    .booking-page .booking-thank-you h2 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 16px; }
+    .booking-page .booking-thank-you > p:not(.booking-eyebrow) { margin-top: 12px; color: rgba(0,0,0,.72); }
+    .booking-page .thank-you-summary { display: flex; flex-wrap: wrap; gap: 18px 32px; margin: 24px 0; }
+    .booking-page .thank-you-summary dd { margin-top: 4px; overflow-wrap: anywhere; }
+    .booking-page .booking-thank-you > .booking-editorial { margin-top: 8px; }
+    .booking-page .thank-you-return { margin-top: 18px; }
+  </style>
+  <style>
+    /* Calendar quick navigation only. */
+    .booking-page #calendar-month { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 8px; border: 0; background: transparent; color: var(--ink); font: inherit; }
+    .booking-page #calendar-month::after { content: ""; width: 6px; height: 6px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); }
+    .booking-page #calendar-month:hover { color: #000000; }
+    .booking-page .calendar-jump { margin-bottom: 14px; padding: 12px 0; border-block: 1px solid rgba(0,0,0,.18); }
+    .booking-page .calendar-jump-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: rgba(0,0,0,.60); margin-bottom: 8px; }
+    .booking-page .calendar-years { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .booking-page .calendar-months { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+    .booking-page .calendar-jump button { min-height: 44px; min-width: 0; padding: 8px 12px; border: 1px solid rgba(0,0,0,.18); border-radius: 10px; background: transparent; color: var(--ink); font-size: 14px; }
+    .booking-page .calendar-jump button[aria-pressed="true"] { border-color: #000000; color: #000000; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+    .booking-page .calendar-jump button:not(:disabled):hover { border-color: #000000; }
+  </style>
+  <link rel="stylesheet" href="language-selector.css">
+  <link rel="stylesheet" href="email-chooser.css?v=1">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="brand" aria-label="Bali Jewelry Masterclass home">
+        <img src="bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">The Workshop</button><div class="nav-dropdown" id="workshop-dropdown"><a href="index.html#creative-process">Creative Process</a><a href="skills-techniques.html#pure-silver">Skills &amp; Techniques</a><a href="index.html#schedule">Schedule</a><a href="pricing.html">Pricing</a></div></div>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">About Us</button><div class="nav-dropdown" id="about-dropdown"><a href="about.html">About BJM</a><a href="index.html#location">Our Location</a><a href="index.html#contact">Contact</a><a href="faq.html">FAQ</a></div></div>
+        <div class="language-selector" role="group" aria-label="Website language">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Language: English" title="English"><img class="language-flag" src="language-flag-gb.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">LANGUAGE</span>
+          <div class="language-options" id="language-options" hidden>
+            <span class="language-option is-active" data-language="en" lang="en" aria-current="true" aria-label="English — current language" title="English — current language"><img class="language-flag" src="language-flag-gb.svg" alt="" width="22" height="15"></span>
+            <button class="language-option" type="button" data-language="fr" lang="fr" disabled title="French — coming soon" aria-label="French — coming soon"><img class="language-flag" src="language-flag-fr.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="de" lang="de" disabled title="German — coming soon" aria-label="German — coming soon"><img class="language-flag" src="language-flag-de.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="zh-CN" lang="zh-CN" disabled title="Chinese — coming soon" aria-label="Chinese — coming soon"><img class="language-flag" src="language-flag-cn.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="ja" lang="ja" disabled title="Japanese — coming soon" aria-label="Japanese — coming soon"><img class="language-flag" src="language-flag-jp.svg" alt="" width="22" height="15"></button>
+          </div>
+        </div>
+        <a href="booking.html" class="nav-cta">Book</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="booking-page">
+    <div class="container booking-canvas">
+      <section class="booking-intro" aria-labelledby="booking-title">
+        <p class="booking-eyebrow">BOOK YOUR WORKSHOP</p>
+        <h1 id="booking-title">Make something of your own.</h1>
+        <p>Choose your preferred date and time and send us your reservation request. We’ll confirm availability with you.</p>
+      </section>
+
+      <p class="booking-demo-note">Your request will be prepared for WhatsApp or Email. You send the message yourself; BJM then confirms availability.</p>
+      <noscript><p>Please enable JavaScript to use the booking form, or contact us using the WhatsApp link below.</p></noscript>
+
+      <form id="reservation-form" class="booking-layout" novalidate>
+        <div class="booking-fields">
+          <fieldset class="booking-step">
+            <legend>01 <span>Choose a date</span></legend>
+            <div class="calendar-heading">
+              <button type="button" id="previous-month" class="calendar-nav" aria-label="Previous month">←</button>
+              <h2><button id="calendar-month" type="button" aria-live="polite" aria-label="Choose calendar month and year" aria-expanded="false" aria-controls="calendar-jump"></button></h2>
+              <button type="button" id="next-month" class="calendar-nav" aria-label="Next month">→</button>
+            </div>
+            <div id="calendar-jump" class="calendar-jump" role="group" aria-label="Choose calendar month and year" hidden>
+              <p class="calendar-jump-label">YEAR</p>
+              <div id="calendar-years" class="calendar-years" role="group" aria-label="Year"></div>
+              <p class="calendar-jump-label">MONTH</p>
+              <div id="calendar-months" class="calendar-months" role="group" aria-label="Month"></div>
+            </div>
+            <div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div id="calendar-days" class="calendar-days" role="group" aria-labelledby="calendar-month" aria-describedby="date-error calendar-note"></div>
+            <p id="date-error" class="booking-error" hidden></p>
+            <p id="calendar-note" class="booking-note">Availability will be confirmed by our team after you submit your request.</p>
+          </fieldset>
+
+          <fieldset class="booking-step">
+            <legend>02 <span>Choose a time</span></legend>
+            <div class="time-options" role="group" aria-label="Preferred workshop time" aria-describedby="time-error">
+              <button type="button" class="time-option" data-time="10:00 AM" aria-pressed="false">10:00 AM</button>
+              <button type="button" class="time-option" data-time="1:00 PM" aria-pressed="false">1:00 PM</button>
+              <button type="button" class="time-option" data-time="3:30 PM" aria-pressed="false">3:30 PM</button>
+              <button type="button" class="time-option" data-time="6:00 PM" aria-pressed="false">6:00 PM</button>
+              <button type="button" id="other-time" class="time-option" data-time="other" aria-pressed="false" aria-expanded="false" aria-controls="time-wheels-panel">+ Other time</button>
+            </div>
+            <div id="custom-time-field" class="booking-field custom-time-field" hidden>
+              <div id="time-wheels-panel" role="group" aria-labelledby="preferred-time-label">
+                <p id="preferred-time-label" class="wheel-title">Preferred time</p>
+                <div class="time-wheel-labels" aria-hidden="true"><span>Hour</span><span></span><span>Minute</span><span>AM/PM</span></div>
+                <div class="time-wheel-picker">
+                  <div id="hour-wheel" class="time-wheel" role="listbox" tabindex="0" aria-label="Hour"></div>
+                  <span class="wheel-colon" aria-hidden="true">:</span>
+                  <div id="minute-wheel" class="time-wheel" role="listbox" tabindex="0" aria-label="Minute"></div>
+                  <div id="period-wheel" class="time-wheel" role="listbox" tabindex="0" aria-label="AM or PM"></div>
+                </div>
+                <button id="use-custom-time" type="button" class="time-option use-custom-time">Use this time</button>
+              </div>
+              <p id="custom-time-note" class="booking-note">Other times are subject to confirmation.</p>
+            </div>
+            <p id="time-error" class="booking-error" hidden></p>
+            <p class="booking-note">Preferred session time in Bali (WITA). Availability is confirmed by our team.</p>
+          <p class="booking-note">Workshop hours: <strong>10:00 AM</strong>–<strong>9:00 PM</strong>. The last session starts at <strong>7:00 PM</strong>; please arrive by <strong>7:00 PM</strong> for this session.</p>
+          </fieldset>
+
+          <fieldset class="booking-step">
+            <legend>03 <span>Number of guests</span></legend>
+            <div class="guest-counter">
+              <button type="button" id="guest-minus" aria-label="Remove one guest">−</button>
+              <output id="guest-count" aria-live="polite">2 guests</output>
+              <button type="button" id="guest-plus" aria-label="Add one guest">+</button>
+            </div>
+            <p class="booking-note">1–20 guests per request.</p>
+            <p id="guest-error" class="booking-error" hidden></p>
+          </fieldset>
+
+          <fieldset class="booking-step booking-details">
+            <legend>04 <span>Your details</span></legend>
+            <div class="details-grid">
+              <div class="booking-field"><label for="guest-name">Name <span aria-hidden="true">*</span></label><input id="guest-name" name="name" autocomplete="name" required aria-describedby="name-error"><p id="name-error" class="booking-error" hidden></p></div>
+              <div class="booking-field"><label for="guest-email">Email <span aria-hidden="true">*</span></label><input id="guest-email" name="email" type="email" autocomplete="email" required aria-describedby="email-error"><p id="email-error" class="booking-error" hidden></p></div>
+              <div class="booking-field"><label for="guest-phone">WhatsApp / Phone <span aria-hidden="true">*</span></label><input id="guest-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="phone-error"><p id="phone-error" class="booking-error" hidden></p></div>
+              <div class="booking-field"><label for="guest-country">Country <span class="optional">(optional)</span></label><input id="guest-country" name="country" autocomplete="country-name"></div>
+              <div class="booking-field booking-notes"><label for="guest-notes">Anything we should know? <span class="optional">(optional)</span></label><textarea id="guest-notes" name="notes" rows="3" placeholder="Custom design ideas, group notes, or special requests."></textarea></div>
+            </div>
+          </fieldset>
+        </div>
+
+        <aside class="booking-summary" aria-labelledby="summary-title">
+          <p class="booking-eyebrow" id="summary-title">YOUR WORKSHOP</p>
+          <h2>Silver Jewelry Workshop</h2>
+          <dl class="summary-list" aria-live="polite" aria-atomic="true">
+            <div><dt>Date</dt><dd id="summary-date">Choose a date</dd></div>
+            <div><dt>Time</dt><dd id="summary-time">Choose a time</dd></div>
+            <div><dt>Guests</dt><dd id="summary-guests">2 guests</dd></div>
+          </dl>
+          <p class="silver-included">Up to 6 g silver per guest included</p>
+          <p class="booking-note">Additional silver, add-ons, or extended workshop time will always be explained before we proceed.</p>
+        </aside>
+
+        <div class="booking-submit">
+          <p id="form-error" class="booking-error" role="alert" hidden></p>
+          <button type="submit" id="review-request" class="booking-primary">Review Reservation Request →</button>
+          <p class="booking-note">A reservation request is not a confirmed booking.</p>
+        </div>
+      </form>
+
+      <section id="booking-review" class="booking-review" aria-labelledby="review-title" hidden>
+        <p class="booking-eyebrow">REVIEW YOUR REQUEST</p>
+        <h2 id="review-title" tabindex="-1">Review your workshop request.</h2>
+        <p class="review-intro">Please check your details before sending.</p>
+        <div class="review-columns">
+          <div>
+            <dl class="review-list">
+              <div><dt>WORKSHOP</dt><dd>Silver Jewelry Workshop</dd></div>
+              <div><dt>DATE</dt><dd id="review-date"></dd></div>
+              <div><dt>TIME</dt><dd id="review-time"></dd></div>
+              <div><dt>GUESTS</dt><dd id="review-guests"></dd></div>
+            </dl>
+          </div>
+          <div>
+            <h3 class="review-label">GUEST DETAILS</h3>
+            <dl class="review-list guest-review-list">
+              <div><dt>Name</dt><dd id="review-name"></dd></div>
+              <div><dt>Email</dt><dd id="review-email"></dd></div>
+              <div><dt>WhatsApp / Phone</dt><dd id="review-phone"></dd></div>
+              <div id="review-country-row"><dt>Country</dt><dd id="review-country"></dd></div>
+            </dl>
+          </div>
+        </div>
+        <div id="review-additional" class="review-additional" hidden>
+          <h3 class="review-label">ADDITIONAL REQUEST</h3>
+          <p id="review-notes"></p>
+        </div>
+        <div class="review-workshop-details">
+          <h3 class="review-label">WORKSHOP DETAILS</h3>
+          <p>Approx. 2 hours</p>
+          <p>Up to 6g of silver per guest included.</p>
+          <p>Additional silver or custom details may involve an extra charge.</p>
+        </div>
+        <p class="booking-note">Availability is confirmed by BJM after we receive your request.</p>
+        <div class="review-actions">
+          <button id="edit-request" type="button" class="review-edit">← Edit details</button>
+          <button id="send-request" type="button" class="booking-primary">Continue to Send →</button>
+        </div>
+      </section>
+      <section id="booking-send" class="booking-send" aria-labelledby="send-title" hidden>
+        <p class="booking-eyebrow">SEND YOUR REQUEST</p>
+        <h2 id="send-title" tabindex="-1">How would you like to send your reservation request?</h2>
+        <p class="send-intro">Choose WhatsApp or Email. Your reservation details will be prepared automatically.</p>
+        <div class="send-methods">
+          <a id="send-whatsapp" class="booking-primary" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">Send via WhatsApp</a>
+          <a id="send-email" class="booking-primary" href="mailto:balijewelrymasterclass@gmail.com">Send via Email</a>
+        </div>
+        <p class="booking-note">Please press Send in your own WhatsApp or email application. Opening the app only prepares your message; BJM confirms availability after receiving your request.</p>
+        <button id="back-to-review" type="button" class="review-edit">← Back to review</button>
+      </section>
+
+      <section id="booking-thank-you" class="booking-thank-you" aria-labelledby="thank-you-title" hidden>
+        <p class="booking-eyebrow">Thank You</p>
+        <h2 id="thank-you-title" tabindex="-1">Your reservation request is ready to send.</h2>
+        <p>Please make sure you complete sending the message through WhatsApp or Email.</p>
+        <p>Once we receive your request, we'll check availability and get back to you quickly.</p>
+        <dl class="thank-you-summary">
+          <div><dt>Date</dt><dd id="thank-you-date"></dd></div>
+          <div><dt>Time</dt><dd id="thank-you-time"></dd></div>
+          <div><dt>Guests</dt><dd id="thank-you-guests"></dd></div>
+        </dl>
+        <p>Need anything else?</p>
+        <a class="booking-editorial" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">WhatsApp us →</a>
+        <div class="thank-you-return"><button id="thank-you-back" type="button" class="review-edit">← Back to review</button></div>
+      </section>
+      <section class="booking-contact" aria-labelledby="contact-booking-title">
+        <div><h2 id="contact-booking-title">Prefer to talk to us first?</h2><p>Questions about your design, group, or workshop? Talk to us before booking.</p></div>
+        <div class="contact-actions">
+          <a class="booking-editorial" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">WhatsApp us →</a>
+          <a class="booking-editorial" href="mailto:balijewelrymasterclass@gmail.com">Email us →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="index.html#home" aria-label="Bali Jewelry Masterclass homepage"><img class="footer-logo" src="bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">Your Silver Craft Space in Bali</p>
+          <div class="footer-social-links" aria-label="Social media">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>Our Location</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Bali Jewelry Masterclass on Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>Contact</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="Email Bali Jewelry Masterclass" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">Email</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Bali Jewelry Masterclass"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="about.html">About BJM</a></li>
+            <li><a href="index.html#creative-process">Creative Process</a></li>
+            <li><a href="skills-techniques.html">Skills &amp; Techniques</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#schedule">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="policies.html">Policies</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← Back</span>
+    <button type="button" class="communication-hub-toggle" aria-label="Contact options" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> How can we help? </h2>
+      <p class="communication-hub-intro"> Choose the easiest way to reach us. </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> Send us a quick message </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> Email </span><span class="communication-hub-detail"> Prefer to write by email? </span></span></button>
+        <a class="communication-hub-option" href="/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> Make a Booking </span><span class="communication-hub-detail"> Choose your workshop details </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      'use strict';
+      // Selection rules are independent of DOM rendering and future availability data.
+      const BookingRules = {
+        times: ['10:00 AM', '1:00 PM', '3:30 PM', '6:00 PM'],
+        localToday(now = new Date()) {
+          return this.dateKey(now.getFullYear(), now.getMonth(), now.getDate());
+        },
+        dateRange(today = this.localToday()) {
+          const current = this.parseDate(today);
+          const tomorrow = new Date(current);
+          tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+          const endMonth = new Date(Date.UTC(current.getUTCFullYear(), current.getUTCMonth() + 12, 1));
+          const lastDay = new Date(Date.UTC(endMonth.getUTCFullYear(), endMonth.getUTCMonth() + 1, 0)).getUTCDate();
+          endMonth.setUTCDate(Math.min(current.getUTCDate(), lastDay));
+          return {
+            earliest: this.dateKey(tomorrow.getUTCFullYear(), tomorrow.getUTCMonth(), tomorrow.getUTCDate()),
+            latest: this.dateKey(endMonth.getUTCFullYear(), endMonth.getUTCMonth(), endMonth.getUTCDate())
+          };
+        },
+        monthInRange(year, month, range = this.dateRange()) {
+          const first = this.dateKey(year, month, 1);
+          const lastDay = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+          const last = this.dateKey(year, month, lastDay);
+          return last >= range.earliest && first <= range.latest;
+        },
+        dateKey(year, month, day) {
+          return year + '-' + String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+        },
+        parseDate(key) { return new Date(key + 'T00:00:00Z'); },
+        canSelectDate(key, today = this.localToday()) {
+          return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(key) &&
+            !Number.isNaN(this.parseDate(key).getTime()) &&
+            this.parseDate(key).toISOString().slice(0, 10) === key && key >= this.dateRange(today).earliest && key <= this.dateRange(today).latest;
+        },
+        clampGuests(count) { return Math.min(20, Math.max(1, Math.trunc(count))); },
+        validGuests(count) { return Number.isInteger(count) && count >= 1 && count <= 20; },
+        validTime(time) { return this.times.includes(time); },
+        validCustomTime(value) {
+          if (!/^([01]\d|2[0-3]):(00|15|30|45)$/.test(value)) return false;
+          const [hours, minutes] = value.split(':').map(Number);
+          const total = hours * 60 + minutes;
+          return total >= 10 * 60 && total <= 19 * 60;
+        },
+        formatCustomTime(value) {
+          if (!this.validCustomTime(value)) return '';
+          const [hours, minutes] = value.split(':').map(Number);
+          return (hours % 12 || 12) + ':' + String(minutes).padStart(2, '0') + (hours < 12 ? ' AM' : ' PM');
+        }
+      };
+      const state = { date: '', time: '', guests: 2, otherTime: false };
+      const current = BookingRules.parseDate(BookingRules.localToday());
+      const view = { year: current.getUTCFullYear(), month: current.getUTCMonth() };
+      const byId = (id) => document.getElementById(id);
+      const form = byId('reservation-form');
+      const days = byId('calendar-days');
+      const dateLabel = (key) => new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'long', year: 'numeric'
+      }).format(BookingRules.parseDate(key));
+      function showError(id, message) {
+        const element = byId(id);
+        element.textContent = message;
+        element.hidden = !message;
+      }
+      function renderSummary() {
+        byId('summary-date').textContent = state.date ? dateLabel(state.date) : 'Choose a date';
+        byId('summary-time').textContent = state.time || 'Choose a time';
+        byId('summary-guests').textContent = state.guests + (state.guests === 1 ? ' guest' : ' guests');
+      }
+      function renderGuests() {
+        byId('guest-count').textContent = state.guests + (state.guests === 1 ? ' guest' : ' guests');
+        byId('guest-minus').disabled = state.guests === 1;
+        byId('guest-plus').disabled = state.guests === 20;
+        renderSummary();
+      }
+      function renderCalendar(focusDate = '') {
+        const liveRange = BookingRules.dateRange();
+        if (!BookingRules.monthInRange(view.year, view.month, liveRange)) {
+          const firstValid = BookingRules.parseDate(liveRange.earliest);
+          view.year = firstValid.getUTCFullYear();
+          view.month = firstValid.getUTCMonth();
+        }
+        if (state.date && !BookingRules.canSelectDate(state.date)) {
+          state.date = '';
+          renderSummary();
+        }
+        const first = new Date(Date.UTC(view.year, view.month, 1));
+        byId('calendar-month').textContent = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'UTC', month: 'long', year: 'numeric'
+        }).format(first);
+        const range = BookingRules.dateRange();
+        const previous = new Date(Date.UTC(view.year, view.month - 1, 1));
+        const next = new Date(Date.UTC(view.year, view.month + 1, 1));
+        byId('previous-month').disabled = !BookingRules.monthInRange(previous.getUTCFullYear(), previous.getUTCMonth(), range);
+        byId('next-month').disabled = !BookingRules.monthInRange(next.getUTCFullYear(), next.getUTCMonth(), range);
+        const fragment = document.createDocumentFragment();
+        const offset = (first.getUTCDay() + 6) % 7;
+        for (let index = 0; index < offset; index++) {
+          const blank = document.createElement('span');
+          blank.setAttribute('aria-hidden', 'true');
+          fragment.append(blank);
+        }
+        const length = new Date(Date.UTC(view.year, view.month + 1, 0)).getUTCDate();
+        for (let day = 1; day <= length; day++) {
+          const key = BookingRules.dateKey(view.year, view.month, day);
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'calendar-day';
+          button.dataset.date = key;
+          button.textContent = day;
+          button.disabled = !BookingRules.canSelectDate(key);
+          button.setAttribute('aria-label', dateLabel(key));
+          button.setAttribute('aria-pressed', String(state.date === key));
+          if (button.disabled) button.setAttribute('title', 'Choose a date from tomorrow through 12 calendar months from today');
+          fragment.append(button);
+        }
+        days.replaceChildren(fragment);
+        if (focusDate) days.querySelector('[data-date="' + focusDate + '"]')?.focus();
+      }
+      function navigateMonth(delta) {
+        const target = new Date(Date.UTC(view.year, view.month + delta, 1));
+        if (!BookingRules.monthInRange(target.getUTCFullYear(), target.getUTCMonth())) return;
+        view.year = target.getUTCFullYear();
+        view.month = target.getUTCMonth();
+        closeMonthSelector();
+        renderCalendar();
+      }
+      let jumpYear = view.year;
+      function closeMonthSelector() {
+        byId('calendar-jump').hidden = true;
+        byId('calendar-month').setAttribute('aria-expanded', 'false');
+      }
+      function renderMonthSelector() {
+        const range = BookingRules.dateRange();
+        const firstYear = BookingRules.parseDate(range.earliest).getUTCFullYear();
+        const lastYear = BookingRules.parseDate(range.latest).getUTCFullYear();
+        jumpYear = Math.max(firstYear, Math.min(lastYear, jumpYear));
+        const years = document.createDocumentFragment();
+        for (let year = firstYear; year <= lastYear; year++) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = year;
+          button.setAttribute('aria-pressed', String(year === jumpYear));
+          button.addEventListener('click', () => {
+            jumpYear = year;
+            renderMonthSelector();
+            byId('calendar-years').querySelector('[aria-pressed="true"]').focus();
+          });
+          years.append(button);
+        }
+        byId('calendar-years').replaceChildren(years);
+        const months = document.createDocumentFragment();
+        for (let month = 0; month < 12; month++) {
+          const button = document.createElement('button');
+          const date = new Date(Date.UTC(jumpYear, month, 1));
+          button.type = 'button';
+          button.textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'UTC', month: 'short' }).format(date);
+          button.setAttribute('aria-label', new Intl.DateTimeFormat('en-GB', { timeZone: 'UTC', month: 'long', year: 'numeric' }).format(date));
+          button.setAttribute('aria-pressed', String(view.year === jumpYear && view.month === month));
+          button.disabled = !BookingRules.monthInRange(jumpYear, month, range);
+          button.addEventListener('click', () => {
+            if (!BookingRules.monthInRange(jumpYear, month)) return;
+            view.year = jumpYear;
+            view.month = month;
+            closeMonthSelector();
+            renderCalendar();
+            byId('calendar-month').focus();
+          });
+          months.append(button);
+        }
+        byId('calendar-months').replaceChildren(months);
+      }
+      byId('calendar-month').addEventListener('click', () => {
+        const opening = byId('calendar-jump').hidden;
+        byId('calendar-jump').hidden = !opening;
+        byId('calendar-month').setAttribute('aria-expanded', String(opening));
+        if (opening) {
+          jumpYear = view.year;
+          renderMonthSelector();
+          byId('calendar-years').querySelector('[aria-pressed="true"]').focus();
+        }
+      });
+      byId('calendar-jump').addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMonthSelector();
+          byId('calendar-month').focus();
+        }
+      });
+      byId('previous-month').addEventListener('click', () => navigateMonth(-1));
+      byId('next-month').addEventListener('click', () => navigateMonth(1));
+      days.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-date]');
+        if (!button || !BookingRules.canSelectDate(button.dataset.date)) return;
+        state.date = button.dataset.date;
+        showError('date-error', '');
+        renderCalendar(state.date);
+        renderSummary();
+      });
+      days.addEventListener('keydown', (event) => {
+        const offsets = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 };
+        if (!(event.key in offsets)) return;
+        const button = event.target.closest('button[data-date]');
+        if (!button) return;
+        event.preventDefault();
+        const target = BookingRules.parseDate(button.dataset.date);
+        target.setUTCDate(target.getUTCDate() + offsets[event.key]);
+        const key = BookingRules.dateKey(target.getUTCFullYear(), target.getUTCMonth(), target.getUTCDate());
+        if (!BookingRules.canSelectDate(key)) return;
+        view.year = target.getUTCFullYear();
+        view.month = target.getUTCMonth();
+        renderCalendar(key);
+      });
+      const customSelection = { hour: '11', minute: '00', period: 'AM' };
+      let customTimeSaved = false;
+      const wheelConfigs = [
+        { id: 'hour-wheel', key: 'hour', values: Array.from({ length: 12 }, (_, i) => String(i + 1)) },
+        { id: 'minute-wheel', key: 'minute', values: ['00', '15', '30', '45'] },
+        { id: 'period-wheel', key: 'period', values: ['AM', 'PM'] }
+      ];
+      function customTimeValue() {
+        const hour = Number(customSelection.hour) % 12 + (customSelection.period === 'PM' ? 12 : 0);
+        return String(hour).padStart(2, '0') + ':' + customSelection.minute;
+      }
+      function updateCustomTime() {
+        if (!state.otherTime) return;
+        state.time = BookingRules.formatCustomTime(customTimeValue());
+        showError('time-error', '');
+        if (customTimeSaved) byId('other-time').textContent = state.time;
+        renderSummary();
+      }
+      function allowedWheelValues(key) {
+        if (key === 'period') return ['AM', 'PM'];
+        if (key === 'hour') return customSelection.period === 'AM'
+          ? ['10', '11'] : ['12', '1', '2', '3', '4', '5', '6', '7'];
+        return customSelection.period === 'PM' && customSelection.hour === '7'
+          ? ['00'] : ['00', '15', '30', '45'];
+      }
+      function refreshWheelValues(forceAlign = false) {
+        // Period determines valid hours; hour determines valid minutes.
+        ['period', 'hour', 'minute'].forEach((key) => {
+          const config = wheelConfigs.find((item) => item.key === key);
+          const values = allowedWheelValues(key);
+          const changed = config.values.join(',') !== values.join(',');
+          if (!values.includes(customSelection[key])) {
+            customSelection[key] = values.reduce((nearest, value) =>
+              Math.abs(Number(value) - Number(customSelection[key])) <
+              Math.abs(Number(nearest) - Number(customSelection[key])) ? value : nearest);
+          }
+          config.values = values;
+          const wheel = byId(config.id);
+          if (changed || !wheel.children.length) {
+            const fragment = document.createDocumentFragment();
+            values.forEach((value, index) => {
+              const option = document.createElement('div');
+              option.className = 'wheel-value';
+              option.id = config.id + '-value-' + index;
+              option.setAttribute('role', 'option');
+              option.dataset.index = index;
+              option.textContent = value;
+              fragment.append(option);
+            });
+            wheel.replaceChildren(fragment);
+          }
+          const index = values.indexOf(customSelection[key]);
+          Array.from(wheel.children).forEach((option, i) => {
+            option.setAttribute('aria-selected', String(i === index));
+          });
+          wheel.setAttribute('aria-activedescendant', config.id + '-value-' + index);
+          if (changed || forceAlign) wheel.scrollTo({ top: index * 44, behavior: 'instant' });
+        });
+      }
+      function selectWheelValue(config, index, scroll = false) {
+        index = Math.max(0, Math.min(config.values.length - 1, index));
+        customSelection[config.key] = config.values[index];
+        refreshWheelValues();
+        if (scroll) byId(config.id).scrollTo({
+          top: config.values.indexOf(customSelection[config.key]) * 44, behavior: 'instant'
+        });
+        updateCustomTime();
+      }
+      wheelConfigs.forEach((config) => {
+        const wheel = byId(config.id);
+        wheel.addEventListener('click', (event) => {
+          const option = event.target.closest('.wheel-value');
+          if (!option) return;
+          wheel.focus();
+          selectWheelValue(config, Number(option.dataset.index), true);
+        });
+        let settle;
+        wheel.addEventListener('scroll', () => {
+          if (byId('time-wheels-panel').hidden || !state.otherTime) return;
+          selectWheelValue(config, Math.round(wheel.scrollTop / 44));
+          clearTimeout(settle);
+          settle = setTimeout(() => {
+            if (!state.otherTime || byId('time-wheels-panel').hidden) return;
+            selectWheelValue(config, Math.round(wheel.scrollTop / 44), true);
+          }, 140);
+        }, { passive: true });
+        wheel.addEventListener('keydown', (event) => {
+          const index = config.values.indexOf(customSelection[config.key]);
+          let next;
+          if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = index + 1;
+          else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = index - 1;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = config.values.length - 1;
+          else return;
+          event.preventDefault();
+          selectWheelValue(config, next, true);
+        });
+      });
+      function alignWheels() {
+        refreshWheelValues(true);
+        updateCustomTime();
+      }
+      refreshWheelValues();
+      document.querySelectorAll('.booking-page .time-option[data-time]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const isOther = button.dataset.time === 'other';
+          if (!isOther && !BookingRules.validTime(button.dataset.time)) return;
+          state.otherTime = isOther;
+          byId('custom-time-field').hidden = !isOther;
+          byId('time-wheels-panel').hidden = !isOther;
+          byId('other-time').setAttribute('aria-expanded', String(isOther));
+          state.time = isOther ? BookingRules.formatCustomTime(customTimeValue()) : button.dataset.time;
+          document.querySelectorAll('.booking-page .time-option[data-time]').forEach((option) => {
+            option.setAttribute('aria-pressed', String(option === button));
+          });
+          showError('time-error', '');
+          renderSummary();
+          if (isOther) {
+            alignWheels();
+            byId('hour-wheel').focus();
+          }
+        });
+      });
+      byId('use-custom-time').addEventListener('click', () => {
+        // Read the centered values even if a wheel is still settling.
+        wheelConfigs.forEach((config) => {
+          selectWheelValue(config, Math.round(byId(config.id).scrollTop / 44), true);
+        });
+        customTimeSaved = true;
+        updateCustomTime();
+        byId('time-wheels-panel').hidden = true;
+        byId('other-time').setAttribute('aria-expanded', 'false');
+        byId('other-time').focus();
+      });
+      function changeGuests(delta) {
+        state.guests = BookingRules.clampGuests(state.guests + delta);
+        showError('guest-error', '');
+        renderGuests();
+      }
+      byId('guest-minus').addEventListener('click', () => changeGuests(-1));
+      byId('guest-plus').addEventListener('click', () => changeGuests(1));
+      const fields = [
+        { id: 'guest-name', error: 'name-error', message: 'Please enter your name.' },
+        { id: 'guest-email', error: 'email-error', message: 'Please enter a valid email address.' },
+        { id: 'guest-phone', error: 'phone-error', message: 'Please enter your WhatsApp or phone number.' }
+      ];
+      function validateField(field) {
+        const input = byId(field.id);
+        const valid = input.value.trim().length > 0 && input.validity.valid;
+        input.setAttribute('aria-invalid', String(!valid));
+        showError(field.error, valid ? '' : field.message);
+        return valid;
+      }
+      fields.forEach((field) => byId(field.id).addEventListener('input', () => {
+        if (byId(field.id).getAttribute('aria-invalid') === 'true') validateField(field);
+      }));
+      let continuingFromReview = false;
+      const fullDateLabel = (key) => new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      }).format(BookingRules.parseDate(key));
+      // Contact details have one source: the existing form controls.
+      Object.defineProperty(state, 'details', {
+        get() {
+          return {
+            name: byId('guest-name').value.trim(),
+            email: byId('guest-email').value.trim(),
+            phone: byId('guest-phone').value.trim(),
+            country: byId('guest-country').value.trim(),
+            notes: byId('guest-notes').value.trim()
+          };
+        }
+      });
+      function buildReservationMessage(booking) {
+        const details = booking.details;
+        const lines = [
+          'Hi Bali Jewelry Masterclass,', '',
+          "I'd like to request a workshop reservation.", '',
+          'Workshop: Silver Jewelry Workshop',
+          'Date: ' + fullDateLabel(booking.date),
+          'Time: ' + booking.time + ' (Bali time)',
+          'Guests: ' + booking.guests, '',
+          'Name: ' + details.name,
+          'Email: ' + details.email,
+          'WhatsApp / Phone: ' + details.phone
+        ];
+        if (details.country) lines.push('Country: ' + details.country);
+        if (details.notes) lines.push('', 'Additional request:', details.notes);
+        lines.push('', 'I understand that my reservation is subject to availability and confirmation by BJM.', '', 'Thank you.');
+        return lines.join('\n');
+      }
+      function prepareSendLinks() {
+        const message = buildReservationMessage(state);
+        byId('send-whatsapp').href = 'https://wa.me/628976843534?text=' + encodeURIComponent(message);
+        const subject = 'Workshop Reservation Request — ' + fullDateLabel(state.date) + ' — ' + state.details.name;
+        byId('send-email').href = 'mailto:balijewelrymasterclass@gmail.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(message);
+      }
+      byId('back-to-review').addEventListener('click', () => {
+        byId('booking-send').hidden = true;
+        renderReview();
+        byId('booking-review').hidden = false;
+        byId('review-title').focus();
+      });
+      function showThankYou() {
+        // Keep default link navigation: only prepare the message and update this page.
+        prepareSendLinks();
+        byId('thank-you-date').textContent = fullDateLabel(state.date);
+        byId('thank-you-time').textContent = state.time + ' (Bali time)';
+        byId('thank-you-guests').textContent = state.guests;
+        byId('booking-send').hidden = true;
+        byId('booking-thank-you').hidden = false;
+        byId('thank-you-title').focus();
+      }
+      byId('send-whatsapp').addEventListener('click', showThankYou);
+      byId('send-email').addEventListener('click', showThankYou);
+      byId('thank-you-back').addEventListener('click', () => {
+        byId('booking-thank-you').hidden = true;
+        renderReview();
+        byId('booking-review').hidden = false;
+        byId('review-title').focus();
+      });
+      function renderReview() {
+        const details = state.details;
+        // Selection state and existing form controls remain the only data sources.
+        byId('review-date').textContent = fullDateLabel(state.date);
+        byId('review-time').textContent = state.time + ' (Bali time)';
+        byId('review-guests').textContent = state.guests + (state.guests === 1 ? ' person' : ' people');
+        byId('review-name').textContent = details.name;
+        byId('review-email').textContent = details.email;
+        byId('review-phone').textContent = details.phone;
+        const country = details.country;
+        byId('review-country').textContent = country;
+        byId('review-country-row').hidden = !country;
+        const notes = details.notes;
+        byId('review-notes').textContent = notes;
+        byId('review-additional').hidden = !notes;
+      }
+      byId('edit-request').addEventListener('click', () => {
+        byId('booking-review').hidden = true;
+        form.hidden = false;
+        byId('review-request').focus();
+      });
+      byId('send-request').addEventListener('click', () => {
+        if (byId('booking-review').hidden) return;
+        continuingFromReview = true;
+        try { form.requestSubmit(); }
+        finally { continuingFromReview = false; }
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let firstInvalid = null;
+        const dateValid = BookingRules.canSelectDate(state.date);
+        showError('date-error', dateValid ? '' : 'Please choose a date from tomorrow through 12 calendar months from today.');
+        if (!dateValid) firstInvalid = days.querySelector('button:not(:disabled)') || byId('next-month');
+        const timeValid = state.otherTime
+          ? BookingRules.validCustomTime(customTimeValue())
+          : BookingRules.validTime(state.time);
+        showError('time-error', timeValid ? '' : (state.otherTime ? 'Please choose a workshop start time between 10:00 AM and 7:00 PM.' : 'Please choose your preferred workshop time.'));
+        if (state.otherTime && timeValid) state.time = BookingRules.formatCustomTime(customTimeValue());
+        if (!timeValid && !firstInvalid) firstInvalid = state.otherTime ? byId('other-time') : document.querySelector('.booking-page .time-option');
+        const guestsValid = BookingRules.validGuests(state.guests);
+        showError('guest-error', guestsValid ? '' : 'Please choose between 1 and 20 guests.');
+        if (!guestsValid && !firstInvalid) firstInvalid = byId('guest-plus');
+        fields.forEach((field) => {
+          if (!validateField(field) && !firstInvalid) firstInvalid = byId(field.id);
+        });
+        if (firstInvalid) {
+          byId('booking-review').hidden = true;
+          form.hidden = false;
+          showError('form-error', 'Please complete the highlighted details before continuing.');
+          firstInvalid.focus();
+          return;
+        }
+        showError('form-error', '');
+        if (!continuingFromReview) {
+          renderReview();
+          form.hidden = true;
+          byId('booking-review').hidden = false;
+          byId('review-title').focus();
+          return;
+        }
+        // Prepare communication links only; the guest sends using their own app.
+        prepareSendLinks();
+        form.hidden = true;
+        byId('booking-review').hidden = true;
+        byId('booking-send').hidden = false;
+        byId('send-title').focus();
+      });
+      renderCalendar();
+      renderGuests();
+    })();
+  </script>
+  <script src="language-selector.js" defer></script>
+  <script src="email-chooser.js?v=1" defer></script>
+  <script src="header-dropdowns.js?v=1" defer></script>
+  <script src="communication-hub.js?v=1" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+/* Blog title links and article return navigation only. */
+.articles-list .article-title-link {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+.articles-list .article-title-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.articles-list .article-title-link:focus-visible,
+.silver-article-page .article-back-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.silver-article-page .article-back-navigation {
+  margin-top: 24px;
+}
+.silver-article-page .article-back-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  padding-block: 10px;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

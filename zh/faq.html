@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>常见问题 | Bali Jewelry Masterclass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFFFFF;
+      --warm-white: #FFFFFF;
+      --sand: #FFFFFF;
+      --terracotta: #000000;
+      --terracotta-dark: rgba(0,0,0,.78);
+      --gold: #000000;
+      --ink: #000000;
+      --muted: rgba(0,0,0,.55);
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; width: 100%; z-index: 20; color: #FFFFFF; background: #000000; }
+    nav { width: min(1180px, 90%); margin: auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding-top: 35px; }
+    .brand { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 23px; letter-spacing: -.5px; position: relative; left: -40px; }
+    .brand img { width: 300px; height: auto; display: block; }
+    @media (min-width: 851px) {
+      header > nav { width: min(1500px, 90%); }
+      header .brand { left: -35px; }
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (min-width: 851px) { .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; } }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: #FFFFFF; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+
+    .section-label { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; font-weight: 600; color: var(--terracotta); margin-bottom: 16px; }
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    .footer-tagline { max-width: 260px; margin: 0 0 14px; color: var(--sand); font-size: 15px; line-height: 1.8; letter-spacing: 3px; }
+    .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    .footer-location-note { margin-top: 14px; }
+    .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    footer h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+
+    @media (min-width: 651px) { .footer-tagline { max-width: none; white-space: nowrap; } }
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--ink); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+      .closing-faq { margin-top: 34px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (max-width: 650px) {
+      .brand { left: 1vw; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer > .container { width: 88%; }
+      .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (min-width: 851px) {
+      .footer-location-map { height: 175px; }
+    }
+
+    .gallery-page {
+      padding: 56px 0 72px;
+      background: var(--cream);
+      color: var(--ink);
+    }
+    .gallery-page > .container { width: min(1500px, 90%); }
+    .gallery-page .section-label { margin-bottom: 14px; }
+    .gallery-page h1 {
+      color: var(--ink);
+      font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+      font-size: clamp(36px, 4.2vw, 48px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+    .gallery-page-intro { max-width: 650px; }
+    .gallery-page-intro > p:last-child {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+      gap: 26px;
+      margin-top: 34px;
+    }
+    .gallery-item { min-width: 0; margin: 0; }
+    .gallery-item img { width: 100%; height: auto; display: block; }
+    @media (min-width: 851px) {
+      .gallery-grid { align-items: stretch; }
+      .gallery-item { aspect-ratio: 4 / 3; }
+      .gallery-item:nth-child(n + 4) { aspect-ratio: 3 / 2; }
+      .gallery-item img { height: 100%; object-fit: cover; }
+    }
+    .gallery-instagram { margin-top: 30px; margin-bottom: 0; }
+    .gallery-instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 5px;
+      color: var(--terracotta);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .gallery-instagram-link:hover { color: var(--terracotta-dark); }
+    .gallery-instagram-link svg { width: 18px; height: 18px; flex: 0 0 18px; }
+    @media (max-width: 850px) {
+      .gallery-page { padding-block: 52px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    }
+    @media (max-width: 650px) {
+      .gallery-page { padding-block: 44px 56px; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+      .gallery-instagram-link { gap: 10px; font-size: 14px; }
+    }
+      /* Utility link below the existing footer divider. */
+    footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+    .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+    .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+  </style>
+  <link rel="stylesheet" href="/header-layout.css?v=1">
+  <link rel="stylesheet" href="/footer-layout.css?v=1">
+  <link rel="stylesheet" href="/site-chrome.css?v=13">
+  <link rel="stylesheet" href="/communication-hub.css?v=1">
+  <style>
+    /* Dedicated FAQ content; approved shared site chrome is unchanged. */
+    .faq-page { background: var(--cream); color: var(--ink); padding: 40px 0; }
+    .faq-page .faq-canvas { width: min(1240px, 90%); }
+    .faq-page h1, .faq-page h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; }
+    .faq-page .faq-intro { margin-bottom: 32px; }
+    .faq-page .faq-eyebrow { color: #000000; letter-spacing: 2.5px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+    .faq-page h1 { font-size: clamp(36px, 4.5vw, 58px); line-height: 1.14; margin-bottom: 12px; }
+    .faq-page .faq-intro > p:last-child { color: rgba(0,0,0,.72); }
+    .faq-page .faq-category { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 2fr); gap: 36px; margin-top: 28px; }
+    .faq-page .faq-category > h2 { font: 600 13px/1.6 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; letter-spacing: 1.5px; padding-top: 17px; }
+    .faq-page .faq-category > h2 span { color: #000000; margin-right: 10px; }
+    .faq-page .faq-item { border-top: 1px solid rgba(0,0,0,.18); }
+    .faq-page .faq-item:last-child { border-bottom: 1px solid rgba(0,0,0,.18); }
+    .faq-page .faq-toggle { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; padding: 16px 0; border: 0; background: transparent; text-align: left; font: 500 17px/1.5 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; color: var(--ink); cursor: pointer; }
+    .faq-page .faq-indicator { flex-shrink: 0; color: #000000; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; transition: transform 160ms ease; }
+    .faq-page .faq-toggle[aria-expanded="true"] .faq-indicator { transform: rotate(45deg); }
+    .faq-page .faq-answer { padding: 0 28px 18px 0; color: rgba(0,0,0,.72); font-size: 16px; line-height: 1.65; }
+    .faq-page .faq-answer p + p { margin-top: 10px; }
+    .faq-page .faq-answer[hidden] { display: none; }
+    .faq-page .faq-contact { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.18); }
+    .faq-page .faq-contact h2 { font-size: 30px; line-height: 1.2; margin-bottom: 8px; }
+    .faq-page .faq-contact p { color: rgba(0,0,0,.72); }
+    .faq-page .faq-chat { display: inline-flex; gap: 12px; align-items: center; width: fit-content; padding: 13px 22px; border-radius: 14px; background: #000000; color: var(--cream); font-weight: 600; flex-shrink: 0; }
+    .faq-page .faq-chat:hover { background: var(--terracotta-dark); }
+    .faq-page .faq-toggle:focus-visible, .faq-page .faq-chat:focus-visible { outline: 2px solid #000000; outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) { .faq-page .faq-indicator { transition: none; } }
+    @media (max-width: 850px) {
+      .faq-page .faq-category { grid-template-columns: 1fr; gap: 10px; }
+      .faq-page .faq-category > h2 { padding-top: 0; }
+    }
+    @media (max-width: 600px) {
+      .faq-page { padding: 30px 0; }
+      .faq-page .faq-canvas { width: 88%; }
+      .faq-page .faq-intro { margin-bottom: 26px; }
+      .faq-page .faq-toggle { font-size: 16px; gap: 16px; }
+      .faq-page .faq-answer { padding-right: 0; }
+      .faq-page .faq-contact { align-items: flex-start; flex-direction: column; gap: 18px; margin-top: 28px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/language-selector.css">
+  <link rel="stylesheet" href="/email-chooser.css?v=1">
+<meta name="description" content="预约前了解银饰制作课程、价格、材料额度、付款、改期、交通、年龄要求与安全指导等常见问题。">
+<link rel="canonical" href="https://balijewelrymasterclass.com/zh/faq.html">
+<meta property="og:url" content="https://balijewelrymasterclass.com/zh/faq.html">
+<meta property="og:title" content="常见问题 | Bali Jewelry Masterclass">
+<meta property="og:description" content="预约前了解银饰制作课程、价格、材料额度、付款、改期、交通、年龄要求与安全指导等常见问题。">
+<link rel="alternate" hreflang="en" href="https://balijewelrymasterclass.com/faq.html">
+<link rel="alternate" hreflang="fr" href="https://balijewelrymasterclass.com/fr/faq.html">
+<link rel="alternate" hreflang="de" href="https://balijewelrymasterclass.com/de/faq.html">
+<link rel="alternate" hreflang="zh-CN" href="https://balijewelrymasterclass.com/zh/faq.html">
+<link rel="alternate" hreflang="x-default" href="https://balijewelrymasterclass.com/faq.html">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/zh/index.html" class="brand" aria-label="Bali Jewelry Masterclass 首页">
+        <img src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">菜单</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">制作体验</button><div class="nav-dropdown" id="workshop-dropdown"><a href="/zh/index.html#creative-process">创作过程</a><a href="/zh/skills-techniques.html#pure-silver">工艺与技巧</a><a href="/zh/index.html#schedule">课程时间</a><a href="/zh/pricing.html">价格</a></div></div>
+        <a href="/zh/gallery.html">相册</a>
+        <a href="/zh/blog.html">博客</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">关于我们</button><div class="nav-dropdown" id="about-dropdown"><a href="/zh/about.html">关于 BJM</a><a href="/zh/index.html#location">工作室位置</a><a href="/zh/index.html#contact">联系我们</a><a href="/zh/faq.html">常见问题</a></div></div>
+        <div class="language-selector" role="group" aria-label="网站语言">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="语言：简体中文" title="简体中文"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">语言</span>
+          <div class="language-options" id="language-options" hidden>
+            <button type="button" class="language-option" data-language="en" lang="en" aria-label="英语" title="英语"><img class="language-flag" src="/language-flag-gb.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="fr" lang="fr" disabled title="法语" aria-label="法语"><img class="language-flag" src="/language-flag-fr.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="de" lang="de" disabled title="德语" aria-label="德语"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"></button>
+            <span class="language-option is-active" aria-current="true" data-language="zh-CN" lang="zh-CN" title="简体中文" aria-label="简体中文"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"></span>
+            <button class="language-option" type="button" data-language="ja" lang="ja" disabled title="日语 — 即将推出" aria-label="日语 — 即将推出"><img class="language-flag" src="/language-flag-jp.svg" alt="" width="22" height="15"></button>
+          </div>
+        </div>
+        <a href="/zh/booking.html" class="nav-cta">预约</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="faq-page">
+    <div class="container faq-canvas">
+      <section class="faq-intro" aria-labelledby="faq-title">
+        <p class="faq-eyebrow">常见问题</p>
+        <h1 id="faq-title">常见问题。</h1>
+        <p>参加 Bali Jewelry Masterclass 制作体验前，你需要了解的信息。</p>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-01">
+        <h2 id="faq-category-01"><span>01</span> 制作体验</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-1" type="button" aria-expanded="true" aria-controls="faq-answer-1"><span>适合新手参加吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-1" aria-labelledby="faq-question-1">
+              <p>适合。无需首饰制作经验，导师会逐步指导你完成制作。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-2" type="button" aria-expanded="true" aria-controls="faq-answer-2"><span>课程需要多长时间？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-2" aria-labelledby="faq-question-2">
+              <p>标准课程时长为 2 小时，某些设计或定制需求可能需要额外时间。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-3" type="button" aria-expanded="true" aria-controls="faq-answer-3"><span>课程中会制作什么？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-3" aria-labelledby="faq-question-3">
+              <p>我们的主要体验是亲手制作银饰，其中戒指是主要且最受欢迎的选择。可选设计和其他方案可以与团队讨论。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-4" type="button" aria-expanded="true" aria-controls="faq-answer-4"><span>首饰是由我自己制作吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-4" aria-labelledby="faq-question-4">
+              <p>是的，这是动手制作课程。你会在导师指导下参与首饰制作过程。出于安全或技术原因，导师可能在必要时协助或接手某些步骤。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-5" type="button" aria-expanded="true" aria-controls="faq-answer-5"><span>可以选择自己的设计吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-5" aria-labelledby="faq-question-5">
+              <p>可以。你可以从 BJM 样品或设计目录中选择，也可能可以尝试自己的想法，具体取决于复杂程度、材料需求和可用课程时间。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-6" type="button" aria-expanded="true" aria-controls="faq-answer-6"><span>成品会与样品完全一样吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-6" aria-labelledby="faq-question-6">
+              <p>不一定。每件作品均为手工制作，因此形状、尺寸、纹理、表面处理、细节和整体外观的细微差异是自然结果。样品是设计参考，而非精确复制的生产模板。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-7" type="button" aria-expanded="true" aria-controls="faq-answer-7"><span>当天可以把首饰带回家吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-7" aria-labelledby="faq-question-7">
+              <p>可以，课程完成当天，你就能带走成品首饰。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-02">
+        <h2 id="faq-category-02"><span>02</span> 价格与材料</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-8" type="button" aria-expanded="true" aria-controls="faq-answer-8"><span>课程价格包含什么？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-8" aria-labelledby="faq-question-8">
+              <p>标准课程包含导师指导、动手制作体验、每位客人最多 6 克银材，以及一件可带回家的成品首饰。可选加项、额外银材、特殊定制和额外课程时间可能另行收费。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-9" type="button" aria-expanded="true" aria-controls="faq-answer-9"><span>包含多少银材？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-9" aria-labelledby="faq-question-9">
+              <p>标准课程价格包含每位客人最多 6 克银材。</p>
+              <p>6 克是材料额度，并不保证所有设计或戒指尺寸都能用 6 克完成。实际用量取决于设计、尺寸、戒指大小和制作过程。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-10" type="button" aria-expanded="true" aria-controls="faq-answer-10"><span>设计需要超过 6 克银材怎么办？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-10" aria-labelledby="faq-question-10">
+              <p>额外银材按每克 IDR 95,000 收费。</p>
+              <p>例如，若预计所选设计和尺寸需要 9 克银材，包含的额度为 6 克，额外 3 克费用为 IDR 300,000。</p>
+              <p>预计材料用量和额外费用会在课程开始前向你说明。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-11" type="button" aria-expanded="true" aria-controls="faq-answer-11"><span>如果首饰用不到 6 克怎么办？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-11" aria-labelledby="faq-question-11">
+              <p>所含 6 克是材料额度，并非客人购买的银材数量。未使用的额度不可退款、兑换，也不会作为未使用银材另行提供。</p>
+              <p>手工制作过程中，也可能有部分材料损耗或残留。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-12" type="button" aria-expanded="true" aria-controls="faq-answer-12"><span>可以添加宝石或其他定制细节吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-12" aria-labelledby="faq-question-12">
+              <p>视设计和供应情况，可能可以加入宝石、定制加工或其他加项，并可能产生额外费用。</p>
+              <p>任何额外费用都会在开始前说明。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-13" type="button" aria-expanded="true" aria-controls="faq-answer-13"><span>会突然加收额外费用吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-13" aria-labelledby="faq-question-13">
+              <p>未经你事先同意，不会加收材料、加项或定制费用。</p>
+              <p>开始前，我们会与你核对所选设计、尺寸、预计材料用量和相关加项。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-14" type="button" aria-expanded="true" aria-controls="faq-answer-14"><span>制作超过 2 小时怎么办？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-14" aria-labelledby="faq-question-14">
+              <p>额外课程时间按每小时 IDR 100,000 收费，以每 30 分钟为单位计算，每额外 30 分钟为 IDR 50,000。</p>
+              <p>若预计所选设计或定制需求需要额外时间，我们会在合理可行的情况下于开始前说明。</p>
+              <p>因我们一方的运营延误产生的额外时间，不向客人收费。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-03">
+        <h2 id="faq-category-03"><span>03</span> 预约与付款</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-15" type="button" aria-expanded="true" aria-controls="faq-answer-15"><span>需要提前预约吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-15" aria-labelledby="faq-question-15">
+              <p>建议提前预约，以便我们准备课程并确认空位。BJM 通常接受至少提前一天的预约。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-16" type="button" aria-expanded="true" aria-controls="faq-answer-16"><span>需要支付订金吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-16" aria-labelledby="faq-question-16">
+              <p>常规预约可能无需订金即可确认。对于较大团体、特殊安排或某些预约，BJM 可能要求订金或预付款以保留预约。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-17" type="button" aria-expanded="true" aria-controls="faq-answer-17"><span>什么时候付款？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-17" aria-labelledby="faq-question-17">
+              <p>常规预约在课程结束时付款，以便将事先同意的额外材料、加项或额外课程时间计入最终金额。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-18" type="button" aria-expanded="true" aria-controls="faq-answer-18"><span>预约后课程价格变化，以哪个价格为准？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-18" aria-labelledby="faq-question-18">
+              <p>该预约将按确认预约时确定的课程价格收费。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-04">
+        <h2 id="faq-category-04"><span>04</span> 取消、改期与迟到</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-19" type="button" aria-expanded="true" aria-controls="faq-answer-19"><span>可以取消预约吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-19" aria-labelledby="faq-question-19">
+              <p>可以。如需取消，请至少在预约课程开始前 12 小时通知我们。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-20" type="button" aria-expanded="true" aria-controls="faq-answer-20"><span>可以更改预约时间吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-20" aria-labelledby="faq-question-20">
+              <p>可以，预约最多可更改 3 次，须视空位情况而定。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-21" type="button" aria-expanded="true" aria-controls="faq-answer-21"><span>迟到会怎样？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-21" aria-labelledby="faq-question-21">
+              <p>我们会在条件允许时尽量安排。</p>
+              <p>若无法在下一场已满员的课程前完成你的课程，预约可能需要改期。</p>
+              <p>若之后的场次有空位，我们可能为你安排该场次，须视实际空位情况而定。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-22" type="button" aria-expanded="true" aria-controls="faq-answer-22"><span>如果没有到场会怎样？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-22" aria-labelledby="faq-question-22">
+              <p>如未通知我们便缺席已确认的预约，今后的预约可能需要支付订金或预付款。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-23" type="button" aria-expanded="true" aria-controls="faq-answer-23"><span>如果 BJM 必须取消我的课程会怎样？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-23" aria-labelledby="faq-question-23">
+              <p>我们会提供其他日期或时间。若你已付款，但无法或不希望改期，已取消课程的付款将全额退还。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-05">
+        <h2 id="faq-category-05"><span>05</span> 位置与交通</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-24" type="button" aria-expanded="true" aria-controls="faq-answer-24"><span>Bali Jewelry Masterclass 在哪里？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-24" aria-labelledby="faq-question-24">
+              <p>Bali Jewelry Masterclass 位于 Dalung, North Kuta, Bali, Indonesia。</p>
+              <p>我们是巴厘岛本地社区中的家庭工作室，而非度假村或大型商业首饰工作室。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-25" type="button" aria-expanded="true" aria-controls="faq-answer-25"><span>费用包含交通吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-25" aria-labelledby="faq-question-25">
+              <p>不包含，交通不计入课程价格。</p>
+              <p>客人可自行安排前往家庭工作室的交通。按需可能提供接送选项，请联系 BJM 确认是否可安排及价格。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-06">
+        <h2 id="faq-category-06"><span>06</span> 团体</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-26" type="button" aria-expanded="true" aria-controls="faq-answer-26"><span>一场课程可接待多少人？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-26" aria-labelledby="faq-question-26">
+              <p>Bali Jewelry Masterclass 每场最多可接待 20 位客人。</p>
+              <p>人数较多或有特殊团体安排时，请提前联系，以便我们确认空位并做好准备。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-07">
+        <h2 id="faq-category-07"><span>07</span> 年龄与安全</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-27" type="button" aria-expanded="true" aria-controls="faq-answer-27"><span>参加课程的最低年龄是多少？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-27" aria-labelledby="faq-question-27">
+              <p>最低参加年龄为 12 岁。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-28" type="button" aria-expanded="true" aria-controls="faq-answer-28"><span>未满 18 岁需要家长或监护人陪同吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-28" aria-labelledby="faq-question-28">
+              <p>需要。12–17 岁客人须由家长或负责的监护人全程陪同。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-29" type="button" aria-expanded="true" aria-controls="faq-answer-29"><span>首饰制作安全吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-29" aria-labelledby="faq-question-29">
+              <p>首饰制作涉及工具、高温、明火、机械和其他设备。</p>
+              <p>导师会全程指导，客人必须遵循所有安全指示。出于安全需要，导师可能协助或接手某个步骤。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-08">
+        <h2 id="faq-category-08"><span>08</span> 课程结束后</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-30" type="button" aria-expanded="true" aria-controls="faq-answer-30"><span>之后可以维修或调整尺寸吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-30" aria-labelledby="faq-question-30">
+              <p>可以，具体取决于首饰和所需工作。</p>
+              <p>成品首饰带回家后，申请维修、调整尺寸、重新处理表面或其他修改，可能产生额外维修或服务费用。</p>
+              <p>适用费用将在任何维修或修改开始前说明。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-09">
+        <h2 id="faq-category-09"><span>09</span> 照片与记录</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-31" type="button" aria-expanded="true" aria-controls="faq-answer-31"><span>课程中会拍照或录视频吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-31" aria-labelledby="faq-question-31">
+              <p>课程中可能会拍摄照片或视频，作为客人体验和记录的一部分。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-32" type="button" aria-expanded="true" aria-controls="faq-answer-32"><span>BJM 可以将我的照片用于社交媒体或营销吗？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-32" aria-labelledby="faq-question-32">
+              <p>仅在你同意的情况下。</p>
+              <p>是否允许将可识别你身份的照片或视频用于 BJM 网站、社交媒体或宣传材料，由你自愿决定。不同意营销使用，不影响课程体验。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-contact" aria-labelledby="faq-contact-title">
+        <div><h2 id="faq-contact-title">还有其他问题？</h2><p>我们很乐意在你预约前解答。</p></div>
+        <a class="faq-chat" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">与我们聊聊 <span aria-hidden="true">→</span></a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="/zh/index.html#home" aria-label="Bali Jewelry Masterclass 首页"><img class="footer-logo" src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">你在巴厘岛的银饰创作空间</p>
+          <div class="footer-social-links" aria-label="社交媒体">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>工作室位置</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Google 地图上的 Bali Jewelry Masterclass" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>联系我们</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="给 Bali Jewelry Masterclass 发邮件" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">电子邮件</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="通过 WhatsApp 联系 Bali Jewelry Masterclass"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>导航</h2>
+          <ul>
+            <li><a href="/zh/about.html">关于 BJM</a></li>
+            <li><a href="/zh/index.html#creative-process">创作过程</a></li>
+            <li><a href="/zh/skills-techniques.html">工艺与技巧</a></li>
+            <li><a href="/zh/pricing.html">价格</a></li>
+            <li><a href="/zh/index.html#schedule">课程时间</a></li>
+            <li><a href="/zh/gallery.html">相册</a></li>
+            <li><a href="/zh/faq.html">常见问题</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="/zh/policies.html">条款与政策</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← 返回</span>
+    <button type="button" class="communication-hub-toggle" aria-label="联系方式" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> 有什么可以帮您？ </h2>
+      <p class="communication-hub-intro"> 选择最方便的方式联系我们。 </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> 给我们发条消息 </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> 电子邮件 </span><span class="communication-hub-detail"> 更喜欢通过邮件联系？ </span></span></button>
+        <a class="communication-hub-option" href="/zh/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> 预约体验 </span><span class="communication-hub-detail"> 选择您的工坊体验安排 </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.faq-page .faq-toggle').forEach((button) => {
+      const answer = document.getElementById(button.getAttribute('aria-controls'));
+      button.setAttribute('aria-expanded', 'false');
+      answer.hidden = true;
+      button.addEventListener('click', () => {
+        const opening = button.getAttribute('aria-expanded') !== 'true';
+        button.setAttribute('aria-expanded', String(opening));
+        answer.hidden = !opening;
+        if (opening && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && answer.animate) {
+          answer.animate([{ opacity: 0, transform: 'translateY(-3px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 160, easing: 'ease-out' });
+        }
+      });
+    });
+  </script>
+  <script src="/language-selector.js" defer></script>
+  <script>/* Shared footer email-provider chooser. */
+(() => {
+  const triggers = document.querySelectorAll('footer button[data-email-chooser]');
+  if (!triggers.length) return;
+
+  const recipient = 'balijewelrymasterclass@gmail.com';
+  const encodedRecipient = encodeURIComponent(recipient);
+  const providers = [
+    ['Gmail', `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedRecipient}`],
+    ['Outlook', `https://outlook.live.com/mail/0/deeplink/compose?to=${encodedRecipient}`],
+    ['Yahoo Mail', `https://compose.mail.yahoo.com/?to=${encodedRecipient}`],
+    ['默认邮件应用', `mailto:${recipient}`]
+  ];
+
+  const dialog = document.createElement('dialog');
+  dialog.id = 'email-provider-chooser';
+  dialog.className = 'email-chooser';
+  dialog.setAttribute('aria-labelledby', 'email-chooser-title');
+  dialog.setAttribute('aria-describedby', 'email-chooser-description');
+  dialog.innerHTML = `
+    <button type="button" class="email-chooser-close" aria-label="关闭邮件选项" autofocus>&times;</button>
+    <h2 id="email-chooser-title">给我们发邮件</h2>
+    <p id="email-chooser-description">请选择你使用的邮件服务。</p>
+    <div class="email-chooser-options"></div>`;
+  const options = dialog.querySelector('.email-chooser-options');
+  for (const [name, url] of providers) {
+    const link = document.createElement('a');
+    const icon = document.createElement('img');
+    icon.src = {
+      'Gmail': '/email-provider-gmail.svg',
+      'Outlook': '/email-provider-outlook.svg',
+      'Yahoo Mail': '/email-provider-yahoo.svg',
+      '默认邮件应用': '/email-provider-other.svg'
+    }[name];
+    icon.className = 'email-provider-icon';
+    icon.alt = '';
+    icon.width = 22;
+    icon.height = 22;
+    const label = document.createElement('span');
+    label.textContent = name;
+    link.append(icon, label);
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    options.append(link);
+  }
+  document.body.append(dialog);
+
+  let opener;
+  for (const trigger of triggers) {
+    trigger.addEventListener('click', () => {
+      opener = trigger;
+      dialog.showModal();
+    });
+  }
+  dialog.querySelector('.email-chooser-close').addEventListener('click', () => dialog.close());
+  let startedOutside = false;
+  const outside = event => {
+    const bounds = dialog.getBoundingClientRect();
+    return event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom);
+  };
+  dialog.addEventListener('pointerdown', event => { startedOutside = outside(event); });
+  dialog.addEventListener('click', event => {
+    if (startedOutside && outside(event)) dialog.close();
+    startedOutside = false;
+  });
+  // Native modal dialogs handle Escape, focus containment, and inert background content.
+  dialog.addEventListener('close', () => opener?.focus());
+})();
+</script>
+  <script src="/header-dropdowns.js?v=1" defer></script>
+  <script src="/communication-hub.js?v=1" defer></script>
+</body>
+</html>
+

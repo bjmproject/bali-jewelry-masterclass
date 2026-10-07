@@ -1,0 +1,187 @@
+{
+    "schemaVersion":  1,
+    "languages":  {
+                      "en":  "",
+                      "fr":  "fr",
+                      "de":  "de",
+                      "zh-CN":  "zh",
+                      "ja":  "ja"
+                  },
+    "pages":  {
+                  "about.html":  {
+                                     "en":  "/about.html",
+                                     "zh-CN":  "/zh/about.html",
+                                     "ja":  "/ja/about.html",
+                                     "fr":  "/fr/about.html",
+                                     "de":  "/de/about.html"
+                                 },
+                  "blog.html":  {
+                                    "en":  "/blog.html",
+                                    "zh-CN":  "/zh/blog.html",
+                                    "ja":  "/ja/blog.html",
+                                    "fr":  "/fr/blog.html",
+                                    "de":  "/de/blog.html"
+                                },
+                  "booking.html":  {
+                                       "en":  "/booking.html",
+                                       "zh-CN":  "/zh/booking.html",
+                                       "ja":  "/ja/booking.html",
+                                       "fr":  "/fr/booking.html",
+                                       "de":  "/de/booking.html"
+                                   },
+                  "celuk-silver-village-or-home-studio-bali.html":  {
+                                                                        "en":  "/celuk-silver-village-or-home-studio-bali.html",
+                                                                        "zh-CN":  "/zh/celuk-silver-village-or-home-studio-bali.html",
+                                                                        "ja":  "/ja/celuk-silver-village-or-home-studio-bali.html",
+                                                                        "fr":  "/fr/celuk-silver-village-or-home-studio-bali.html",
+                                                                        "de":  "/de/celuk-silver-village-or-home-studio-bali.html"
+                                                                    },
+                  "faq.html":  {
+                                   "en":  "/faq.html",
+                                   "zh-CN":  "/zh/faq.html",
+                                   "ja":  "/ja/faq.html",
+                                   "fr":  "/fr/faq.html",
+                                   "de":  "/de/faq.html"
+                               },
+                  "gallery.html":  {
+                                       "en":  "/gallery.html",
+                                       "zh-CN":  "/zh/gallery.html",
+                                       "ja":  "/ja/gallery.html",
+                                       "fr":  "/fr/gallery.html",
+                                       "de":  "/de/gallery.html"
+                                   },
+                  "how-a-silver-ring-is-made.html":  {
+                                                         "en":  "/how-a-silver-ring-is-made.html",
+                                                         "zh-CN":  "/zh/how-a-silver-ring-is-made.html",
+                                                         "ja":  "/ja/how-a-silver-ring-is-made.html",
+                                                         "fr":  "/fr/how-a-silver-ring-is-made.html",
+                                                         "de":  "/de/how-a-silver-ring-is-made.html"
+                                                     },
+                  "how-much-does-silver-jewelry-class-bali-cost.html":  {
+                                                                            "en":  "/how-much-does-silver-jewelry-class-bali-cost.html",
+                                                                            "zh-CN":  "/zh/how-much-does-silver-jewelry-class-bali-cost.html",
+                                                                            "ja":  "/ja/how-much-does-silver-jewelry-class-bali-cost.html",
+                                                                            "fr":  "/fr/how-much-does-silver-jewelry-class-bali-cost.html",
+                                                                            "de":  "/de/how-much-does-silver-jewelry-class-bali-cost.html"
+                                                                        },
+                  "how-much-silver-do-you-need-to-make-a-ring.html":  {
+                                                                          "en":  "/how-much-silver-do-you-need-to-make-a-ring.html",
+                                                                          "zh-CN":  "/zh/how-much-silver-do-you-need-to-make-a-ring.html",
+                                                                          "ja":  "/ja/how-much-silver-do-you-need-to-make-a-ring.html",
+                                                                          "fr":  "/fr/how-much-silver-do-you-need-to-make-a-ring.html",
+                                                                          "de":  "/de/how-much-silver-do-you-need-to-make-a-ring.html"
+                                                                      },
+                  "how-to-choose-ring-design-jewelry-workshop.html":  {
+                                                                          "en":  "/how-to-choose-ring-design-jewelry-workshop.html",
+                                                                          "zh-CN":  "/zh/how-to-choose-ring-design-jewelry-workshop.html",
+                                                                          "ja":  "/ja/how-to-choose-ring-design-jewelry-workshop.html",
+                                                                          "fr":  "/fr/how-to-choose-ring-design-jewelry-workshop.html",
+                                                                          "de":  "/de/how-to-choose-ring-design-jewelry-workshop.html"
+                                                                      },
+                  "how-to-choose-silver-jewelry-class-bali.html":  {
+                                                                       "en":  "/how-to-choose-silver-jewelry-class-bali.html",
+                                                                       "zh-CN":  "/zh/how-to-choose-silver-jewelry-class-bali.html",
+                                                                       "ja":  "/ja/how-to-choose-silver-jewelry-class-bali.html",
+                                                                       "fr":  "/fr/how-to-choose-silver-jewelry-class-bali.html",
+                                                                       "de":  "/de/how-to-choose-silver-jewelry-class-bali.html"
+                                                                   },
+                  "index.html":  {
+                                     "en":  "/",
+                                     "zh-CN":  "/zh/index.html",
+                                     "ja":  "/ja/index.html",
+                                     "fr":  "/fr/index.html",
+                                     "de":  "/de/index.html"
+                                 },
+                  "make-your-own-silver-ring-bali.html":  {
+                                                              "en":  "/make-your-own-silver-ring-bali.html",
+                                                              "zh-CN":  "/zh/make-your-own-silver-ring-bali.html",
+                                                              "ja":  "/ja/make-your-own-silver-ring-bali.html",
+                                                              "fr":  "/fr/make-your-own-silver-ring-bali.html",
+                                                              "de":  "/de/make-your-own-silver-ring-bali.html"
+                                                          },
+                  "making-couple-rings-bali.html":  {
+                                                        "en":  "/making-couple-rings-bali.html",
+                                                        "zh-CN":  "/zh/making-couple-rings-bali.html",
+                                                        "ja":  "/ja/making-couple-rings-bali.html",
+                                                        "fr":  "/fr/making-couple-rings-bali.html",
+                                                        "de":  "/de/making-couple-rings-bali.html"
+                                                    },
+                  "policies.html":  {
+                                        "en":  "/policies.html",
+                                        "zh-CN":  "/zh/policies.html",
+                                        "ja":  "/ja/policies.html",
+                                        "fr":  "/fr/policies.html",
+                                        "de":  "/de/policies.html"
+                                    },
+                  "pricing.html":  {
+                                       "en":  "/pricing.html",
+                                       "zh-CN":  "/zh/pricing.html",
+                                       "ja":  "/ja/pricing.html",
+                                       "fr":  "/fr/pricing.html",
+                                       "de":  "/de/pricing.html"
+                                   },
+                  "pure-silver-vs-sterling-silver.html":  {
+                                                              "en":  "/pure-silver-vs-sterling-silver.html",
+                                                              "zh-CN":  "/zh/pure-silver-vs-sterling-silver.html",
+                                                              "ja":  "/ja/pure-silver-vs-sterling-silver.html",
+                                                              "fr":  "/fr/pure-silver-vs-sterling-silver.html",
+                                                              "de":  "/de/pure-silver-vs-sterling-silver.html"
+                                                          },
+                  "ring-finishes-explained.html":  {
+                                                       "en":  "/ring-finishes-explained.html",
+                                                       "zh-CN":  "/zh/ring-finishes-explained.html",
+                                                       "ja":  "/ja/ring-finishes-explained.html",
+                                                       "fr":  "/fr/ring-finishes-explained.html",
+                                                       "de":  "/de/ring-finishes-explained.html"
+                                                   },
+                  "silver-jewelry-making-techniques.html":  {
+                                                                "en":  "/silver-jewelry-making-techniques.html",
+                                                                "zh-CN":  "/zh/silver-jewelry-making-techniques.html",
+                                                                "ja":  "/ja/silver-jewelry-making-techniques.html",
+                                                                "fr":  "/fr/silver-jewelry-making-techniques.html",
+                                                                "de":  "/de/silver-jewelry-making-techniques.html"
+                                                            },
+                  "silver-jewelry-workshop-bali-for-beginners.html":  {
+                                                                          "en":  "/silver-jewelry-workshop-bali-for-beginners.html",
+                                                                          "zh-CN":  "/zh/silver-jewelry-workshop-bali-for-beginners.html",
+                                                                          "ja":  "/ja/silver-jewelry-workshop-bali-for-beginners.html",
+                                                                          "fr":  "/fr/silver-jewelry-workshop-bali-for-beginners.html",
+                                                                          "de":  "/de/silver-jewelry-workshop-bali-for-beginners.html"
+                                                                      },
+                  "skills-techniques.html":  {
+                                                 "en":  "/skills-techniques.html",
+                                                 "zh-CN":  "/zh/skills-techniques.html",
+                                                 "ja":  "/ja/skills-techniques.html",
+                                                 "fr":  "/fr/skills-techniques.html",
+                                                 "de":  "/de/skills-techniques.html"
+                                             },
+                  "what-can-you-make-silver-jewelry-class-bali.html":  {
+                                                                           "en":  "/what-can-you-make-silver-jewelry-class-bali.html",
+                                                                           "zh-CN":  "/zh/what-can-you-make-silver-jewelry-class-bali.html",
+                                                                           "ja":  "/ja/what-can-you-make-silver-jewelry-class-bali.html",
+                                                                           "fr":  "/fr/what-can-you-make-silver-jewelry-class-bali.html",
+                                                                           "de":  "/de/what-can-you-make-silver-jewelry-class-bali.html"
+                                                                       },
+                  "what-is-pure-silver.html":  {
+                                                   "en":  "/what-is-pure-silver.html",
+                                                   "zh-CN":  "/zh/what-is-pure-silver.html",
+                                                   "fr":  "/fr/what-is-pure-silver.html",
+                                                   "de":  "/de/what-is-pure-silver.html",
+                                                   "ja":  "/ja/what-is-pure-silver.html"
+                                               },
+                  "what-to-expect-silver-jewelry-making-class-bali.html":  {
+                                                                               "en":  "/what-to-expect-silver-jewelry-making-class-bali.html",
+                                                                               "zh-CN":  "/zh/what-to-expect-silver-jewelry-making-class-bali.html",
+                                                                               "ja":  "/ja/what-to-expect-silver-jewelry-making-class-bali.html",
+                                                                               "fr":  "/fr/what-to-expect-silver-jewelry-making-class-bali.html",
+                                                                               "de":  "/de/what-to-expect-silver-jewelry-making-class-bali.html"
+                                                                           },
+                  "what-to-wear-jewelry-making-class-bali.html":  {
+                                                                      "en":  "/what-to-wear-jewelry-making-class-bali.html",
+                                                                      "zh-CN":  "/zh/what-to-wear-jewelry-making-class-bali.html",
+                                                                      "ja":  "/ja/what-to-wear-jewelry-making-class-bali.html",
+                                                                      "fr":  "/fr/what-to-wear-jewelry-making-class-bali.html",
+                                                                      "de":  "/de/what-to-wear-jewelry-making-class-bali.html"
+                                                                  }
+              }
+}

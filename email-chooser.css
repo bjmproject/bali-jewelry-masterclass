@@ -1,0 +1,87 @@
+/* Preserve the existing footer row while replacing navigation with a button. */
+footer button.footer-contact-row[data-email-chooser] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+footer button.footer-contact-row[data-email-chooser] svg { pointer-events: none; }
+footer button.footer-contact-row[data-email-chooser]:hover { opacity: .8; }
+footer button.footer-contact-row[data-email-chooser]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.email-chooser {
+  box-sizing: border-box;
+  width: min(360px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 28px 24px 24px;
+  border: 1px solid rgba(37, 35, 33, .2);
+  border-radius: 4px;
+  background: #FFFFFF;
+  color: #252321;
+  font-family: inherit;
+  text-align: left;
+  overflow: auto;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, .24);
+}
+.email-chooser::backdrop { background: rgba(0, 0, 0, .55); }
+.email-chooser h2 {
+  margin: 0 24px 8px 0;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+.email-chooser p { margin: 0 0 20px; font-size: 14px; line-height: 1.5; }
+.email-chooser-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 26px;
+  cursor: pointer;
+}
+.email-chooser-options { display: grid; gap: 8px; }
+.email-chooser-options a {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(37, 35, 33, .22);
+  border-radius: 3px;
+  color: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.email-chooser-options a:hover, .email-chooser-close:hover { background: rgba(37, 35, 33, .06); }
+.email-chooser a:focus-visible, .email-chooser button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Local provider branding; preserve the existing option row height. */
+.email-chooser-options a { gap: 10px; }
+.email-chooser-options .email-provider-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  object-fit: contain;
+}

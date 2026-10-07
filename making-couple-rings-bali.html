@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>Couple Ring Making in Bali: Create Your Own Silver Rings Together | BJM</title>
+  <meta name="description" content="Make couple rings together in Bali and learn what to expect from a hands-on silver jewelry workshop, from choosing designs to creating two personal pieces.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FFFFFF; --warm-white: #FFFFFF; --sand: #FFFFFF; --ink: #000000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; width: 100%; z-index: 20; color: #FFFFFF; background: #000000; }
+    nav { width: min(1180px, 90%); margin: auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding-top: 35px; }
+    .brand { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 23px; letter-spacing: -.5px; position: relative; left: -40px; }
+    .brand img { width: 300px; height: auto; display: block; }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (min-width: 851px) { .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; } }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: #FFFFFF; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+
+    .articles-page-intro { padding: 68px 0 82px; background: var(--cream); }
+    .articles-page-intro h1 { color: var(--ink); font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: clamp(36px, 4.2vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -1px; }
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    .footer-tagline { max-width: 260px; margin: 0 0 14px; color: var(--sand); font-size: 15px; line-height: 1.8; letter-spacing: 3px; }
+    .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    .footer-location-note { margin-top: 14px; }
+    .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+
+    @media (min-width: 651px) { .footer-tagline { max-width: none; white-space: nowrap; } }
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--ink); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (min-width: 851px) {
+      .footer-location-map { height: 175px; }
+    }
+    @media (max-width: 650px) {
+      .brand { left: 1vw; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer > .container { width: 88%; }
+      .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+      .copyright { flex-direction: column; }
+    }
+      /* Utility link below the existing footer divider. */
+    footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+    .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+    .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+  </style>
+  <link rel="stylesheet" href="header-layout.css?v=1">
+  <link rel="stylesheet" href="footer-layout.css?v=1">
+  <link rel="stylesheet" href="site-chrome.css?v=13">
+  <link rel="stylesheet" href="communication-hub.css?v=1">
+  <style>
+    /* Article content only; shared site chrome is preserved. */
+    .silver-article-page { background: var(--cream); color: var(--ink); padding: 40px 0; }
+    .silver-article-page .silver-article { width: min(780px, 90%); margin-inline: auto; }
+    .silver-article-page .article-eyebrow { color: #000000; font-size: 12px; font-weight: 600; letter-spacing: 2px; margin-bottom: 12px; }
+    .silver-article-page h1, .silver-article-page h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; }
+    .silver-article-page h1 { font-size: clamp(34px, 4vw, 48px); line-height: 1.15; letter-spacing: -.7px; margin-bottom: 22px; }
+    .silver-article-page h1 span { display: inline-block; font-size: .76em; margin-top: 8px; }
+    .silver-article-page h2 { font-size: clamp(26px, 3vw, 32px); line-height: 1.2; margin-bottom: 14px; }
+    .silver-article-page p, .silver-article-page dd { font-size: 17px; line-height: 1.75; color: rgba(0,0,0,.72); overflow-wrap: break-word; }
+    .silver-article-page p + p { margin-top: 12px; }
+    .silver-article-page section { margin-top: 32px; }
+    .silver-article-page p a { color: #000000; text-decoration: underline; text-underline-offset: 3px; }
+    .silver-article-page .silver-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding-block: 20px; margin-block: 20px; border-block: 1px solid rgba(0,0,0,.18); }
+    .silver-article-page .silver-comparison dt { font-weight: 600; margin-bottom: 8px; }
+    .silver-article-page .silver-comparison dt span { display: block; color: #000000; font: 600 34px/1.2 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; margin-bottom: 6px; }
+    .silver-article-page .article-reflection { color: #000000; font: 600 26px/1.4 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; margin-top: 16px; }
+    .silver-article-page .article-closing-line { font-style: italic; font-weight: 500; margin-top: 18px; }
+    .silver-article-page .article-workshop-cta { border-top: 1px solid rgba(0,0,0,.18); padding-top: 24px; }
+    .silver-article-page .article-primary { display: inline-flex; align-items: center; width: fit-content; margin-top: 18px; padding: 12px 20px; border: 0; border-radius: 14px; background: #000000; color: var(--cream); font-weight: 600; }
+    .silver-article-page .article-primary:hover { background: rgba(0,0,0,.78); }
+    .silver-article-page a:focus-visible { outline: 2px solid #000000; outline-offset: 4px; }
+    @media (max-width: 600px) {
+      .silver-article-page { padding: 30px 0; }
+      .silver-article-page .silver-article { width: 88%; }
+      .silver-article-page section { margin-top: 28px; }
+      .silver-article-page .silver-comparison { grid-template-columns: 1fr; gap: 18px; }
+      .silver-article-page p, .silver-article-page dd { font-size: 16px; }
+    }
+  </style>
+  <style>
+    .silver-article-page .article-sources { border-top: 1px solid rgba(0,0,0,.18); padding-top: 20px; }
+    .silver-article-page .article-sources h2 { font-size: 22px; margin-bottom: 12px; }
+    .silver-article-page .article-sources ul { display: grid; gap: 8px; list-style: none; padding: 0; }
+    .silver-article-page .article-sources a { font-size: 14px; line-height: 1.6; }
+  </style>
+  <style>
+    .silver-article-page h3 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 22px; font-weight: 600; line-height: 1.3; margin: 24px 0 12px; }
+    .silver-article-page ul, .silver-article-page ol { margin: 12px 0; padding-left: 24px; color: rgba(0,0,0,.72); font-size: 17px; line-height: 1.75; overflow-wrap: break-word; }
+    .silver-article-page li + li { margin-top: 4px; }
+    @media (max-width: 650px) { .silver-article-page ul, .silver-article-page ol { font-size: 16px; } }
+  </style>
+  <link rel="stylesheet" href="language-selector.css">
+  <link rel="stylesheet" href="email-chooser.css?v=1">
+  <link rel="stylesheet" href="blog-navigation.css?v=1">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="brand" aria-label="Bali Jewelry Masterclass home">
+        <img src="bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">The Workshop</button><div class="nav-dropdown" id="workshop-dropdown"><a href="index.html#creative-process">Creative Process</a><a href="skills-techniques.html#pure-silver">Skills &amp; Techniques</a><a href="index.html#schedule">Schedule</a><a href="pricing.html">Pricing</a></div></div>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">About Us</button><div class="nav-dropdown" id="about-dropdown"><a href="about.html">About BJM</a><a href="index.html#location">Our Location</a><a href="index.html#contact">Contact</a><a href="faq.html">FAQ</a></div></div>
+        <div class="language-selector" role="group" aria-label="Website language">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Language: English" title="English"><img class="language-flag" src="language-flag-gb.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">LANGUAGE</span>
+          <div class="language-options" id="language-options" hidden>
+            <span class="language-option is-active" data-language="en" lang="en" aria-current="true" aria-label="English — current language" title="English — current language"><img class="language-flag" src="language-flag-gb.svg" alt="" width="22" height="15"></span>
+            <button class="language-option" type="button" data-language="fr" lang="fr" disabled title="French — coming soon" aria-label="French — coming soon"><img class="language-flag" src="language-flag-fr.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="de" lang="de" disabled title="German — coming soon" aria-label="German — coming soon"><img class="language-flag" src="language-flag-de.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="zh-CN" lang="zh-CN" disabled title="Chinese — coming soon" aria-label="Chinese — coming soon"><img class="language-flag" src="language-flag-cn.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="ja" lang="ja" disabled title="Japanese — coming soon" aria-label="Japanese — coming soon"><img class="language-flag" src="language-flag-jp.svg" alt="" width="22" height="15"></button>
+          </div>
+        </div>
+        <a href="booking.html" class="nav-cta">Book</a>
+      </div>
+    </nav>
+  </header>
+  <main class="silver-article-page">
+    <article class="silver-article" aria-labelledby="article-title">
+      <div class="article-opening">
+        <p class="article-eyebrow">JEWELRY MAKING IN BALI</p>
+        <h1 id="article-title">Making Couple Rings in Bali:<br><span>A Meaningful Experience to Create Together</span></h1>
+        <p>There are plenty of things to do together in Bali.</p>
+        <p>You can go somewhere for dinner, spend the day at the beach, watch the sunset, or explore somewhere new.</p>
+        <p>Making something together is a little different.</p>
+        <p>Instead of taking home something you found in a shop, you spend a few hours deciding what to make, working with the material, learning unfamiliar tools, and watching two pieces of jewelry gradually take shape at the same workbench.</p>
+        <p>And they do not have to match.</p>
+        <p>They do not even need to look like traditional “couple rings.”</p>
+        <p>They can simply be two rings connected by the fact that you made them together.</p></div>
+      <section><h2>Why make couple rings in Bali?</h2>
+        <p>A ring is easy to carry home and easy to keep wearing after a trip.</p>
+        <p>When you make it yourself, it also comes with a very specific memory.</p>
+        <p>You remember choosing the design.</p>
+        <p>You remember sitting next to each other at the workbench.</p>
+        <p>You remember which parts were easier than expected and which ones required a little help.</p>
+        <p>For some couples, making rings might be part of a honeymoon, anniversary, or another occasion.</p>
+        <p>For others, there does not need to be an occasion at all.</p>
+        <p>It can simply be something different to do together while you are in Bali.</p>
+      </section>
+      <section><h2>Your rings do not have to be identical</h2>
+        <p>Matching rings are one option, not a requirement.</p>
+        <p>If you both like the same design, you can make rings with similar proportions, textures, finishes, or details.</p>
+        <p>But you can also make two pieces that are related without being copies of each other.</p>
+        <p>For example:</p>
+        <ul><li>the same texture on different ring widths</li>
+          <li>similar proportions with <a href="ring-finishes-explained.html">different finishes</a></li>
+          <li>the same small detail on otherwise different designs</li>
+          <li>related shapes with different surface treatments</li></ul>
+        <p>Or you can each make something completely different.</p>
+        <p>One person might prefer a narrow polished band while the other wants something wider and hammered.</p>
+        <p>The connection does not have to be obvious to anyone else.</p>
+        <p>Sometimes the only thing connecting the rings is the story of making them together.</p>
+      </section>
+      <section><h2>Start with what each of you would actually wear</h2>
+        <p>Before deciding that your rings should match, ask a simpler question:</p>
+        <p><strong>What would each of us actually enjoy wearing?</strong></p>
+        <p>You may have very different tastes in jewelry.</p>
+        <p>One person might prefer something minimal and regular.</p>
+        <p>The other might like visible texture or a more organic shape.</p>
+        <p>That difference does not need to become a problem that the design has to solve.</p>
+        <p>Start with each person&#39;s preferences, then decide whether there is an element worth sharing between the two pieces.</p>
+        <p>This usually gives you more freedom than trying to force two people into one design.</p>
+      </section>
+      <section><h2>A shared detail can be enough</h2>
+        <p>Couple rings can feel connected through something very small.</p>
+        <p>It could be a similar hammer texture.</p>
+        <p>A shared finishing direction.</p>
+        <p>A related shape.</p>
+        <p>Initials, letters, numbers, dates, stamped details, or other personalization may also be possible with certain designs, depending on the available surface, tools, material, time, and work required.</p>
+        <p>If a particular detail matters to you, discuss it before the making begins.</p>
+        <p>Not every idea works equally well on every ring, and a reference image can make it much easier to explain what you have in mind.</p>
+        <p>The goal does not have to be making two perfectly matching objects.</p>
+        <p>It can be finding one detail that belongs to both of them.</p>
+      </section>
+      <section><h2>You each make your own piece</h2>
+        <p>Making rings together does not mean one person works while the other watches.</p>
+        <p>Each guest has their own piece to make.</p>
+        <p>You may be doing similar things at roughly the same time, or your designs may take you through slightly different stages.</p>
+        <p>One of you might spend longer shaping a ring.</p>
+        <p>The other might become unexpectedly obsessed with getting a texture exactly right.</p>
+        <p>You might discover that one person immediately feels comfortable with the tools while the other needs more time.</p>
+        <p>That is part of doing a hands-on activity together.</p>
+        <p>You share the workshop, but you do not have to have exactly the same experience at the workbench.</p>
+      </section>
+      <section><h2>What if one of you is better at making things?</h2>
+        <p>Very possible.</p>
+        <p>Also completely irrelevant.</p>
+        <p>One person may have more patience with filing.</p>
+        <p>The other may feel more comfortable hammering or shaping.</p>
+        <p>Someone who insists they are “terrible with their hands” may suddenly become the person concentrating hardest at the bench.</p>
+        <p>There is no score at the end.</p>
+        <p>You are not competing to see whose ring looks more professional.</p>
+        <p>Your instructor can guide each of you according to <a href="how-to-choose-ring-design-jewelry-workshop.html">what your individual piece requires</a>.</p>
+        <p>Different speeds, different designs, and different amounts of assistance are all fine.</p>
+      </section>
+      <section><h2>Do you need jewelry-making experience?</h2>
+        <p>No.</p>
+        <p>You can both arrive without previous jewelry-making experience.</p>
+        <p>Your instructor demonstrates the relevant tools and techniques, explains what you are doing, and helps when a stage requires more technical control.</p>
+        <p>Some processes are easier for beginners to participate in independently than others.</p>
+        <p>Stages involving high heat or greater precision may require closer instructor assistance.</p>
+        <p>You are still actively involved in making your own jewelry.</p>
+        <p>You are simply learning while you do it.</p>
+      </section>
+      <section><h2>How complicated should your rings be?</h2>
+        <p>Complicated is not automatically better.</p>
+        <p>If you are making jewelry for the first time, a relatively straightforward design can give you more opportunity to participate in the making yourself.</p>
+        <p>Width, proportions, texture, finish, and small details can create plenty of variation without requiring an elaborate construction.</p>
+        <p>If either of you has a particular design in mind, bring or send a reference image.</p>
+        <p>Your instructor can help determine whether it works with the available material, workshop time, and techniques.</p>
+        <p>If an idea needs to be adapted, you can often keep the part of the design that matters most.</p>
+      </section>
+      <section><h2>What happens while you&#39;re making the rings?</h2>
+        <p>Your exact process depends on the designs you choose.</p>
+        <p>At Bali Jewelry Masterclass, jewelry can move through stages such as measuring the silver, melting and forming the material, rolling, shaping, hammering, soldering where required, filing, adding surface details, and polishing.</p>
+        <p>You do not need to memorize any of that before arriving.</p>
+        <p>Your instructor guides you through the relevant stages as your rings develop.</p>
+        <p>Because your designs may be different, you might not always be doing exactly the same thing at exactly the same time.</p>
+        <p>That is fine.</p>
+        <p>The shared part is not following an identical sequence.</p>
+        <p>It is being at the workbench together while each piece takes shape.</p>
+      </section>
+      <section><h2>How much silver is included for two people?</h2>
+        <p>At Bali Jewelry Masterclass, the standard workshop includes up to <strong>6 grams of silver per guest</strong>.</p>
+        <p>For a couple booking, that means each person has their own included silver allowance.</p>
+        <p>It is not one 6-gram allowance shared between two people.</p>
+        <p>How much silver each ring actually requires depends on its <a href="how-much-silver-do-you-need-to-make-a-ring.html">size, width, thickness, and overall design</a>.</p>
+        <p>If either ring requires additional silver, that will be discussed before the additional material is used.</p>
+        <p>This also means your rings do not need to have the same weight or dimensions.</p>
+        <p>Each design can be considered individually.</p>
+      </section>
+      <section><h2>How long is the workshop?</h2>
+        <p>The standard Bali Jewelry Masterclass workshop includes <strong>two hours</strong>.</p>
+        <p>For couples, you work on your pieces during the same session.</p>
+        <p>The designs should therefore be realistic for the available time.</p>
+        <p>If a particular idea requires additional time, material, or special work, the requirement and estimated cost will be explained before that extra work begins.</p>
+        <p>If making the rings together is the part you care about most, choosing designs that fit comfortably within the session can be more enjoyable than trying to squeeze in every possible detail.</p>
+      </section>
+      <section><h2>Is this only for romantic couples?</h2>
+        <p>Not necessarily.</p>
+        <p>Two people making connected pieces can mean whatever they want it to mean.</p>
+        <p>Partners can make rings together.</p>
+        <p>So can close friends, siblings, or family members.</p>
+        <p>You can make matching pieces, loosely related designs, or jewelry that has no visual connection at all.</p>
+        <p>The workshop does not decide what the rings represent.</p>
+        <p>You do.</p>
+      </section>
+      <section><h2>Making couple rings at our home studio</h2>
+        <p>Bali Jewelry Masterclass is held at our home studio in <strong>Dalung, North Kuta</strong>.</p>
+        <p>For two guests, the Couple price is <strong>IDR 600,000 per person</strong>.</p>
+        <p>Each guest receives:</p>
+        <ul><li><strong>Up to 6 grams of silver</strong></li>
+          <li><strong>One finished piece</strong></li>
+          <li><strong>Two hours of workshop time</strong></li>
+          <li><strong>Tools and equipment</strong></li>
+          <li><strong>Instructor guidance</strong></li></ul>
+        <p>No previous jewelry-making experience is required.</p>
+        <p>You can begin with designs available at the studio or bring your own references.</p>
+        <p>Your rings can match, share one or two details, or be completely different.</p>
+        <p>The important part is that each of you gets to make a piece of your own while sharing the experience.</p>
+      </section>
+      <section><h2>Two rings, one afternoon at the workbench</h2>
+        <p>Months after a trip, it can be difficult to remember every restaurant, beach, or place you visited.</p>
+        <p>A ring is different because it can stay in your everyday life.</p>
+        <p>You might notice a hammer mark and remember making the texture.</p>
+        <p>You might see the difference between your two rings and remember why you chose them that way.</p>
+        <p>Or you may simply remember sitting beside each other trying something neither of you had done before.</p>
+        <p>The rings do not need to tell everyone else a story.</p>
+        <p>They only need to remind the two people who made them.</p>
+      </section>
+      <section class="article-workshop-cta" aria-label="Explore the workshop">
+        <p class="article-eyebrow">READY TO MAKE YOUR RINGS TOGETHER?</p>
+        <p>Choose your designs and spend a couple of hours making your own silver jewelry at our home studio in Bali.</p>
+        <a class="article-primary" href="index.html#creative-process">Explore the Workshop →</a>
+      </section>
+            <div class="article-back-navigation">
+        <a class="article-back-link" href="blog.html">← Back to Blog</a>
+      </div>
+</article>
+  </main>
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="index.html#home" aria-label="Bali Jewelry Masterclass homepage"><img class="footer-logo" src="bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">Your Silver Craft Space in Bali</p>
+          <div class="footer-social-links" aria-label="Social media">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>Our Location</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Bali Jewelry Masterclass on Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>Contact</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="Email Bali Jewelry Masterclass" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">Email</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Bali Jewelry Masterclass"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="about.html">About BJM</a></li>
+            <li><a href="index.html#creative-process">Creative Process</a></li>
+            <li><a href="skills-techniques.html">Skills &amp; Techniques</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#schedule">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="policies.html">Policies</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← Back</span>
+    <button type="button" class="communication-hub-toggle" aria-label="Contact options" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> How can we help? </h2>
+      <p class="communication-hub-intro"> Choose the easiest way to reach us. </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> Send us a quick message </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> Email </span><span class="communication-hub-detail"> Prefer to write by email? </span></span></button>
+        <a class="communication-hub-option" href="/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> Make a Booking </span><span class="communication-hub-detail"> Choose your workshop details </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script src="language-selector.js" defer></script>
+  <script src="email-chooser.js?v=1" defer></script>
+  <script src="header-dropdowns.js?v=1" defer></script>
+  <script src="communication-hub.js?v=1" defer></script>
+</body>
+</html>

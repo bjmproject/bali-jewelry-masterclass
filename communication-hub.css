@@ -1,0 +1,92 @@
+/* Shared Communication Hub only. */
+.communication-hub {
+  --hub-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  position: fixed;
+  z-index: 1000;
+  right: calc(24px + env(safe-area-inset-right, 0px));
+  bottom: calc(var(--hub-bottom) + var(--hub-footer-clearance, 0px));
+  width: 56px;
+  height: 56px;
+  font-family: inherit;
+  color: #242424;
+}
+.communication-hub-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+.communication-hub-toggle svg { width: 30px; height: 30px; }
+/* Two gentle sways, followed by a long still interval. Opening resets to rest. */
+@keyframes communication-hub-attention {
+  0%, 88%, 95%, 100% { transform: translateX(0); }
+  89.4%, 92.2% { transform: translateX(-1.5px); }
+  90.8%, 93.6% { transform: translateX(1.5px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .communication-hub-toggle[aria-expanded="false"] {
+    animation: communication-hub-attention 12s ease-in-out infinite;
+  }
+}
+.communication-hub-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 12px);
+  width: 320px;
+  max-width: calc(var(--hub-viewport-width, 100vw) - 32px - env(safe-area-inset-right, 0px));
+  max-height: calc(100vh - var(--hub-bottom) - var(--hub-footer-clearance, 0px) - 84px);
+  max-height: calc(100dvh - var(--hub-bottom) - var(--hub-footer-clearance, 0px) - 84px);
+  overflow-y: auto;
+  padding: 18px;
+  border: 1px solid #D9D7D2;
+  border-radius: 12px;
+  background: #FAF9F6;
+  box-shadow: 0 3px 16px rgba(0,0,0,.12);
+  text-align: left;
+}
+.communication-hub-panel[hidden] { display: none; }
+.communication-hub-panel h2 { margin: 0 0 6px; color: #242424; font-family: inherit; font-size: 20px; font-weight: 600; line-height: 1.3; letter-spacing: 0; }
+.communication-hub-intro { margin: 0 0 12px; color: #55524E; font: inherit; font-size: 14px; line-height: 1.45; }
+.communication-hub-options { display: grid; gap: 4px; }
+.communication-hub-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 58px;
+  padding: 10px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #242424;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.communication-hub-option:not(:disabled):hover { background: #EFEEEA; }
+.communication-hub-option svg { display: block; width: 24px; height: 24px; flex: 0 0 24px; }
+.communication-hub-option[data-hub-email] svg { color: #4285F4; }
+.communication-hub-option[data-hub-booking] svg { color: #bda57a; }
+.communication-hub-copy { min-width: 0; flex: 1; }
+.communication-hub-label { display: block; font-size: 15px; font-weight: 600; line-height: 1.4; }
+.communication-hub-detail { display: block; margin-top: 2px; color: #55524E; font-size: 13px; line-height: 1.4; }
+.communication-hub-toggle:focus-visible { outline: 2px solid #242424; outline-offset: 4px; }
+.communication-hub-option:focus-visible { outline: 2px solid #242424; outline-offset: 2px; }
+@media (max-width: 650px) {
+  .communication-hub { --hub-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); right: calc(16px + env(safe-area-inset-right, 0px)); }
+  .communication-hub-panel { width: calc(var(--hub-viewport-width, 100vw) - 32px - env(safe-area-inset-right, 0px)); }
+}
+
+/* Internal return control for the existing email dialog only. */
+.email-chooser .communication-hub-back { display: inline-flex; align-items: center; min-height: 44px; margin: 0 32px 8px 0; padding: 0 10px; border: 0; border-radius: 3px; background: transparent; color: inherit; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.email-chooser .communication-hub-back[hidden] { display: none; }
+.email-chooser .communication-hub-back:hover { background: rgba(37,35,33,.06); }

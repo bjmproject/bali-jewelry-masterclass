@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+
+_backup/
+bjm-blog-content-audit.md
+bjm-indonesian-content-audit.md

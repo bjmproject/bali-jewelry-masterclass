@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>Bedingungen | Bali Jewelry Masterclass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FFFFFF; --warm-white: #FFFFFF; --sand: #FFFFFF; --ink: #000000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; width: 100%; z-index: 20; color: #FFFFFF; background: #000000; }
+    nav { width: min(1180px, 90%); margin: auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding-top: 35px; }
+    .brand { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 23px; letter-spacing: -.5px; position: relative; left: -40px; }
+    .brand img { width: 300px; height: auto; display: block; }
+    @media (min-width: 851px) {
+      header > nav { width: min(1500px, 90%); margin-inline: auto; padding: 0; }
+      header .brand { left: 0; transform: translateX(-35px); }
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (min-width: 851px) {
+      .nav-group--craft .nav-dropdown-toggle { gap: 0; }
+      .nav-group--craft .nav-dropdown-toggle::after { content: none; }
+      .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; }
+    }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: #FFFFFF; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+
+    .articles-page-intro { padding: 68px 0 82px; background: var(--cream); }
+    .articles-page-intro h1 { color: var(--ink); font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: clamp(36px, 4.2vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -1px; }
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    .footer-tagline { max-width: 260px; margin: 0 0 14px; color: var(--sand); font-size: 15px; line-height: 1.8; letter-spacing: 3px; }
+    .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    .footer-location-note { margin-top: 14px; }
+    .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+
+    @media (min-width: 651px) { .footer-tagline { max-width: none; white-space: nowrap; } }
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--ink); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (min-width: 851px) {
+      .footer-location-map { height: 175px; }
+    }
+    @media (max-width: 650px) {
+      .brand { left: 1vw; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer > .container { width: 88%; }
+      .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+      .copyright { flex-direction: column; }
+    }
+      /* Utility link below the existing footer divider. */
+    footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+    .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+    .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+      :root { --accent: #000000; }
+    body { background: var(--cream); }
+    html { scroll-behavior: smooth; }
+    .policies-intro { padding: 64px 0 0; }
+    .policies-reading { text-align: left; }
+    @media (min-width: 851px) {
+      main .container.policies-reading { width: min(1500px, 90%); margin-inline: auto; }
+    }
+    .policies-intro h1 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: clamp(36px, 4.2vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -1px; }
+    .policies-subtitle { margin-top: 18px; color: rgba(0,0,0,.60); }
+    .policies-updated { margin-top: 12px; font-size: 13px; color: rgba(0,0,0,.60); }
+    .policies-nav { width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px 24px; margin: 28px 0 0; padding: 16px 0; border-block: 1px solid rgba(0,0,0,.16); font-size: 14px; }
+    .policies-nav a { padding-block: 4px; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 5px; }
+    .policies-nav a:hover { color: var(--accent); }
+    .policies-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    .policies-content { padding-bottom: 64px; }
+    .policy-section { padding-block: 24px; scroll-margin-top: 24px; }
+    .policy-section + .policy-section { border-top: 1px solid rgba(0,0,0,.16); }
+    .policy-section h2 { font-size: clamp(17px, 2.4vw, 20px); font-weight: 600; line-height: 1.5; letter-spacing: 1.5px; margin-bottom: 24px; }
+    .policy-number { color: var(--accent); }
+    .policy-section h3 { font-size: 17px; font-weight: 600; line-height: 1.5; margin: 24px 0 8px; }
+    .policy-section p { margin: 0; line-height: 1.8; }
+    .policy-section p + p { margin-top: 12px; }
+    .policy-subsection:first-child > h3 { margin-top: 0; }
+    .policy-section:last-child { padding-bottom: 0; }
+    .policy-section-content { min-width: 0; }
+    .policy-contact-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; }
+    .policy-contact-link { display: inline-flex; align-items: center; gap: 8px; }
+    .policy-contact-link svg { width: 18px; height: 18px; flex: 0 0 18px; }
+    .policy-contact-link:hover { color: var(--accent); }
+    .policy-contact-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    @media (min-width: 851px) {
+      .policy-section-content { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px clamp(24px, 3vw, 40px); align-items: start; }
+      .policy-section-content.is-masonry { grid-auto-rows: 1px; row-gap: 0; }
+      .policy-subsection { min-width: 0; display: flow-root; }
+      .policy-subsection > h3 { margin-top: 0; }
+    }
+    @media (min-width: 1100px) {
+      .policy-section-content { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 650px) {
+      .policies-intro { padding-top: 44px; }
+      .policies-reading { width: 88%; }
+      .policies-nav { flex-direction: column; align-items: flex-start; gap: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+  <link rel="stylesheet" href="/header-layout.css?v=1">
+  <link rel="stylesheet" href="/footer-layout.css?v=1">
+  <link rel="stylesheet" href="/site-chrome.css?v=13">
+  <link rel="stylesheet" href="/communication-hub.css?v=1">
+  <link rel="stylesheet" href="/language-selector.css">
+  <link rel="stylesheet" href="/email-chooser.css?v=1">
+<meta name="description" content="Informationen zu Buchung, Zahlung, Silberkontingent, Workshop-Dauer, Sicherheit, Stornierung, Umbuchung und Datenschutz bei Bali Jewelry Masterclass.">
+<link rel="canonical" href="https://balijewelrymasterclass.com/de/policies.html">
+<meta property="og:url" content="https://balijewelrymasterclass.com/de/policies.html">
+<meta property="og:title" content="Bedingungen | Bali Jewelry Masterclass">
+<meta property="og:description" content="Informationen zu Buchung, Zahlung, Silberkontingent, Workshop-Dauer, Sicherheit, Stornierung, Umbuchung und Datenschutz bei Bali Jewelry Masterclass.">
+<link rel="alternate" hreflang="en" href="https://balijewelrymasterclass.com/policies.html">
+<link rel="alternate" hreflang="fr" href="https://balijewelrymasterclass.com/fr/policies.html">
+<link rel="alternate" hreflang="de" href="https://balijewelrymasterclass.com/de/policies.html">
+<link rel="alternate" hreflang="x-default" href="https://balijewelrymasterclass.com/policies.html">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/de/index.html" class="brand" aria-label="Bali Jewelry Masterclass Startseite">
+        <img src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menü</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">Der Workshop</button><div class="nav-dropdown" id="workshop-dropdown"><a href="/de/index.html#creative-process">Dein kreativer Prozess</a><a href="/de/skills-techniques.html#pure-silver">Handwerk &amp; Techniken</a><a href="/de/index.html#schedule">Zeiten</a><a href="/de/pricing.html">Preise</a></div></div>
+        <a href="/de/gallery.html">Galerie</a>
+        <a href="/de/blog.html">Blog</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">Über uns</button><div class="nav-dropdown" id="about-dropdown"><a href="/de/about.html">Über BJM</a><a href="/de/index.html#location">Unser Standort</a><a href="/de/index.html#contact">Kontakt</a><a href="/de/faq.html">FAQ</a></div></div>
+        <div class="language-selector" role="group" aria-label="Website-Sprache">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Sprache: Deutsch" title="Deutsch"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">SPRACHE</span>
+          <div class="language-options" id="language-options" hidden>
+            <button type="button" class="language-option" data-language="en" lang="en" aria-label="Englisch" title="Englisch"><img class="language-flag" src="/language-flag-gb.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="fr" lang="fr" disabled title="Französisch" aria-label="Französisch"><img class="language-flag" src="/language-flag-fr.svg" alt="" width="22" height="15"></button>
+            <span class="language-option is-active" aria-current="true" data-language="de" lang="de" title="Deutsch" aria-label="Deutsch"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"></span>
+            <button class="language-option" type="button" data-language="zh-CN" lang="zh-CN" disabled title="Chinesisch — demnächst" aria-label="Chinesisch — demnächst"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="ja" lang="ja" disabled title="Japanisch — demnächst" aria-label="Japanisch — demnächst"><img class="language-flag" src="/language-flag-jp.svg" alt="" width="22" height="15"></button>
+          </div>
+        </div>
+        <a href="/de/booking.html" class="nav-cta">Buchen</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="policies-intro" aria-labelledby="policies-heading">
+      <div class="container policies-reading">
+        <h1 id="policies-heading">BEDINGUNGEN</h1>
+        <p class="policies-subtitle">Allgemeine Geschäftsbedingungen &middot; Stornierung &amp; Erstattung &middot; Datenschutz</p>
+        <p class="policies-updated">Zuletzt aktualisiert: <time datetime="2026-10">Oktober 2026</time></p>
+        <nav class="policies-nav" aria-label="Abschnitte der Bedingungen">
+          <a href="#terms-and-conditions">Allgemeine Geschäftsbedingungen</a>
+          <a href="#cancellation-and-refunds">Stornierung &amp; Erstattung</a>
+          <a href="#privacy-policy">Datenschutz</a>
+        </nav>
+      </div>
+    </section>
+    <div class="container policies-reading policies-content">
+      <section class="policy-section" id="terms-and-conditions" aria-labelledby="terms-and-conditions-heading">
+        <h2 id="terms-and-conditions-heading"><span class="policy-number">01 &mdash;</span> ALLGEMEINE GESCHÄFTSBEDINGUNGEN</h2>
+        <div class="policy-section-content">
+          <div class="policy-subsection">
+        <h3>Workshop-Buchungen</h3>
+        <p>Eine Reservierung ist bestätigt, sobald Bali Jewelry Masterclass Datum, Uhrzeit und Anzahl der Gäste für den Workshop bestätigt hat.</p>
+        <p>Reguläre Buchungen können ohne Anzahlung bestätigt werden. Bei größeren Gruppen, besonderen Vereinbarungen oder bestimmten Buchungen können wir eine Anzahlung oder Vorauszahlung verlangen, um die Reservierung zu sichern.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Preise &amp; Zahlung</h3>
+        <p>Der bei der Buchung bestätigte Workshop-Preis gilt für diese Reservierung, auch wenn sich unsere veröffentlichten Preise danach ändern.</p>
+        <p>Bei regulären Buchungen erfolgt die Zahlung am Ende des Workshops, damit vereinbarte zusätzliche Materialien, Extras oder zusätzliche Workshopzeit im Endbetrag berücksichtigt werden können.</p>
+        <p>Die verfügbaren Zahlungsmethoden teilen wir dir im Workshop mit.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Silbermaterial</h3>
+        <p>Jeder Standard-Workshop enthält bis zu 6 Gramm Silber pro Gast.</p>
+        <p>Die benötigte Silbermenge hängt vom Schmuckdesign, den Abmessungen, der Ringgröße und dem Herstellungsprozess ab. Die enthaltenen 6 Gramm sind ein Materialkontingent und garantieren nicht, dass jedes Design oder jede Größe mit 6 Gramm angefertigt werden kann.</p>
+        <p>Wenn dein gewähltes Stück voraussichtlich mehr als 6 Gramm benötigt, berechnen wir zusätzliches Silber mit 95.000 IDR pro Gramm.</p>
+        <p>Nicht genutzte Anteile des enthaltenen Silberkontingents werden weder erstattet noch umgetauscht oder separat als unverarbeitetes Silber ausgegeben.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Materialschätzung &amp; Zusatzkosten</h3>
+        <p>Vor Beginn des Workshops besprechen wir mit dir dein gewähltes Design, die Größe, den geschätzten Silberbedarf und mögliche optionale Extras.</p>
+        <p>Wenn zusätzliches Silber, Edelsteine, individuelle Arbeiten oder andere Extras erforderlich sind, erklären wir dir die geschätzten Zusatzkosten vor Arbeitsbeginn.</p>
+        <p>Ohne deine vorherige Zustimmung berechnen wir keine zusätzlichen Kosten.</p>
+        <p>Da Schmuck von Hand hergestellt wird, ist der Materialbedarf eine Schätzung. Während der Herstellung kann Material verloren gehen oder als Rückstand verbleiben. Das Endgewicht deines fertigen Schmuckstücks kann daher von der ursprünglich geschätzten Materialmenge abweichen.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Workshop-Dauer</h3>
+        <p>Der Standard-Workshop dauert 2 Stunden.</p>
+        <p>Zusätzliche Workshopzeit kostet 100.000 IDR pro Stunde und wird in Schritten von 30 Minuten berechnet (50.000 IDR pro zusätzliche 30 Minuten).</p>
+        <p>Wenn dein gewähltes Design oder eine individuelle Anpassung voraussichtlich zusätzliche Zeit benötigt, erklären wir dir das vor Beginn des Workshops, soweit dies vernünftigerweise möglich ist.</p>
+        <p>Zusätzliche Zeit aufgrund von Verzögerungen oder betrieblichen Problemen auf unserer Seite wird dem Gast nicht berechnet.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Handgefertigter Schmuck</h3>
+        <p>Du fertigst deinen Schmuck von Hand mit Anleitung unserer Kursleiter.</p>
+        <p>Unsere Musterstücke und Katalogdesigns dienen als Orientierung. Da jedes Stück von Hand hergestellt wird, ist dein fertiger Schmuck möglicherweise nicht zu 100% mit einem Muster identisch.</p>
+        <p>Kleine Unterschiede in Form, Abmessungen, Struktur, Oberflächenbearbeitung, Details und Gesamterscheinung sind ein natürlicher Teil der handwerklichen Herstellung.</p>
+        <p>Unsere Kursleiter begleiten dich auf dem Weg zum vereinbarten Design und bewahren dabei den praktischen Charakter des Erlebnisses.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Sicherheit im Workshop</h3>
+        <p>Bei der Schmuckherstellung kommen Werkzeuge, Hitze, Flammen, Maschinen und andere Geräte zum Einsatz, die sorgfältig verwendet werden müssen.</p>
+        <p>Gäste müssen während des gesamten Workshops den Anweisungen der Kursleiter und den Sicherheitshinweisen folgen.</p>
+        <p>Unsere Kursleiter können bei einem bestimmten Arbeitsschritt helfen oder ihn übernehmen, wenn sie dies für sicherer halten.</p>
+        <p>Wenn ein Gast wiederholt Sicherheitshinweise missachtet oder sich so verhält, dass er sich selbst, andere Gäste, unser Team oder die Workshop-Umgebung gefährden könnte, behält sich Bali Jewelry Masterclass das Recht vor, die Teilnahme dieses Gastes zu beenden.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Altersvoraussetzungen</h3>
+        <p>Das Mindestalter für die Teilnahme am Workshop beträgt 12 Jahre.</p>
+        <p>Gäste im Alter von 12–17 Jahren müssen während des Workshops von einem Elternteil oder einer verantwortlichen Aufsichtsperson begleitet werden.</p>
+        <p>Bei jüngeren Teilnehmern können Kursleiter bestimmte Arbeitsschritte anpassen, dabei helfen oder sie übernehmen, je nach Fähigkeiten des Teilnehmers und den Sicherheitsanforderungen des Prozesses.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Reparaturen &amp; Änderungen</h3>
+        <p>Nachdem dein Schmuck fertiggestellt wurde und du ihn mit nach Hause genommen hast, können spätere Reparaturen, Größenanpassungen, erneute Oberflächenbearbeitungen oder andere Änderungen zusätzliche Reparatur- oder Servicekosten verursachen.</p>
+        <p>Anfallende Kosten teilen wir dir vor Beginn der Reparatur oder Änderung mit.</p>
+          </div>
+        </div>
+      </section>
+      <section class="policy-section" id="cancellation-and-refunds" aria-labelledby="cancellation-and-refunds-heading">
+        <h2 id="cancellation-and-refunds-heading"><span class="policy-number">02 &mdash;</span> STORNIERUNG &amp; ERSTATTUNG</h2>
+        <div class="policy-section-content">
+          <div class="policy-subsection">
+        <h3>Stornierung durch Gäste</h3>
+        <p>Wenn du deinen Workshop stornieren musst, informiere uns bitte mindestens 12 Stunden vor deinem geplanten Workshop-Beginn.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Umbuchung</h3>
+        <p>Buchungen können bis zu 3 Mal umgebucht werden, je nach Verfügbarkeit.</p>
+        <p>Wir bemühen uns, deinen gewünschten neuen Termin oder deine gewünschte Uhrzeit zu ermöglichen, können die Verfügbarkeit jedoch nicht garantieren.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Verspätete Ankunft</h3>
+        <p>Wenn du zu spät kommst, versuchen wir, dir nach Möglichkeit entgegenzukommen.</p>
+        <p>Wenn durch deine verspätete Ankunft nicht genügend Zeit bleibt, um den Workshop vor einem vollständig ausgebuchten Folgetermin abzuschließen, muss dein Workshop möglicherweise umgebucht werden.</p>
+        <p>Wenn in einem späteren Workshop Plätze frei sind, können wir dir je nach Verfügbarkeit einen Platz in diesem Workshop anbieten.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Nichterscheinen</h3>
+        <p>Bei Reservierungen ohne Vorauszahlung gibt es im Fall des Nichterscheinens keine Zahlung, die erstattet werden könnte.</p>
+        <p>Gäste, die ohne Benachrichtigung nicht zu einer bestätigten Buchung erscheinen, müssen bei einer zukünftigen Reservierung möglicherweise eine Anzahlung oder Vorauszahlung leisten.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Stornierung durch Bali Jewelry Masterclass</h3>
+        <p>Sollten wir deinen Workshop wider Erwarten stornieren müssen, bieten wir dir einen alternativen Termin oder eine andere Uhrzeit an.</p>
+        <p>Wenn du bereits bezahlt hast und nicht umbuchen kannst oder möchtest, erstatten wir den für den stornierten Workshop gezahlten Betrag vollständig.</p>
+          </div>
+        </div>
+      </section>
+      <section class="policy-section" id="privacy-policy" aria-labelledby="privacy-policy-heading">
+        <h2 id="privacy-policy-heading"><span class="policy-number">03 &mdash;</span> DATENSCHUTZ</h2>
+        <div class="policy-section-content">
+          <div class="policy-subsection">
+        <h3>Welche Informationen wir erheben</h3>
+        <p>Wir erheben nur Informationen, die in angemessenem Umfang notwendig sind, um deinen Workshop zu organisieren und mit dir zu kommunizieren.</p>
+        <p>Dazu können dein Name, deine Kontaktdaten, Buchungsinformationen, Workshop-Wünsche und weitere Informationen gehören, die du uns freiwillig zur Verfügung stellst.</p>
+        <p>Wir können auch fragen, wie du auf Bali Jewelry Masterclass aufmerksam geworden bist, um besser zu verstehen, über welche Kanäle Gäste unseren Workshop finden.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Wie wir deine Informationen verwenden</h3>
+        <p>Wir können deine Informationen verwenden, um Reservierungen zu verwalten und zu bestätigen, mit dir über deinen Workshop zu kommunizieren, Workshop-bezogene Leistungen und Dokumentation bereitzustellen, Transaktionen abzuwickeln oder zu erfassen, Fragen zu beantworten und unsere Leistungen zu verbessern.</p>
+        <p>Wir verkaufen deine personenbezogenen Daten nicht.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Fotos &amp; Videos</h3>
+        <p>Während des Workshops können Fotos und Videos als Teil des Gästeerlebnisses und der Workshop-Dokumentation aufgenommen werden.</p>
+        <p>Die Verwendung von Fotos oder Videos, auf denen Gäste erkennbar sind, für das Marketing von Bali Jewelry Masterclass — einschließlich unserer Website, sozialen Medien und Werbematerialien — erfolgt auf Grundlage der freiwilligen Zustimmung der Gäste.</p>
+        <p>Wenn du keine Zustimmung zur Verwendung für Marketingzwecke gibst, hat das keinen Einfluss auf deine Möglichkeit, am Workshop teilzunehmen.</p>
+        <p>Wenn du zuvor zugestimmt hast und deine Zustimmung später widerrufen möchtest, kannst du uns kontaktieren. Wir stellen die zukünftige Nutzung ein und entfernen das Material, soweit vernünftigerweise möglich, aus Kanälen, die wir kontrollieren.</p>
+        <p>Wir können nicht garantieren, dass Kopien entfernt werden, die bereits unabhängig von Dritten geteilt, erneut veröffentlicht, zwischengespeichert oder gespeichert wurden.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Dienste von Drittanbietern</h3>
+        <p>Unsere Website und Kommunikation können Dienste von Drittanbietern nutzen, die für den Betrieb unserer Website, unserer Präsenz in sozialen Medien, unserer Kommunikation, Zahlungen oder anderer Geschäftsfunktionen erforderlich sind.</p>
+        <p>Wenn personenbezogene Daten von einem Drittanbieter verarbeitet werden, kann für den Umgang mit ihnen auch dessen eigene Datenschutzerklärung gelten.</p>
+        <p>Wir beabsichtigen, Informationen nur weiterzugeben, soweit dies in angemessenem Umfang erforderlich ist, um unsere Leistungen zu erbringen, unser Geschäft zu betreiben oder geltende gesetzliche Verpflichtungen zu erfüllen.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Datenspeicherung &amp; Sicherheit</h3>
+        <p>Wir speichern personenbezogene Daten nur so lange, wie dies für die Zwecke, zu denen sie erhoben wurden, in angemessenem Umfang erforderlich ist, einschließlich betrieblicher, administrativer und gesetzlicher Anforderungen.</p>
+        <p>Wir ergreifen angemessene Maßnahmen zum Schutz personenbezogener Daten, die wir kontrollieren. Allerdings kann für keine elektronische Speicherung oder Übertragung über das Internet vollständige Sicherheit garantiert werden.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Deine Informationen</h3>
+        <p>Du kannst Bali Jewelry Masterclass kontaktieren, wenn du Fragen zu personenbezogenen Daten hast, die du uns zur Verfügung gestellt hast, oder gegebenenfalls eine Berichtigung oder Löschung beantragen möchtest.</p>
+          </div>
+          <div class="policy-subsection">
+        <h3>Kontakt</h3>
+        <p>Bali Jewelry Masterclass</p>
+        <div class="policy-contact-links">
+<a class="policy-contact-link" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              WhatsApp
+            </a>
+<a class="policy-contact-link" href="mailto:balijewelrymasterclass@gmail.com" aria-label="E-Mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              E-Mail
+            </a>
+        </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="/de/index.html#home" aria-label="Bali Jewelry Masterclass Startseite"><img class="footer-logo" src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">Dein Raum für Silberhandwerk auf Bali</p>
+          <div class="footer-social-links" aria-label="Soziale Medien">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>Unser Standort</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Bali Jewelry Masterclass auf Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>Kontakt</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="E-Mail an Bali Jewelry Masterclass" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">E-Mail</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="Bali Jewelry Masterclass auf WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="/de/about.html">Über BJM</a></li>
+            <li><a href="/de/index.html#creative-process">Dein kreativer Prozess</a></li>
+            <li><a href="/de/skills-techniques.html">Handwerk &amp; Techniken</a></li>
+            <li><a href="/de/pricing.html">Preise</a></li>
+            <li><a href="/de/index.html#schedule">Zeiten</a></li>
+            <li><a href="/de/gallery.html">Galerie</a></li>
+            <li><a href="/de/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="/de/policies.html">Bedingungen</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <script>
+    (() => {
+      const desktop = window.matchMedia('(min-width: 851px)');
+      const wideDesktop = window.matchMedia('(min-width: 1100px)');
+      const grids = [...document.querySelectorAll('.policy-section-content')];
+      let frame = 0;
+      const arrangePolicies = () => {
+        frame = 0;
+        grids.forEach((grid) => {
+          const blocks = [...grid.children];
+          if (!desktop.matches) {
+            grid.classList.remove('is-masonry');
+            blocks.forEach((block) => {
+              block.style.removeProperty('grid-column');
+              block.style.removeProperty('grid-row');
+            });
+            return;
+          }
+          // Measure natural content height without stale masonry row constraints.
+          grid.classList.remove('is-masonry');
+          blocks.forEach((block) => {
+            block.style.removeProperty('grid-column');
+            block.style.removeProperty('grid-row');
+          });
+          if (!grid.getBoundingClientRect().width) return;
+          const heights = blocks.map((block) => Math.ceil(Math.max(
+            block.getBoundingClientRect().height, block.scrollHeight
+          )));
+          const nextRows = Array(wideDesktop.matches ? 3 : 2).fill(1);
+          grid.classList.add('is-masonry');
+          blocks.forEach((block, index) => {
+            const column = nextRows.indexOf(Math.min(...nextRows));
+            block.style.gridColumn = String(column + 1);
+            block.style.gridRow = `${nextRows[column]} / span ${Math.max(1, heights[index])}`;
+            nextRows[column] += Math.max(1, heights[index]) + 24;
+          });
+        });
+      };
+      const schedule = () => {
+        if (!frame) frame = window.requestAnimationFrame(arrangePolicies);
+      };
+      window.addEventListener('resize', schedule);
+      desktop.addEventListener('change', schedule);
+      wideDesktop.addEventListener('change', schedule);
+      if ('ResizeObserver' in window) {
+        const observer = new ResizeObserver(schedule);
+        grids.forEach((grid) => [...grid.children].forEach((block) => observer.observe(block)));
+      }
+      if (document.fonts) document.fonts.ready.then(schedule);
+      arrangePolicies();
+    })();
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← Zurück</span>
+    <button type="button" class="communication-hub-toggle" aria-label="Kontaktmöglichkeiten" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> Wie können wir helfen? </h2>
+      <p class="communication-hub-intro"> Wähle den einfachsten Weg, uns zu erreichen. </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> Schreib uns eine kurze Nachricht </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> E-Mail </span><span class="communication-hub-detail"> Schreibst du lieber eine E-Mail? </span></span></button>
+        <a class="communication-hub-option" href="/de/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> Workshop buchen </span><span class="communication-hub-detail"> Wähle die Details für deinen Workshop </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script src="/language-selector.js" defer></script>
+  <script>/* Shared footer email-provider chooser. */
+(() => {
+  const triggers = document.querySelectorAll('footer button[data-email-chooser]');
+  if (!triggers.length) return;
+
+  const recipient = 'balijewelrymasterclass@gmail.com';
+  const encodedRecipient = encodeURIComponent(recipient);
+  const providers = [
+    ['Gmail', `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedRecipient}`],
+    ['Outlook', `https://outlook.live.com/mail/0/deeplink/compose?to=${encodedRecipient}`],
+    ['Yahoo Mail', `https://compose.mail.yahoo.com/?to=${encodedRecipient}`],
+    ['Standard-E-Mail-App', `mailto:${recipient}`]
+  ];
+
+  const dialog = document.createElement('dialog');
+  dialog.id = 'email-provider-chooser';
+  dialog.className = 'email-chooser';
+  dialog.setAttribute('aria-labelledby', 'email-chooser-title');
+  dialog.setAttribute('aria-describedby', 'email-chooser-description');
+  dialog.innerHTML = `
+    <button type="button" class="email-chooser-close" aria-label="E-Mail-Auswahl schließen" autofocus>&times;</button>
+    <h2 id="email-chooser-title">Schreib uns eine E-Mail</h2>
+    <p id="email-chooser-description">Wähle deinen E-Mail-Dienst.</p>
+    <div class="email-chooser-options"></div>`;
+  const options = dialog.querySelector('.email-chooser-options');
+  for (const [name, url] of providers) {
+    const link = document.createElement('a');
+    const icon = document.createElement('img');
+    icon.src = {
+      'Gmail': '/email-provider-gmail.svg',
+      'Outlook': '/email-provider-outlook.svg',
+      'Yahoo Mail': '/email-provider-yahoo.svg',
+      'Standard-E-Mail-App': '/email-provider-other.svg'
+    }[name];
+    icon.className = 'email-provider-icon';
+    icon.alt = '';
+    icon.width = 22;
+    icon.height = 22;
+    const label = document.createElement('span');
+    label.textContent = name;
+    link.append(icon, label);
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    options.append(link);
+  }
+  document.body.append(dialog);
+
+  let opener;
+  for (const trigger of triggers) {
+    trigger.addEventListener('click', () => {
+      opener = trigger;
+      dialog.showModal();
+    });
+  }
+  dialog.querySelector('.email-chooser-close').addEventListener('click', () => dialog.close());
+  let startedOutside = false;
+  const outside = event => {
+    const bounds = dialog.getBoundingClientRect();
+    return event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom);
+  };
+  dialog.addEventListener('pointerdown', event => { startedOutside = outside(event); });
+  dialog.addEventListener('click', event => {
+    if (startedOutside && outside(event)) dialog.close();
+    startedOutside = false;
+  });
+  // Native modal dialogs handle Escape, focus containment, and inert background content.
+  dialog.addEventListener('close', () => opener?.focus());
+})();
+</script>
+  <script src="/header-dropdowns.js?v=1" defer></script>
+  <script src="/communication-hub.js?v=1" defer></script>
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>よくある質問 | Bali Jewelry Masterclass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFFFFF;
+      --warm-white: #FFFFFF;
+      --sand: #FFFFFF;
+      --terracotta: #000000;
+      --terracotta-dark: rgba(0,0,0,.78);
+      --gold: #000000;
+      --ink: #000000;
+      --muted: rgba(0,0,0,.55);
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; width: 100%; z-index: 20; color: #FFFFFF; background: #000000; }
+    nav { width: min(1180px, 90%); margin: auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding-top: 35px; }
+    .brand { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 23px; letter-spacing: -.5px; position: relative; left: -40px; }
+    .brand img { width: 300px; height: auto; display: block; }
+    @media (min-width: 851px) {
+      header > nav { width: min(1500px, 90%); }
+      header .brand { left: -35px; }
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (min-width: 851px) { .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; } }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: #FFFFFF; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+
+    .section-label { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; font-weight: 600; color: var(--terracotta); margin-bottom: 16px; }
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    .footer-tagline { max-width: 260px; margin: 0 0 14px; color: var(--sand); font-size: 15px; line-height: 1.8; letter-spacing: 3px; }
+    .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    .footer-location-note { margin-top: 14px; }
+    .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    footer h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+
+    @media (min-width: 651px) { .footer-tagline { max-width: none; white-space: nowrap; } }
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--ink); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+      .closing-faq { margin-top: 34px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (max-width: 650px) {
+      .brand { left: 1vw; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer > .container { width: 88%; }
+      .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (min-width: 851px) {
+      .footer-location-map { height: 175px; }
+    }
+
+    .gallery-page {
+      padding: 56px 0 72px;
+      background: var(--cream);
+      color: var(--ink);
+    }
+    .gallery-page > .container { width: min(1500px, 90%); }
+    .gallery-page .section-label { margin-bottom: 14px; }
+    .gallery-page h1 {
+      color: var(--ink);
+      font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+      font-size: clamp(36px, 4.2vw, 48px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+    .gallery-page-intro { max-width: 650px; }
+    .gallery-page-intro > p:last-child {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+      gap: 26px;
+      margin-top: 34px;
+    }
+    .gallery-item { min-width: 0; margin: 0; }
+    .gallery-item img { width: 100%; height: auto; display: block; }
+    @media (min-width: 851px) {
+      .gallery-grid { align-items: stretch; }
+      .gallery-item { aspect-ratio: 4 / 3; }
+      .gallery-item:nth-child(n + 4) { aspect-ratio: 3 / 2; }
+      .gallery-item img { height: 100%; object-fit: cover; }
+    }
+    .gallery-instagram { margin-top: 30px; margin-bottom: 0; }
+    .gallery-instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 5px;
+      color: var(--terracotta);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .gallery-instagram-link:hover { color: var(--terracotta-dark); }
+    .gallery-instagram-link svg { width: 18px; height: 18px; flex: 0 0 18px; }
+    @media (max-width: 850px) {
+      .gallery-page { padding-block: 52px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    }
+    @media (max-width: 650px) {
+      .gallery-page { padding-block: 44px 56px; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+      .gallery-instagram-link { gap: 10px; font-size: 14px; }
+    }
+      /* Utility link below the existing footer divider. */
+    footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+    .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+    .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+  </style>
+  <link rel="stylesheet" href="/header-layout.css?v=1">
+  <link rel="stylesheet" href="/footer-layout.css?v=1">
+  <link rel="stylesheet" href="/site-chrome.css?v=13">
+  <link rel="stylesheet" href="/communication-hub.css?v=1">
+  <style>
+    /* Dedicated FAQ content; approved shared site chrome is unchanged. */
+    .faq-page { background: var(--cream); color: var(--ink); padding: 40px 0; }
+    .faq-page .faq-canvas { width: min(1240px, 90%); }
+    .faq-page h1, .faq-page h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; }
+    .faq-page .faq-intro { margin-bottom: 32px; }
+    .faq-page .faq-eyebrow { color: #000000; letter-spacing: 2.5px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+    .faq-page h1 { font-size: clamp(36px, 4.5vw, 58px); line-height: 1.14; margin-bottom: 12px; }
+    .faq-page .faq-intro > p:last-child { color: rgba(0,0,0,.72); }
+    .faq-page .faq-category { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 2fr); gap: 36px; margin-top: 28px; }
+    .faq-page .faq-category > h2 { font: 600 13px/1.6 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; letter-spacing: 1.5px; padding-top: 17px; }
+    .faq-page .faq-category > h2 span { color: #000000; margin-right: 10px; }
+    .faq-page .faq-item { border-top: 1px solid rgba(0,0,0,.18); }
+    .faq-page .faq-item:last-child { border-bottom: 1px solid rgba(0,0,0,.18); }
+    .faq-page .faq-toggle { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; padding: 16px 0; border: 0; background: transparent; text-align: left; font: 500 17px/1.5 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; color: var(--ink); cursor: pointer; }
+    .faq-page .faq-indicator { flex-shrink: 0; color: #000000; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; transition: transform 160ms ease; }
+    .faq-page .faq-toggle[aria-expanded="true"] .faq-indicator { transform: rotate(45deg); }
+    .faq-page .faq-answer { padding: 0 28px 18px 0; color: rgba(0,0,0,.72); font-size: 16px; line-height: 1.65; }
+    .faq-page .faq-answer p + p { margin-top: 10px; }
+    .faq-page .faq-answer[hidden] { display: none; }
+    .faq-page .faq-contact { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,.18); }
+    .faq-page .faq-contact h2 { font-size: 30px; line-height: 1.2; margin-bottom: 8px; }
+    .faq-page .faq-contact p { color: rgba(0,0,0,.72); }
+    .faq-page .faq-chat { display: inline-flex; gap: 12px; align-items: center; width: fit-content; padding: 13px 22px; border-radius: 14px; background: #000000; color: var(--cream); font-weight: 600; flex-shrink: 0; }
+    .faq-page .faq-chat:hover { background: var(--terracotta-dark); }
+    .faq-page .faq-toggle:focus-visible, .faq-page .faq-chat:focus-visible { outline: 2px solid #000000; outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) { .faq-page .faq-indicator { transition: none; } }
+    @media (max-width: 850px) {
+      .faq-page .faq-category { grid-template-columns: 1fr; gap: 10px; }
+      .faq-page .faq-category > h2 { padding-top: 0; }
+    }
+    @media (max-width: 600px) {
+      .faq-page { padding: 30px 0; }
+      .faq-page .faq-canvas { width: 88%; }
+      .faq-page .faq-intro { margin-bottom: 26px; }
+      .faq-page .faq-toggle { font-size: 16px; gap: 16px; }
+      .faq-page .faq-answer { padding-right: 0; }
+      .faq-page .faq-contact { align-items: flex-start; flex-direction: column; gap: 18px; margin-top: 28px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/language-selector.css">
+  <link rel="stylesheet" href="/email-chooser.css?v=1">
+<meta name="description" content="バリの銀のジュエリー制作体験について、料金、材料、予約、所要時間、年齢、安全、アクセスなど、よくある質問にお答えします。">
+<link rel="canonical" href="https://balijewelrymasterclass.com/ja/faq.html">
+<meta property="og:url" content="https://balijewelrymasterclass.com/ja/faq.html">
+<meta property="og:title" content="よくある質問 | Bali Jewelry Masterclass">
+<meta property="og:description" content="バリの銀のジュエリー制作体験について、料金、材料、予約、所要時間、年齢、安全、アクセスなど、よくある質問にお答えします。">
+<link rel="alternate" hreflang="en" href="https://balijewelrymasterclass.com/faq.html">
+<link rel="alternate" hreflang="zh-CN" href="https://balijewelrymasterclass.com/zh/faq.html">
+<link rel="alternate" hreflang="ja" href="https://balijewelrymasterclass.com/ja/faq.html">
+<link rel="alternate" hreflang="fr" href="https://balijewelrymasterclass.com/fr/faq.html">
+<link rel="alternate" hreflang="de" href="https://balijewelrymasterclass.com/de/faq.html">
+<link rel="alternate" hreflang="x-default" href="https://balijewelrymasterclass.com/faq.html">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/ja/index.html" class="brand" aria-label="Bali Jewelry Masterclassのホーム">
+        <img src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" style="white-space: nowrap;" type="button" aria-expanded="false" aria-controls="site-menu">メニュー</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">ワークショップ</button><div class="nav-dropdown" id="workshop-dropdown"><a href="/ja/index.html#creative-process">制作の流れ</a><a href="/ja/skills-techniques.html#pure-silver">技法と道具</a><a href="/ja/index.html#schedule">開催時間</a><a href="/ja/pricing.html">料金</a></div></div>
+        <a href="/ja/gallery.html">ギャラリー</a>
+        <a href="/ja/blog.html">ブログ</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">私たちについて</button><div class="nav-dropdown" id="about-dropdown"><a href="/ja/about.html">BJMについて</a><a href="/ja/index.html#location">アクセス</a><a href="/ja/index.html#contact">お問い合わせ</a><a href="/ja/faq.html">よくある質問</a></div></div>
+        <div class="language-selector" role="group" aria-label="サイトの言語">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="言語：日本語" title="日本語"><img class="language-flag" src="/language-flag-jp.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">言語</span>
+          <div class="language-options" id="language-options" hidden>
+            <button type="button" class="language-option" data-language="en" lang="en" aria-label="英語" title="英語"><img class="language-flag" src="/language-flag-gb.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="fr" lang="fr" disabled title="フランス語" aria-label="フランス語"><img class="language-flag" src="/language-flag-fr.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="de" lang="de" disabled title="ドイツ語" aria-label="ドイツ語"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="zh-CN" lang="zh-CN" disabled title="中国語（簡体字）" aria-label="中国語（簡体字）"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"></button>
+            <span class="language-option is-active" aria-current="true" data-language="ja" lang="ja" title="日本語" aria-label="日本語"><img class="language-flag" src="/language-flag-jp.svg" alt="" width="22" height="15"></span>
+          </div>
+        </div>
+        <a href="/ja/booking.html" class="nav-cta">予約</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="faq-page">
+    <div class="container faq-canvas">
+      <section class="faq-intro" aria-labelledby="faq-title">
+        <p class="faq-eyebrow">よくある質問</p>
+        <h1 id="faq-title">よくあるご質問。</h1>
+        <p>Bali Jewelry Masterclassのワークショップに参加する前に、知っておきたいこと。</p>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-01">
+        <h2 id="faq-category-01"><span>01</span> ワークショップ</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-1" type="button" aria-expanded="true" aria-controls="faq-answer-1"><span>初心者でも参加できますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-1" aria-labelledby="faq-question-1">
+              <p>はい。ジュエリー制作の経験は必要ありません。講師が一つひとつの工程をご案内します。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-2" type="button" aria-expanded="true" aria-controls="faq-answer-2"><span>ワークショップはどのくらいかかりますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-2" aria-labelledby="faq-question-2">
+              <p>標準ワークショップの所要時間は2時間です。デザインやカスタマイズによっては、追加時間が必要な場合があります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-3" type="button" aria-expanded="true" aria-controls="faq-answer-3"><span>ワークショップでは何を作りますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-3" aria-labelledby="faq-question-3">
+              <p>主な体験は、ご自身の銀のジュエリーを作ることです。指輪が中心で、最も人気があります。用意しているデザインやその他の選択肢は、スタッフにご相談ください。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-4" type="button" aria-expanded="true" aria-controls="faq-answer-4"><span>自分でジュエリーを作りますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-4" aria-labelledby="faq-question-4">
+              <p>はい。実際に手を動かすワークショップです。講師のサポートを受けながら、制作工程に参加します。安全上または技術上の理由から、必要に応じて講師が一部の工程を手伝ったり、代わって行ったりすることがあります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-5" type="button" aria-expanded="true" aria-controls="faq-answer-5"><span>自分でデザインを選べますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-5" aria-labelledby="faq-question-5">
+              <p>はい。BJMのサンプルやカタログから選べます。複雑さ、必要な材料、ワークショップの時間によっては、オリジナルのアイデアに対応できる場合もあります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-6" type="button" aria-expanded="true" aria-controls="faq-answer-6"><span>完成品はサンプルとまったく同じになりますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-6" aria-labelledby="faq-question-6">
+              <p>必ずしも同じにはなりません。一つひとつ手作りするため、形、寸法、質感、仕上げ、細部、全体の見た目に生じる小さな違いは自然なものです。サンプルはデザインの参考であり、まったく同じものを量産するための型ではありません。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-7" type="button" aria-expanded="true" aria-controls="faq-answer-7"><span>ジュエリーは当日持ち帰れますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-7" aria-labelledby="faq-question-7">
+              <p>はい。ワークショップ終了時に、完成したジュエリーをその日のうちにお持ち帰りいただけます。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-02">
+        <h2 id="faq-category-02"><span>02</span> 料金と材料</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-8" type="button" aria-expanded="true" aria-controls="faq-answer-8"><span>料金には何が含まれますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-8" aria-labelledby="faq-question-8">
+              <p>標準ワークショップには、講師のサポート、実際に手を動かすジュエリー制作体験、1名につき最大6グラムの銀、持ち帰れる完成作品1点が含まれます。追加オプション、銀の追加、特別なカスタマイズ、時間の延長には、別途料金がかかる場合があります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-9" type="button" aria-expanded="true" aria-controls="faq-answer-9"><span>銀はどのくらい含まれますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-9" aria-labelledby="faq-question-9">
+              <p>標準料金には、1名につき最大6グラムの銀が含まれています。</p>
+              <p>6グラムは材料の割当量であり、すべてのデザインや指輪のサイズが6グラムで作れることを保証するものではありません。必要量は、デザイン、寸法、指輪のサイズ、制作工程によって異なります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-10" type="button" aria-expanded="true" aria-controls="faq-answer-10"><span>デザインに6グラムを超える銀が必要な場合は？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-10" aria-labelledby="faq-question-10">
+              <p>追加の銀は、1グラムあたりIDR 95,000です。</p>
+              <p>例えば、選んだデザインとサイズに9グラムが必要と見込まれる場合、6グラムは料金に含まれ、追加3グラムの費用はIDR 300,000となります。</p>
+              <p>推定される材料の必要量と追加費用は、ワークショップ開始前にご説明します。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-11" type="button" aria-expanded="true" aria-controls="faq-answer-11"><span>6グラム未満でできた場合はどうなりますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-11" aria-labelledby="faq-question-11">
+              <p>含まれる6グラムは材料の割当量であり、参加者がその量の銀を購入するものではありません。未使用分の返金、交換、未使用の銀としてのお渡しはできません。</p>
+              <p>手作りの工程中に、材料の一部が失われたり、残留物として残ったりする場合もあります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-12" type="button" aria-expanded="true" aria-controls="faq-answer-12"><span>宝石やオリジナルの細部を追加できますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-12" aria-labelledby="faq-question-12">
+              <p>デザインや在庫状況によっては、宝石、特注の加工、その他の追加に対応できる場合があり、追加料金がかかることがあります。</p>
+              <p>追加費用は、作業を始める前に説明します。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-13" type="button" aria-expanded="true" aria-controls="faq-answer-13"><span>予想外の追加料金はありますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-13" aria-labelledby="faq-question-13">
+              <p>事前の同意なく、材料、追加オプション、カスタマイズの追加料金を加えることはありません。</p>
+              <p>始める前に、選んだデザイン、サイズ、推定材料量、関連する追加内容を一緒に確認します。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-14" type="button" aria-expanded="true" aria-controls="faq-answer-14"><span>制作に2時間以上かかる場合は？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-14" aria-labelledby="faq-question-14">
+              <p>追加時間は1時間あたりIDR 100,000で、追加30分あたりIDR 50,000として30分単位で計算します。</p>
+              <p>選んだデザインやカスタマイズに追加時間が必要と見込まれる場合、合理的に可能な限り、開始前に説明します。</p>
+              <p>当方の運営上の遅延による追加時間は、参加者に請求しません。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-03">
+        <h2 id="faq-category-03"><span>03</span> 予約とお支払い</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-15" type="button" aria-expanded="true" aria-controls="faq-answer-15"><span>事前予約は必要ですか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-15" aria-labelledby="faq-question-15">
+              <p>準備と空き状況の確認のため、事前予約をおすすめします。BJMでは通常、少なくとも1日前までの予約を受け付けています。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-16" type="button" aria-expanded="true" aria-controls="faq-answer-16"><span>前払い金は必要ですか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-16" aria-labelledby="faq-question-16">
+              <p>通常の予約は、前払い金なしで確定できる場合があります。大人数のグループ、特別な手配、その他一部の予約では、予約確保のために前払い金または事前のお支払いをお願いする場合があります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-17" type="button" aria-expanded="true" aria-controls="faq-answer-17"><span>支払いはいつ行いますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-17" aria-labelledby="faq-question-17">
+              <p>通常の予約は、ワークショップ終了時にお支払いいただきます。事前に合意した追加材料、追加オプション、延長時間を最終金額に含めるためです。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-18" type="button" aria-expanded="true" aria-controls="faq-answer-18"><span>予約後に料金が変わった場合、どの料金が適用されますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-18" aria-labelledby="faq-question-18">
+              <p>予約確定時に確認したワークショップ料金を、その予約に適用します。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-04">
+        <h2 id="faq-category-04"><span>04</span> キャンセル・日程変更・遅刻</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-19" type="button" aria-expanded="true" aria-controls="faq-answer-19"><span>予約をキャンセルできますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-19" aria-labelledby="faq-question-19">
+              <p>はい。キャンセルが必要な場合は、予約時間の少なくとも12時間前までにご連絡ください。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-20" type="button" aria-expanded="true" aria-controls="faq-answer-20"><span>予約の日程を変更できますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-20" aria-labelledby="faq-question-20">
+              <p>はい。空き状況に応じて、最大3回まで変更できます。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-21" type="button" aria-expanded="true" aria-controls="faq-answer-21"><span>遅れた場合はどうなりますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-21" aria-labelledby="faq-question-21">
+              <p>可能な限り対応します。</p>
+              <p>次のセッションが満席で、その開始前に制作を終える時間が足りない場合、日程を変更していただくことがあります。</p>
+              <p>後のセッションに空きがある場合は、空き状況に応じて、そのセッションをご案内することがあります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-22" type="button" aria-expanded="true" aria-controls="faq-answer-22"><span>予約に参加しなかった場合は？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-22" aria-labelledby="faq-question-22">
+              <p>確定した予約に連絡なく参加されなかった方には、次回の予約で前払い金または事前のお支払いをお願いする場合があります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-23" type="button" aria-expanded="true" aria-controls="faq-answer-23"><span>BJMがワークショップをキャンセルした場合は？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-23" aria-labelledby="faq-question-23">
+              <p>別の日程または時間をご案内します。お支払い済みで、日程変更ができない、または希望されない場合は、キャンセルしたワークショップの支払額を全額返金します。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-05">
+        <h2 id="faq-category-05"><span>05</span> 場所と交通</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-24" type="button" aria-expanded="true" aria-controls="faq-answer-24"><span>Bali Jewelry Masterclassはどこにありますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-24" aria-labelledby="faq-question-24">
+              <p>Bali Jewelry Masterclassは、Dalung, North Kuta, Bali, Indonesiaにあります。</p>
+              <p>地元のバリの住宅街にある自宅スタジオで、リゾートや大規模な商業ジュエリースタジオではありません。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-25" type="button" aria-expanded="true" aria-controls="faq-answer-25"><span>交通費は含まれますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-25" aria-labelledby="faq-question-25">
+              <p>いいえ。交通費はワークショップ料金に含まれていません。</p>
+              <p>自宅スタジオへの交通手段は、ご自身で手配できます。ご希望に応じて送迎を手配できる場合もあります。対応の可否と料金は、BJMまでお問い合わせください。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-06">
+        <h2 id="faq-category-06"><span>06</span> グループ</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-26" type="button" aria-expanded="true" aria-controls="faq-answer-26"><span>何人まで参加できますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-26" aria-labelledby="faq-question-26">
+              <p>Bali Jewelry Masterclassは、1セッションにつき最大20名まで対応できます。</p>
+              <p>大人数の予約や特別なグループの手配については、空き状況の確認と準備のため、事前にご連絡ください。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-07">
+        <h2 id="faq-category-07"><span>07</span> 年齢と安全</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-27" type="button" aria-expanded="true" aria-controls="faq-answer-27"><span>参加できる最低年齢は？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-27" aria-labelledby="faq-question-27">
+              <p>最低参加年齢は12歳です。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-28" type="button" aria-expanded="true" aria-controls="faq-answer-28"><span>18歳未満には保護者の同伴が必要ですか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-28" aria-labelledby="faq-question-28">
+              <p>はい。12–17歳の方には、ワークショップ中、保護者または責任を持てる付き添いの方の同伴が必要です。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-29" type="button" aria-expanded="true" aria-controls="faq-answer-29"><span>ジュエリー制作は安全ですか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-29" aria-labelledby="faq-question-29">
+              <p>ジュエリー制作では、道具、熱、炎、機械、その他の設備を使います。</p>
+              <p>講師が全工程でご案内します。参加者は、すべての安全上の指示に従ってください。安全のために必要な場合、講師が特定の工程を手伝ったり、代わって行ったりします。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-08">
+        <h2 id="faq-category-08"><span>08</span> ワークショップの後</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-30" type="button" aria-expanded="true" aria-controls="faq-answer-30"><span>後から修理やサイズ直しはできますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-30" aria-labelledby="faq-question-30">
+              <p>はい。ジュエリーと必要な作業によって対応できます。</p>
+              <p>完成品をお持ち帰りになった後の修理、サイズ直し、再仕上げ、その他の変更には、追加の修理・サービス料金がかかる場合があります。</p>
+              <p>費用は、修理や変更を始める前にご説明します。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-category" aria-labelledby="faq-category-09">
+        <h2 id="faq-category-09"><span>09</span> 写真と記録</h2>
+        <div class="faq-questions">
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-31" type="button" aria-expanded="true" aria-controls="faq-answer-31"><span>ワークショップ中に写真や動画を撮りますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-31" aria-labelledby="faq-question-31">
+              <p>参加者の体験や記録の一環として、写真や動画を撮影する場合があります。</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3><button class="faq-toggle" id="faq-question-32" type="button" aria-expanded="true" aria-controls="faq-answer-32"><span>BJMが私の写真をSNSや宣伝に使うことはありますか？</span><svg class="faq-indicator" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 10h12M10 4v12"/></svg></button></h3>
+            <div class="faq-answer" id="faq-answer-32" aria-labelledby="faq-question-32">
+              <p>ご本人の同意がある場合のみです。</p>
+              <p>個人を特定できる写真や動画をBJMのウェブサイト、SNS、販促物に使うことへの同意は任意です。マーケティングへの利用に同意しなくても、ワークショップの体験に影響はありません。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="faq-contact" aria-labelledby="faq-contact-title">
+        <div><h2 id="faq-contact-title">ほかにご質問がありますか？</h2><p>予約前のご相談も、お気軽に。</p></div>
+        <a class="faq-chat" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer">チャットで相談 <span aria-hidden="true">→</span></a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="/ja/index.html#home" aria-label="Bali Jewelry Masterclassのホーム"><img class="footer-logo" src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">バリの、あなたの銀細工スペース</p>
+          <div class="footer-social-links" aria-label="SNS">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>アクセス</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Googleマップで見るBali Jewelry Masterclass" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>お問い合わせ</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="Bali Jewelry Masterclassにメール" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">メール</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="WhatsAppでBali Jewelry Masterclassに連絡"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>ナビゲーション</h2>
+          <ul>
+            <li><a href="/ja/about.html">BJMについて</a></li>
+            <li><a href="/ja/index.html#creative-process">制作の流れ</a></li>
+            <li><a href="/ja/skills-techniques.html">技法と道具</a></li>
+            <li><a href="/ja/pricing.html">料金</a></li>
+            <li><a href="/ja/index.html#schedule">開催時間</a></li>
+            <li><a href="/ja/gallery.html">ギャラリー</a></li>
+            <li><a href="/ja/faq.html">よくある質問</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="/ja/policies.html">ご利用にあたって</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← 戻る</span>
+    <button type="button" class="communication-hub-toggle" aria-label="お問い合わせ方法" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> 何かお手伝いできますか？ </h2>
+      <p class="communication-hub-intro"> ご都合のよい方法でお問い合わせください。 </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> 気軽にメッセージをどうぞ </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> メール </span><span class="communication-hub-detail"> メールでのお問い合わせはこちら </span></span></button>
+        <a class="communication-hub-option" href="/ja/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> ワークショップを予約 </span><span class="communication-hub-detail"> ワークショップの詳細を選ぶ </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.faq-page .faq-toggle').forEach((button) => {
+      const answer = document.getElementById(button.getAttribute('aria-controls'));
+      button.setAttribute('aria-expanded', 'false');
+      answer.hidden = true;
+      button.addEventListener('click', () => {
+        const opening = button.getAttribute('aria-expanded') !== 'true';
+        button.setAttribute('aria-expanded', String(opening));
+        answer.hidden = !opening;
+        if (opening && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && answer.animate) {
+          answer.animate([{ opacity: 0, transform: 'translateY(-3px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 160, easing: 'ease-out' });
+        }
+      });
+    });
+  </script>
+  <script src="/language-selector.js" defer></script>
+  <script>/* Shared footer email-provider chooser. */
+(() => {
+  const triggers = document.querySelectorAll('footer button[data-email-chooser]');
+  if (!triggers.length) return;
+
+  const recipient = 'balijewelrymasterclass@gmail.com';
+  const encodedRecipient = encodeURIComponent(recipient);
+  const providers = [
+    ['Gmail', `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedRecipient}`],
+    ['Outlook', `https://outlook.live.com/mail/0/deeplink/compose?to=${encodedRecipient}`],
+    ['Yahoo Mail', `https://compose.mail.yahoo.com/?to=${encodedRecipient}`],
+    ['標準のメールアプリ', `mailto:${recipient}`]
+  ];
+
+  const dialog = document.createElement('dialog');
+  dialog.id = 'email-provider-chooser';
+  dialog.className = 'email-chooser';
+  dialog.setAttribute('aria-labelledby', 'email-chooser-title');
+  dialog.setAttribute('aria-describedby', 'email-chooser-description');
+  dialog.innerHTML = `
+    <button type="button" class="email-chooser-close" aria-label="メールの選択肢を閉じる" autofocus>&times;</button>
+    <h2 id="email-chooser-title">メールでお問い合わせ</h2>
+    <p id="email-chooser-description">ご利用のメールサービスを選んでください。</p>
+    <div class="email-chooser-options"></div>`;
+  const options = dialog.querySelector('.email-chooser-options');
+  for (const [name, url] of providers) {
+    const link = document.createElement('a');
+    const icon = document.createElement('img');
+    icon.src = {
+      'Gmail': '/email-provider-gmail.svg',
+      'Outlook': '/email-provider-outlook.svg',
+      'Yahoo Mail': '/email-provider-yahoo.svg',
+      '標準のメールアプリ': '/email-provider-other.svg'
+    }[name];
+    icon.className = 'email-provider-icon';
+    icon.alt = '';
+    icon.width = 22;
+    icon.height = 22;
+    const label = document.createElement('span');
+    label.textContent = name;
+    link.append(icon, label);
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    options.append(link);
+  }
+  document.body.append(dialog);
+
+  let opener;
+  for (const trigger of triggers) {
+    trigger.addEventListener('click', () => {
+      opener = trigger;
+      dialog.showModal();
+    });
+  }
+  dialog.querySelector('.email-chooser-close').addEventListener('click', () => dialog.close());
+  let startedOutside = false;
+  const outside = event => {
+    const bounds = dialog.getBoundingClientRect();
+    return event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom);
+  };
+  dialog.addEventListener('pointerdown', event => { startedOutside = outside(event); });
+  dialog.addEventListener('click', event => {
+    if (startedOutside && outside(event)) dialog.close();
+    startedOutside = false;
+  });
+  // Native modal dialogs handle Escape, focus containment, and inert background content.
+  dialog.addEventListener('close', () => opener?.focus());
+})();
+</script>
+  <script src="/header-dropdowns.js?v=1" defer></script>
+  <script src="/communication-hub.js?v=1" defer></script>
+</body>
+</html>
+

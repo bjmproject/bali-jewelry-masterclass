@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    footer .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    footer .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    footer .footer-tagline { max-width: 260px; margin: 0 0 14px; color: #FFFFFF; font-family: "Nothing You Could Do", "Segoe Print", cursive; font-size: 18px; font-weight: 400; font-style: normal; line-height: 1.5; letter-spacing: 0; }
+    footer .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    footer .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    footer .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    footer .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    footer .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    footer .footer-location-note { margin-top: 14px; }
+    footer .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    footer .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    footer .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    footer .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    footer .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    footer .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    footer .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    footer .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    footer .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    footer h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    footer .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+footer { --cream: #FFFFFF; --sand: #FFFFFF; }
+footer > .container { display: block; }
+footer a { color: inherit; }
+footer .footer-brand-column { width: auto; }
+footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+footer .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+footer .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+footer .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+@media (min-width: 851px) {
+  footer .footer-location-map { height: 175px; }
+}
+@media (max-width: 850px) {
+  footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+}
+@media (max-width: 650px) {
+  footer .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  footer .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+}

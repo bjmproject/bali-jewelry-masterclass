@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bjm-favicon.svg" type="image/svg+xml">
+  <title>巴厘岛银饰制作课体验指南 | BJM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #FFFFFF; --warm-white: #FFFFFF; --sand: #FFFFFF; --ink: #000000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; background: var(--warm-white); color: var(--ink); font-size: 16px; line-height: 1.65; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 90%); margin: auto; }
+
+    header { position: relative; width: 100%; z-index: 20; color: #FFFFFF; background: #000000; }
+    nav { width: min(1180px, 90%); margin: auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding-top: 35px; }
+    .brand { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 23px; letter-spacing: -.5px; position: relative; left: -40px; }
+    .brand img { width: 300px; height: auto; display: block; }
+    .nav-links { display: flex; gap: 32px; align-items: center; font-size: 17px; line-height: 1.4; }
+    .nav-links a { opacity: .92; transition: .2s ease; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-group { position: relative; }
+    .nav-group > a, .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown-toggle { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: pointer; opacity: .92; transition: .2s ease; }
+    .nav-dropdown-toggle:hover { opacity: 1; }
+    .nav-dropdown-toggle::after { content: none; display: none; }
+    .nav-dropdown { display: none; position: absolute; top: 100%; left: -18px; min-width: 205px; padding: 12px 18px; background: var(--ink); border: 1px solid rgba(255,255,255,.18); border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (min-width: 851px) { .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown { display: grid; gap: 10px; } }
+    .nav-dropdown a { display: block; font-size: 14px; white-space: nowrap; }
+    .menu-toggle { display: none; color: #FFFFFF; border: 1px solid rgba(255,255,255,.65); background: transparent; border-radius: 100px; padding: 9px 14px; font: inherit; }
+
+    .articles-page-intro { padding: 68px 0 82px; background: var(--cream); }
+    .articles-page-intro h1 { color: var(--ink); font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: clamp(36px, 4.2vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: -1px; }
+
+    footer { background: #000000; color: var(--cream); padding: 44px 0 20px; }
+    footer h2 { margin-top: 0; font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4; text-transform: uppercase; letter-spacing: 2.8px; margin-bottom: 22px; color: var(--sand); }
+    footer > .container { width: min(1180px, 90%); margin-inline: auto; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .8fr); column-gap: clamp(28px, 4vw, 64px); width: 100%; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-logo { width: min(100%, 255px); height: auto; display: block; margin: 0 0 18px -29px; filter: brightness(0) saturate(100%) invert(74%) sepia(13%) saturate(788%) hue-rotate(7deg) brightness(91%) contrast(86%); }
+    .footer-tagline { max-width: 260px; margin: 0 0 14px; color: var(--sand); font-size: 15px; line-height: 1.8; letter-spacing: 3px; }
+    .footer-brand-description { max-width: 285px; margin: 0; color: rgba(255,255,255,.72); font-size: 15px; font-style: italic; line-height: 1.6; }
+    .footer-social-links { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+    .footer-social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: rgba(255,255,255,.88); }
+    .footer-social-links svg { width: 30px; height: 30px; flex: 0 0 30px; }
+    .footer-location { color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; max-width: 300px; margin: 0; }
+    .footer-location-note { margin-top: 14px; }
+    .footer-location-address { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .footer-location-map { display: block; width: 100%; height: 140px; margin-top: 15px; border: 0; border-radius: 3px; }
+    .footer-location-address svg { width: 18px; height: 18px; margin-top: 4px; flex: 0 0 18px; }
+    .footer-map-link { display: inline-flex; align-items: center; color: var(--sand); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .footer-contact-link { display: inline-flex; align-items: center; gap: 12px; min-height: 38px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.6; }
+    .footer-contact-link svg { width: 20px; height: 20px; flex: 0 0 20px; }
+    .footer-contact-intro { margin: 0 0 18px; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+    .footer-contact-list { display: grid; justify-items: start; gap: 7px; }
+    .footer-column ul { display: grid; gap: 10px; margin: 0; padding: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.5; list-style: none; }
+    .copyright { padding-top: 20px; font-size: 14px; color: rgba(255,255,255,.48); display: flex; justify-content: space-between; gap: 20px; width: 100%; line-height: 1.6; }
+
+    @media (min-width: 651px) { .footer-tagline { max-width: none; white-space: nowrap; } }
+    @media (max-width: 850px) {
+      .brand { left: 0; }
+      .brand img { width: 219px; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links.is-open { display: grid; position: absolute; top: 82px; left: 5%; width: 90%; gap: 0; padding: 12px 20px; background: var(--ink); border-radius: 3px; font-size: 15px; }
+      .nav-links.is-open > a, .nav-links.is-open .nav-group > a, .nav-links.is-open .nav-group > .nav-dropdown-toggle { display: flex; padding: 10px 0; }
+      .nav-links.is-open .nav-group:not(.nav-group--craft) .nav-dropdown { display: grid; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft .nav-dropdown { display: none; position: static; padding: 0 0 8px 14px; background: transparent; border: 0; box-shadow: none; gap: 5px; }
+      .nav-links.is-open .nav-group--craft.is-open .nav-dropdown { display: grid; }
+      .nav-links.is-open .nav-dropdown a { padding: 4px 0; }
+      .nav-links.is-open .nav-cta { justify-content: center; margin: 8px 0; padding: 10px 18px; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 36px; }
+      .copyright { flex-direction: column; }
+    }
+    @media (min-width: 851px) {
+      .footer-location-map { height: 175px; }
+    }
+    @media (max-width: 650px) {
+      .brand { left: 1vw; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      footer > .container { width: 88%; }
+      .footer-logo { width: min(100%, 230px); margin-left: -26px; }
+      .copyright { flex-direction: column; }
+    }
+      /* Utility link below the existing footer divider. */
+    footer .copyright { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 16px; }
+    .footer-policies-link { margin-left: 0; flex-shrink: 0; color: var(--sand); }
+    .footer-policies-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .footer-policies-link:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 5px; }
+  </style>
+  <link rel="stylesheet" href="/header-layout.css?v=1">
+  <link rel="stylesheet" href="/footer-layout.css?v=1">
+  <link rel="stylesheet" href="/site-chrome.css?v=13">
+  <link rel="stylesheet" href="/communication-hub.css?v=1">
+  <style>
+    /* Article content only; shared site chrome is preserved. */
+    .silver-article-page { background: var(--cream); color: var(--ink); padding: 40px 0; }
+    .silver-article-page .silver-article { width: min(780px, 90%); margin-inline: auto; }
+    .silver-article-page .article-eyebrow { color: #000000; font-size: 12px; font-weight: 600; letter-spacing: 2px; margin-bottom: 12px; }
+    .silver-article-page h1, .silver-article-page h2 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-weight: 600; }
+    .silver-article-page h1 { font-size: clamp(34px, 4vw, 48px); line-height: 1.15; letter-spacing: -.7px; margin-bottom: 22px; }
+    .silver-article-page h1 span { display: inline-block; font-size: .76em; margin-top: 8px; }
+    .silver-article-page h2 { font-size: clamp(26px, 3vw, 32px); line-height: 1.2; margin-bottom: 14px; }
+    .silver-article-page p, .silver-article-page dd { font-size: 17px; line-height: 1.75; color: rgba(0,0,0,.72); overflow-wrap: break-word; }
+    .silver-article-page p + p { margin-top: 12px; }
+    .silver-article-page section { margin-top: 32px; }
+    .silver-article-page p a { color: #000000; text-decoration: underline; text-underline-offset: 3px; }
+    .silver-article-page .silver-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding-block: 20px; margin-block: 20px; border-block: 1px solid rgba(0,0,0,.18); }
+    .silver-article-page .silver-comparison dt { font-weight: 600; margin-bottom: 8px; }
+    .silver-article-page .silver-comparison dt span { display: block; color: #000000; font: 600 34px/1.2 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; margin-bottom: 6px; }
+    .silver-article-page .article-reflection { color: #000000; font: 600 26px/1.4 "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; margin-top: 16px; }
+    .silver-article-page .article-closing-line { font-style: italic; font-weight: 500; margin-top: 18px; }
+    .silver-article-page .article-workshop-cta { border-top: 1px solid rgba(0,0,0,.18); padding-top: 24px; }
+    .silver-article-page .article-primary { display: inline-flex; align-items: center; width: fit-content; margin-top: 18px; padding: 12px 20px; border: 0; border-radius: 14px; background: #000000; color: var(--cream); font-weight: 600; }
+    .silver-article-page .article-primary:hover { background: rgba(0,0,0,.78); }
+    .silver-article-page a:focus-visible { outline: 2px solid #000000; outline-offset: 4px; }
+    @media (max-width: 600px) {
+      .silver-article-page { padding: 30px 0; }
+      .silver-article-page .silver-article { width: 88%; }
+      .silver-article-page section { margin-top: 28px; }
+      .silver-article-page .silver-comparison { grid-template-columns: 1fr; gap: 18px; }
+      .silver-article-page p, .silver-article-page dd { font-size: 16px; }
+    }
+  </style>
+  <style>
+    .silver-article-page .article-sources { border-top: 1px solid rgba(0,0,0,.18); padding-top: 20px; }
+    .silver-article-page .article-sources h2 { font-size: 22px; margin-bottom: 12px; }
+    .silver-article-page .article-sources ul { display: grid; gap: 8px; list-style: none; padding: 0; }
+    .silver-article-page .article-sources a { font-size: 14px; line-height: 1.6; }
+  </style>
+  <style>
+    .silver-article-page h3 { font-family: "DM Sans", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; font-size: 22px; font-weight: 600; line-height: 1.3; margin: 24px 0 12px; }
+    .silver-article-page ul, .silver-article-page ol { margin: 12px 0; padding-left: 24px; color: rgba(0,0,0,.72); font-size: 17px; line-height: 1.75; overflow-wrap: break-word; }
+    .silver-article-page li + li { margin-top: 4px; }
+    @media (max-width: 650px) { .silver-article-page ul, .silver-article-page ol { font-size: 16px; } }
+  </style>
+  <link rel="stylesheet" href="/language-selector.css">
+  <link rel="stylesheet" href="/email-chooser.css?v=1">
+<meta name="description" content="从未做过首饰？了解巴厘岛银饰制作课的体验，从选择设计到成形、焊接、抛光，再把作品带回家。">
+<link rel="canonical" href="https://balijewelrymasterclass.com/zh/what-to-expect-silver-jewelry-making-class-bali.html">
+<meta property="og:url" content="https://balijewelrymasterclass.com/zh/what-to-expect-silver-jewelry-making-class-bali.html">
+<meta property="og:title" content="巴厘岛银饰制作课体验指南 | BJM">
+<meta property="og:description" content="从未做过首饰？了解巴厘岛银饰制作课的体验，从选择设计到成形、焊接、抛光，再把作品带回家。">
+<link rel="alternate" hreflang="en" href="https://balijewelrymasterclass.com/what-to-expect-silver-jewelry-making-class-bali.html">
+<link rel="alternate" hreflang="fr" href="https://balijewelrymasterclass.com/fr/what-to-expect-silver-jewelry-making-class-bali.html">
+<link rel="alternate" hreflang="de" href="https://balijewelrymasterclass.com/de/what-to-expect-silver-jewelry-making-class-bali.html">
+<link rel="alternate" hreflang="zh-CN" href="https://balijewelrymasterclass.com/zh/what-to-expect-silver-jewelry-making-class-bali.html">
+<link rel="alternate" hreflang="x-default" href="https://balijewelrymasterclass.com/what-to-expect-silver-jewelry-making-class-bali.html">
+  <link rel="stylesheet" href="/blog-navigation.css?v=1">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/zh/index.html" class="brand" aria-label="Bali Jewelry Masterclass 首页">
+        <img src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">菜单</button>
+      <div class="nav-links" id="site-menu">
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="workshop-dropdown">制作体验</button><div class="nav-dropdown" id="workshop-dropdown"><a href="/zh/index.html#creative-process">创作过程</a><a href="/zh/skills-techniques.html#pure-silver">工艺与技巧</a><a href="/zh/index.html#schedule">课程时间</a><a href="/zh/pricing.html">价格</a></div></div>
+        <a href="/zh/gallery.html">相册</a>
+        <a href="/zh/blog.html">博客</a>
+        <div class="nav-group"><button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="about-dropdown">关于我们</button><div class="nav-dropdown" id="about-dropdown"><a href="/zh/about.html">关于 BJM</a><a href="/zh/index.html#location">工作室位置</a><a href="/zh/index.html#contact">联系我们</a><a href="/zh/faq.html">常见问题</a></div></div>
+        <div class="language-selector" role="group" aria-label="网站语言">
+          <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="语言：简体中文" title="简体中文"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"><span aria-hidden="true"></span></button>
+          <span class="language-heading">语言</span>
+          <div class="language-options" id="language-options" hidden>
+            <button type="button" class="language-option" data-language="en" lang="en" aria-label="英语" title="英语"><img class="language-flag" src="/language-flag-gb.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="fr" lang="fr" disabled title="法语" aria-label="法语"><img class="language-flag" src="/language-flag-fr.svg" alt="" width="22" height="15"></button>
+            <button class="language-option" type="button" data-language="de" lang="de" disabled title="德语" aria-label="德语"><img class="language-flag" src="/language-flag-de.svg" alt="" width="22" height="15"></button>
+            <span class="language-option is-active" aria-current="true" data-language="zh-CN" lang="zh-CN" title="简体中文" aria-label="简体中文"><img class="language-flag" src="/language-flag-cn.svg" alt="" width="22" height="15"></span>
+            <button class="language-option" type="button" data-language="ja" lang="ja" disabled title="日语 — 即将推出" aria-label="日语 — 即将推出"><img class="language-flag" src="/language-flag-jp.svg" alt="" width="22" height="15"></button>
+          </div>
+        </div>
+        <a href="/zh/booking.html" class="nav-cta">预约</a>
+      </div>
+    </nav>
+  </header>
+  <main class="silver-article-page">
+    <article class="silver-article" aria-labelledby="article-title">
+      <div class="article-opening">
+        <p class="article-eyebrow">巴厘岛首饰制作</p>
+        <h1 id="article-title">在巴厘岛的银饰制作课上会经历什么：<br><span>新手指南</span></h1>
+        <p>你已经预约了巴厘岛的银饰制作课。</p>
+        <p>到了之后，究竟会做些什么？</p>
+        <p>你并不是简单地挑一枚成品戒指，加几个装饰细节，就把它称为手工作品。</p>
+        <p>在动手课程中，你从一个想法开始，经历把材料变成首饰所需的各个步骤。</p>
+        <p>具体过程取决于制作什么。如果这是你第一次坐在首饰工作台前，以下内容可以帮你了解场次中可能发生的事。</p></div>
+      <section><h2>开始制作前</h2>
+        <p>第一件事，是决定想做什么。</p>
+        <p>你可能已经把参考图存在手机里，也可以从工作室现有设计中选择。</p>
+        <p>开始前，设计需要符合可用材料、时间和技法的实际范围。</p>
+        <p>这时可以讨论：</p>
+        <ul><li>想制作哪种首饰</li>
+          <li>大小和比例</li>
+          <li>纹理和表面处理</li>
+          <li>希望添加的细节</li>
+          <li>设计需要多少银材</li>
+          <li>是否可能需要额外时间或特殊加工</li></ul>
+        <p>如果原来的想法对这次场次来说太复杂，也许可以简化或调整，同时保留你最喜欢的元素。</p>
+        <p>设计确定后，就可以开始动手制作。</p>
+      </section>
+      <section><h2>1. 称量银材</h2>
+        <p>首饰从材料开始。</p>
+        <p>所需银材用量取决于制作的作品，因此加工前会先称重。</p>
+        <p>如果做戒指，也需要考虑手指尺寸和设计预期的尺寸。</p>
+        <p>这时的银材看起来还完全不像成品首饰。</p>
+        <p>不过，很快就会开始变化。</p>
+      </section>
+      <section><h2>2. 熔化银材</h2>
+        <p>在 Bali Jewelry Masterclass 制作的许多作品，都会先把银材加热至熔融状态。</p>
+        <p>之后将熔化的银倒入银锭模具。</p>
+        <p>冷却时，它会凝固成可以继续加工的形态。</p>
+        <p>由于涉及很高的温度，这个步骤尤其需要导师参与。</p>
+        <p>导师会解释正在发生什么，引导操作，并在必要时介入。</p>
+        <p>从模具里出来的，并不是戒指或已经完成的首饰部件。</p>
+        <p>它是后续步骤所需的初始材料。</p>
+      </section>
+      <section><h2>3. 压延并加工至所需尺寸</h2>
+        <p>凝固的银材需要达到设计所需的尺寸。</p>
+        <p>压延机可以逐步改变它的厚度和比例。</p>
+        <p>材料加工过程中，也可能用到锤打。</p>
+        <p>根据作品需要，银材可能要再次加热、加工，才能达到合适尺寸。</p>
+        <p>这个过程会让一件重要的事变得很明显：</p>
+        <p>熔化的银并不会突然变成最终形状的首饰。</p>
+        <p>材料需要逐步加工，才能成为所需的形态。</p>
+      </section>
+      <section><h2>4. 首饰开始成形</h2>
+        <p>银材达到合适尺寸后，就可以开始制作首饰的实际形状。</p>
+        <p>做戒指时，就是逐步把材料加工成预期的大小和截面。</p>
+        <p>过程中会再次检查尺寸，随着作品成形及时调整。</p>
+        <p>根据设计，其他首饰可能采用不同的步骤顺序。</p>
+        <p>因此，坐在同一张工作台前的两位客人，不一定会做完全相同的操作。</p>
+        <p>设计决定制作过程。</p>
+      </section>
+      <section><h2>5. 有些设计需要焊接</h2>
+        <p>如果作品的某些部分需要连接，就可能用到焊接。</p>
+        <p>焊接利用热量，让首饰的不同部分形成牢固接合。</p>
+        <p>它比前面某些工作台操作需要更精细的控制，因此导师会在旁指导，必要时协助或介入。</p>
+        <p><a href="/silver-jewelry-workshop-bali-for-beginners.html">来之前，不需要知道</a> 具体怎样操作。</p>
+        <p>在课程中，你会看到 <a href="/silver-jewelry-making-techniques.html">这项技法如何使用，以及为什么使用</a>。</p>
+      </section>
+      <section><h2>6. 用锉修细化形状</h2>
+        <p>主要形状完成后，作品仍需要细化。</p>
+        <p>锉修可以去除粗糙或不平整的部分，修整边缘，让形状更接近预期设计。</p>
+        <p>这个步骤没有熔银或使用焊枪那么显眼，却能明显影响成品。</p>
+        <p>首饰越接近完成，小调整就越重要。</p>
+      </section>
+      <section><h2>7. 添加纹理和表面细节</h2>
+        <p>根据设计，制作过程中可能会加入或细化纹理。</p>
+        <p>锤痕、更光滑的表面、有意保留的不规则感或其他细节，都能改变简单作品的个性。</p>
+        <p>这也是最初所做选择开始更明显地呈现出来的时候。</p>
+        <p>基本比例相近的两枚戒指，可以因为表面处理不同，最终看起来很不一样。</p>
+      </section>
+      <section><h2>8. 抛光并完成作品</h2>
+        <p>最后的步骤，让首饰逐渐呈现你将带回家的样子。</p>
+        <p>按照预期的表面效果进行细化，并检查尺寸、佩戴贴合度、形状和整体表面质量等细节。</p>
+        <p>明亮抛光的作品，与希望保留更多纹理或减少反光的作品，会采用不同的处理方式。</p>
+        <p>这个阶段，变化往往最明显。</p>
+        <p>在课程大部分时间里看起来还像半成品的作品，终于开始呈现完成的样子。</p>
+      </section>
+      <section><h2>有多少步骤由你自己完成？</h2>
+        <p>动手课程并不一定意味着每一项技术操作都要完全独立完成。</p>
+        <p>在适合的环节，你会直接加工自己的作品。</p>
+        <p>导师会示范技法、解释工具用法，并在你准备好后给你空间继续操作。</p>
+        <p>有些步骤精度要求更高，或涉及高温。</p>
+        <p>这时导师可能会提供更密切的协助，或介入操作。</p>
+        <p>具体的参与比例，取决于设计和所用技法。</p>
+        <p>重点不是证明你不用帮助也能做首饰。</p>
+        <p>而是真正参与把材料变成自己的成品。</p>
+      </section>
+      <section><h2>每件作品都会完全按这些步骤制作吗？</h2>
+        <p>不会。</p>
+        <p>首饰制作没有唯一固定的流程。</p>
+        <p>简单戒指、吊坠、手镯或其他设计，可能需要不同的准备、技法和收尾工作。</p>
+        <p>有些作品需要焊接。</p>
+        <p>有些更侧重成形或纹理。</p>
+        <p>有些设计需要额外材料或时间。</p>
+        <p>以上顺序可以帮助你了解大致过程，但你自己的场次会根据所选作品的需求进行。</p>
+      </section>
+      <section><h2>从没用过首饰制作工具，怎么办？</h2>
+        <p>没有关系。</p>
+        <p>来之前，不需要会操作压延机、给银材成形、使用首饰锉刀，也不需要懂焊接过程中会发生什么。</p>
+        <p>相关工具和技法进入你的制作过程时，导师会逐一解释。</p>
+        <p>你会在实际操作中学习。</p>
+        <p>不用在碰任何东西之前就了解整个工作室，而是在真正需要某件工具时，了解它的作用。</p>
+      </section>
+      <section><h2>首饰制作课需要多长时间？</h2>
+        <p>不同工作室和设计的课程时长可能不同。</p>
+        <p>Bali Jewelry Masterclass 的标准课程时长为 <strong>两小时</strong>。</p>
+        <p>所选设计应适合在场次时间内完成。</p>
+        <p>如果作品需要标准课程之外的额外时间、材料或特殊加工，应在额外工作开始前确认。</p>
+        <p>不需要把所有可能的首饰制作技法都放进一个场次。</p>
+        <p>目标是经历你的作品所需的制作过程，完成一件可以带回家的首饰。</p>
+      </section>
+      <section><h2>应该带什么？</h2>
+        <p>不需要自带首饰制作工具或银材。</p>
+        <p>如果已经知道想做什么，把参考图存到手机里带来。</p>
+        <p>它能让最初的设计讨论更方便。</p>
+        <p><a href="/zh/what-to-wear-jewelry-making-class-bali.html">舒适的衣服</a> 很适合动手活动。</p>
+        <p>如果留长发，在工具附近操作时能把头发扎起来，也会方便一些。</p>
+        <p>课程中请听从导师的安全指导，尤其是在设备周围或涉及加热的操作中。</p>
+        <p>除此之外，不需要像参加专业首饰课程那样准备。</p>
+        <p>你是来尝试的。</p>
+      </section>
+      <section><h2>Bali Jewelry Masterclass 的场次包含什么？</h2>
+        <p>Bali Jewelry Masterclass 的课程在我们的家庭工作室进行，地点位于 <strong>Dalung, North Kuta</strong>。</p>
+        <p>标准课程包含：</p>
+        <ul><li><strong>两小时课程时间</strong></li>
+          <li><strong>每位客人最多 6 克银材</strong></li>
+          <li><strong>每人一件成品</strong></li>
+          <li><strong>工具和设备</strong></li>
+          <li><strong>导师指导</strong></li>
+          <li><strong>适合新手的动手体验</strong></li></ul>
+        <p>可以从工作室现有设计开始，也可以讨论自己的想法。</p>
+        <p>如果作品需要额外银材、时间或特殊加工，我们会在额外工作开始前说明需求和预计费用。</p>
+        <p>不需要任何首饰制作经验。</p>
+      </section>
+      <section><h2>结束时会带走什么？</h2>
+        <p>课程开始时，你有银材和一个想法。</p>
+        <p>结束时，你有一件成品首饰。</p>
+        <p>但你也知道中间发生了什么。</p>
+        <p>你看到了材料的变化。</p>
+        <p>使用过一些让它成形的工具。</p>
+        <p>理解了为什么某些步骤需要耐心，另一些则需要更有经验的人帮忙。</p>
+        <p>再看成品时，制作过程不再是看不见的。</p>
+        <p>你知道它是怎样完成的，因为你参与了制作。</p>
+      </section>
+      <section class="article-workshop-cta" aria-label="了解制作体验">
+        <p class="article-eyebrow">准备好亲自了解制作过程了吗？</p>
+        <p>在我们巴厘岛的家庭工作室，亲手制作自己的银饰。</p>
+        <a class="article-primary" href="/zh/index.html#creative-process">了解制作体验 →</a>
+      </section>
+            <div class="article-back-navigation">
+        <a class="article-back-link" href="/zh/blog.html">← 返回博客</a>
+      </div>
+</article>
+  </main>
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand-column">
+          <a class="footer-logo-link" href="/zh/index.html#home" aria-label="Bali Jewelry Masterclass 首页"><img class="footer-logo" src="/bjm-logo-horizontal-white.png" alt="Bali Jewelry Masterclass" width="1200" height="300" loading="lazy" decoding="async"></a>
+          <p class="footer-tagline">你在巴厘岛的银饰创作空间</p>
+          <div class="footer-social-links" aria-label="社交媒体">
+            <a href="https://www.instagram.com/balijewelrymasterclass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/@balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2h-3v13.5a3.5 3.5 0 1 1-3-3.46V9a6.5 6.5 0 1 0 6 6.5V8.3A8.1 8.1 0 0 0 21 10V7a5 5 0 0 1-5-5Z"/></svg></a>
+                      <a href="https://www.facebook.com/balijewelrymasterclass" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.6 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h1.9V2a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.7H8.6v3.6h3.2V22z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-column footer-location-column" id="location">
+          <h2>工作室位置</h2>
+          <div class="footer-location-address">
+            <p class="footer-location">Cemara Giri Graha 3 Blok II No.6F,<br>Dalung, North Kuta, Bali, Indonesia</p>
+          </div>
+          <iframe class="footer-location-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3944.8916329558433!2d115.1724279!3d-8.6064022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23963acc97927%3A0x61c659bdaaf164cc!2sBali%20Jewelry%20Masterclass!5e0!3m2!1sid!2sid!4v1790946932763!5m2!1sid!2sid" title="Google 地图上的 Bali Jewelry Masterclass" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="footer-column footer-contact-column" id="contact">
+          <h2>联系我们</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-link">
+              <button type="button" class="footer-contact-row" data-email-chooser aria-label="给 Bali Jewelry Masterclass 发邮件" aria-haspopup="dialog" aria-controls="email-provider-chooser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="4" width="19" height="16" rx="1.5" /><path d="m3 5 9 8 9-8" /></svg>
+              <span class="footer-contact-label">电子邮件</span></button>
+              <span class="footer-contact-detail">balijewelrymasterclass@gmail.com</span>
+            </div>
+            <div class="footer-contact-link">
+              <a class="footer-contact-row" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer" aria-label="通过 WhatsApp 联系 Bali Jewelry Masterclass"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.001-5.45 4.44-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.442 9.884-9.885 9.884" /></svg>
+              <span class="footer-contact-label">WhatsApp</span></a>
+              <span class="footer-contact-detail">+62 897 684 3534</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column footer-workshop-column">
+          <h2>导航</h2>
+          <ul>
+            <li><a href="/zh/about.html">关于 BJM</a></li>
+            <li><a href="/zh/index.html#creative-process">创作过程</a></li>
+            <li><a href="/zh/skills-techniques.html">工艺与技巧</a></li>
+            <li><a href="/zh/pricing.html">价格</a></li>
+            <li><a href="/zh/index.html#schedule">课程时间</a></li>
+            <li><a href="/zh/gallery.html">相册</a></li>
+            <li><a href="/zh/faq.html">常见问题</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+
+        <div>&copy; 2026 Bali Jewelry Masterclass.</div>
+        <a class="footer-policies-link" href="/zh/policies.html">条款与政策</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteMenu = document.querySelector('#site-menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = siteMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+
+  </script>
+  <div class="communication-hub">
+    <span data-hub-back-label hidden>← 返回</span>
+    <button type="button" class="communication-hub-toggle" aria-label="联系方式" aria-expanded="false" aria-controls="communication-hub-panel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.2a8.5 8.5 0 0 1-8.5 8.2 9 9 0 0 1-3.5-.7L3 21l1.5-5A8 8 0 0 1 3.5 11.2 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.2Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor"/><circle cx="12" cy="11" r="1.3" fill="currentColor"/><circle cx="16" cy="11" r="1.3" fill="currentColor"/></svg></button>
+    <div class="communication-hub-panel" id="communication-hub-panel" role="region" aria-labelledby="communication-hub-title" hidden>
+      <h2 id="communication-hub-title"> 有什么可以帮您？ </h2>
+      <p class="communication-hub-intro"> 选择最方便的方式联系我们。 </p>
+      <div class="communication-hub-options">
+        <a class="communication-hub-option" href="https://wa.me/628976843534" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 720 720" fill="#25D366" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> WhatsApp </span><span class="communication-hub-detail"> 给我们发条消息 </span></span></a>
+        <button type="button" class="communication-hub-option" data-hub-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> 电子邮件 </span><span class="communication-hub-detail"> 更喜欢通过邮件联系？ </span></span></button>
+        <a class="communication-hub-option" href="/zh/booking.html" data-hub-booking><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-12 5 2 2 4-4"/></svg><span class="communication-hub-copy"><span class="communication-hub-label"> 预约体验 </span><span class="communication-hub-detail"> 选择您的工坊体验安排 </span></span></a>
+      </div>
+    </div>
+  </div>
+  <script src="/language-selector.js" defer></script>
+  <script>/* Shared footer email-provider chooser. */
+(() => {
+  const triggers = document.querySelectorAll('footer button[data-email-chooser]');
+  if (!triggers.length) return;
+
+  const recipient = 'balijewelrymasterclass@gmail.com';
+  const encodedRecipient = encodeURIComponent(recipient);
+  const providers = [
+    ['Gmail', `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedRecipient}`],
+    ['Outlook', `https://outlook.live.com/mail/0/deeplink/compose?to=${encodedRecipient}`],
+    ['Yahoo Mail', `https://compose.mail.yahoo.com/?to=${encodedRecipient}`],
+    ['默认邮件应用', `mailto:${recipient}`]
+  ];
+
+  const dialog = document.createElement('dialog');
+  dialog.id = 'email-provider-chooser';
+  dialog.className = 'email-chooser';
+  dialog.setAttribute('aria-labelledby', 'email-chooser-title');
+  dialog.setAttribute('aria-describedby', 'email-chooser-description');
+  dialog.innerHTML = `
+    <button type="button" class="email-chooser-close" aria-label="关闭邮件选项" autofocus>&times;</button>
+    <h2 id="email-chooser-title">给我们发邮件</h2>
+    <p id="email-chooser-description">请选择你使用的邮件服务。</p>
+    <div class="email-chooser-options"></div>`;
+  const options = dialog.querySelector('.email-chooser-options');
+  for (const [name, url] of providers) {
+    const link = document.createElement('a');
+    const icon = document.createElement('img');
+    icon.src = {
+      'Gmail': '/email-provider-gmail.svg',
+      'Outlook': '/email-provider-outlook.svg',
+      'Yahoo Mail': '/email-provider-yahoo.svg',
+      '默认邮件应用': '/email-provider-other.svg'
+    }[name];
+    icon.className = 'email-provider-icon';
+    icon.alt = '';
+    icon.width = 22;
+    icon.height = 22;
+    const label = document.createElement('span');
+    label.textContent = name;
+    link.append(icon, label);
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    options.append(link);
+  }
+  document.body.append(dialog);
+
+  let opener;
+  for (const trigger of triggers) {
+    trigger.addEventListener('click', () => {
+      opener = trigger;
+      dialog.showModal();
+    });
+  }
+  dialog.querySelector('.email-chooser-close').addEventListener('click', () => dialog.close());
+  let startedOutside = false;
+  const outside = event => {
+    const bounds = dialog.getBoundingClientRect();
+    return event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom);
+  };
+  dialog.addEventListener('pointerdown', event => { startedOutside = outside(event); });
+  dialog.addEventListener('click', event => {
+    if (startedOutside && outside(event)) dialog.close();
+    startedOutside = false;
+  });
+  // Native modal dialogs handle Escape, focus containment, and inert background content.
+  dialog.addEventListener('close', () => opener?.focus());
+})();
+</script>
+  <script src="/header-dropdowns.js?v=1" defer></script>
+  <script src="/communication-hub.js?v=1" defer></script>
+</body>
+</html>
